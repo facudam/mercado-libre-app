@@ -8,15 +8,71 @@
     max-width: var(--max-width);
     margin: auto;
     display: flex;
-    justify-content: space-between;
-    border: 1px solid red;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 2px 30px;
+}
+
+.nav__top-marca {
+    width: 100%;
+    max-width: 780px;
+    display: flex;
+    gap: 50px;
     align-items: center;
 }
 
+
 .logo {
-    width: 140px;
+    width: 135px;
+}
+
+.form {
+    display: inherit;
+    background-color: #fff;
+    height: 40px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    border-left: 1px solid #dedbdb;
+    border-bottom: 1px solid #dedbdb;
+    border-right: 1px solid #dedbdb;
+    overflow: hidden
+    ;
+}
+
+.form input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    font-size: 1rem;
+    color: rgb(128, 128, 128);
+    letter-spacing: .5px;
+}
+
+.form input::placeholder {
+    color: #d3d3d3;
+    font-size: .95rem;
+}
+
+.form input:focus {
+    outline: none;
+}
+
+.form__img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    border-left: 1px solid #d7d2d2;
+    padding-bottom: 5px;
 }
 
 .lupa {
     width: 20px;
 }
+
+.propaganda a img {
+    width: 350px;
+}
+
