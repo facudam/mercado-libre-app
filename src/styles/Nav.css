@@ -1,0 +1,22 @@
+
+.nav {
+    background-color: var(--amarillo);
+}
+
+.nav__top {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid red;
+    align-items: center;
+}
+
+.logo {
+    width: 140px;
+}
+
+.lupa {
+    width: 20px;
+}
