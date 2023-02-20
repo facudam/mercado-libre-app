@@ -1,5 +1,8 @@
 import lupa from '../images/search-outline.svg';
-import logo from '../images/mercadolibre.svg'
+import logo from '../images/mercadolibre.svg';
+import location_img from '../images/location-outline.svg';
+import row_down from '../images/row-down.svg';
+import carrito from '../images/cart.svg'
 import '../styles/Nav.css'
 
 export const Nav = () => {
@@ -11,7 +14,7 @@ export const Nav = () => {
                 <form className='form'>
                     <input type='search' placeholder='Buscar productos, marcas y más...'/>
                     <div className='form__img-container'>
-                        <img className='lupa' src={ lupa } alt='lupa-search' />
+                        <img className='lupa' src={ lupa } alt='lupa search' />
                     </div>
                 </form>
             </div>
@@ -21,8 +24,40 @@ export const Nav = () => {
             </div>
         </div>
 
-        <nav className='nav__main'>
-
+        <nav className='nav__top nav__main'>
+            <div className='nav__top-first'>
+                <button className='btn-location'>
+                    <img src={ location_img } alt='location image'/>
+                    <div className='btn-location__sending-to'>
+                        <p>Enviar a</p>
+                        <p>Buenos Aires 1888</p>
+                    </div>
+                </button>
+                <div>
+                    <nav className='nav-item-container'>
+                        <ul>
+                            <li className='li-img'><a  href='' target='_blank'>Categorías</a><img src={ row_down } alt='row down' /></li>
+                            <li><a href=''>Ofertas</a></li>
+                            <li><a href=''>Historial</a></li>
+                            <li><a href=''>Supermercado</a></li>
+                            <li><a href=''>Moda</a></li>
+                            <li><a href=''>Vender</a></li>
+                            <li><a href=''>Ayuda</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            
+            <div className='nav__top-second'>
+                <nav className='nav-item-container'>
+                    <ul>
+                        <li><a href=''>Creá tu cuenta</a></li>
+                        <li><a href=''>Ingresá</a></li>
+                        <li><a href=''>Mis compras</a></li>
+                        <li><img className='carrito-img' src={ carrito } alt='carrito de compras'/></li>
+                    </ul>
+                </nav>
+            </div>
         </nav>
     </div>
   )
