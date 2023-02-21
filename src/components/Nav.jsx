@@ -7,8 +7,24 @@ import carrito from '../images/cart.svg'
 import mobileLogo from '../images/meli-mobile-logo.png'
 import '../styles/Nav.css'
 import { MenuHamburguesa } from './MenuHamburguesa';
+import { useEffect } from 'react';
 
 export const Nav = () => {
+
+
+
+   const categoriesButton = document.querySelector('.li-img');
+    const menuDesplegable = document.querySelector('.menu-desplegable');
+
+    const showCategoriesMenu = () => { 
+        menuDesplegable.style.setProperty('display', 'flex');
+    }
+
+    const hideCategoriesMenu = () => {
+        menuDesplegable.style.setProperty('display', 'none')
+    }
+  
+
   return (
     <div className='nav'>
         { /* Desktop Nav */}
@@ -40,7 +56,38 @@ export const Nav = () => {
                 <div>
                     <nav className='nav-item-container'>
                         <ul>
-                            <li className='li-img'><a  href='' target='_blank'>Categorías</a><img src={ row_down } alt='row down' /></li>
+                            <li 
+                                onMouseOver={() => showCategoriesMenu()}
+                                onMouseOut={() => hideCategoriesMenu()}
+                                className='li-img'><a  href='' target='_blank'>Categorías</a><img src={ row_down } alt='row down' />
+                                <div className='menu-desplegable'>
+                                    <ul>
+                                        <li><a href=''>Vehiculos</a></li>
+                                        <li><a href=''>Inmuebles</a></li>
+                                        <li><a href=''>Inmuebles</a></li>
+                                        <li><a href=''>Supermercado</a></li>
+                                        <li><a href=''>Tecnología</a></li>
+                                        <li><a href=''>Hogar y Muebles</a></li>
+                                        <li><a href=''>Electrodomésticos</a></li>
+                                        <li><a href=''>Herramientas</a></li>
+                                        <li><a href=''>Construcción</a></li>
+                                        <li><a href=''>Deportes y Fitness</a></li>
+                                        <li><a href=''>Accesorios para Vehículos</a></li>
+                                        <li><a href=''>Moda</a></li>
+                                        <li><a href=''>Juegos y Juguetes</a></li>
+                                        <li><a href=''>Bebés</a></li>
+                                        <li><a href=''>Belleza y Cuidado Personal</a></li>
+                                        <li><a href=''>Salud y Equipamiento Médico</a></li>
+                                        <li><a href=''>Industrias y Oficinas</a></li>
+                                        <li><a href=''>Agro</a></li>
+                                        <li><a href=''>Productos sustentables</a></li>
+                                        <li><a href=''>Servicios</a></li>
+                                        <li><a href=''>Más vendidos</a></li>
+                                        <li><a href=''>Tiendas oficiales</a></li>
+                                        <li><a href=''>Ver más categorías</a></li>
+                                    </ul> 
+                                </div> 
+                            </li>
                             <li><a href=''>Ofertas</a></li>
                             <li><a href=''>Historial</a></li>
                             <li><a href=''>Supermercado</a></li>
@@ -62,7 +109,9 @@ export const Nav = () => {
                     </ul>
                 </nav>
             </div>
+        
         </nav>
+           
 
         {/* mobile nav */}
 
