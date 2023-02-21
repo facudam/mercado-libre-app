@@ -2,6 +2,7 @@
 .nav {
     background-color: var(--amarillo);
     padding-bottom: 5px;
+    box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
 }
 
 .nav__top {
@@ -155,4 +156,92 @@
 .carrito-img {
     width: 25px;
     cursor: pointer;
+}
+
+
+
+/* Responsive */
+
+@media screen and (max-width: 1111px) {
+    .nav__top {
+        display: none;
+    }
+}
+
+.nav-mobile-superior {
+    box-shadow: 0 1px 0px 0 rgb(0 0 0 / 10%);
+    padding: 5px 7px;
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-mobile-superior .mobile-logo {
+    width: 45px;
+}
+
+.nav-mobile-superior__input {
+    display: flex;
+    height: 32px;
+    width: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+}
+
+.lupa-container {
+    background-color: #fff;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.nav-mobile-superior__input img {
+    width: 20px;
+    
+}
+
+.nav-mobile-superior__input input {
+    border: none;
+    width: 100%;
+}
+
+.nav-mobile-superior__input input::placeholder {
+    color: #d3d3d3;
+}
+
+.btn-mobile {
+    background-color: transparent;
+    border: none;
+    padding: 5px 7px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: #33333399;
+    
+}
+
+.btn-mobile__location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-mobile img {
+    width: 15px;
+}
+
+@media screen and (min-width: 1111px) {
+    .nav-mobile-superior {
+        display: none;
+    }
+
+    .btn-mobile {
+        display: none;
+    }
 }

@@ -2,12 +2,16 @@ import lupa from '../images/search-outline.svg';
 import logo from '../images/mercadolibre.svg';
 import location_img from '../images/location-outline.svg';
 import row_down from '../images/row-down.svg';
+import row_right from '../images/row-right.svg'
 import carrito from '../images/cart.svg'
+import mobileLogo from '../images/meli-mobile-logo.png'
 import '../styles/Nav.css'
+import { MenuHamburguesa } from './MenuHamburguesa';
 
 export const Nav = () => {
   return (
     <div className='nav'>
+        { /* Desktop Nav */}
         <div className='nav__top'>
             <div className='nav__top-marca'>
                 <a href='#'><img className='logo' src={ logo } alt='logo de mercado libre' /></a>
@@ -59,6 +63,29 @@ export const Nav = () => {
                 </nav>
             </div>
         </nav>
+
+        {/* mobile nav */}
+
+        <div className='nav__top nav-mobile-superior'>
+            <img className='mobile-logo' src={ mobileLogo } />
+            <form className='nav-mobile-superior__input'>
+                <div className='lupa-container'>
+                    <img src={ lupa } alt='lupa' />
+                </div>
+                <input type='search' placeholder='Buscar productos, marcas y más...'/>
+            </form>
+            
+            <MenuHamburguesa />
+            <img className='carrito-img' src={ carrito } alt='carrito de compras' />
+        </div>
+        <button className='nav__top btn-mobile'>
+            <div className='btn-mobile__location'>
+                <img src={ location_img } alt='location image'/>
+                <span>Enviar a Buenos Aires</span>
+            </div>
+            
+            <img src={ row_right } alt='flecha mirando a la derecha' />
+        </button>
     </div>
   )
 }
