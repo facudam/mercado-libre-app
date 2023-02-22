@@ -9,21 +9,10 @@ import '../styles/Nav.css'
 import { MenuHamburguesa } from './MenuHamburguesa';
 import { useEffect } from 'react';
 
+
 export const Nav = () => {
 
-
-
-   const categoriesButton = document.querySelector('.li-img');
     const menuDesplegable = document.querySelector('.menu-desplegable');
-
-    const showCategoriesMenu = () => { 
-        menuDesplegable.style.setProperty('display', 'flex');
-    }
-
-    const hideCategoriesMenu = () => {
-        menuDesplegable.style.setProperty('display', 'none')
-    }
-  
 
   return (
     <div className='nav'>
@@ -56,11 +45,14 @@ export const Nav = () => {
                 <div>
                     <nav className='nav-item-container'>
                         <ul>
-                            <li 
-                                onMouseOver={() => showCategoriesMenu()}
-                                onMouseOut={() => hideCategoriesMenu()}
+                            <li
+                                onMouseOver={() => menuDesplegable.style.setProperty('display', 'flex')}
+                                onMouseOut={() => menuDesplegable.style.setProperty('display','none')}
                                 className='li-img'><a  href='' target='_blank'>Categorías</a><img src={ row_down } alt='row down' />
-                                <div className='menu-desplegable'>
+                                <div 
+                                    onMouseOver={() => menuDesplegable.style.setProperty('display', 'flex')}
+                                    onMouseOut={() => menuDesplegable.style.setProperty('display','none')}
+                                    className='menu-desplegable'>
                                     <ul>
                                         <li><a href=''>Vehiculos</a></li>
                                         <li><a href=''>Inmuebles</a></li>

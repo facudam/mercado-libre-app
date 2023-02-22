@@ -166,7 +166,7 @@
 
 /* Responsive */
 
-@media screen and (max-width: 1111px) {
+@media screen and (max-width: 1082px) {
     .nav__top {
         display: none;
     }
@@ -245,7 +245,7 @@
     width: 15px;
 }
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1083px) {
     .nav-mobile-superior {
         display: none;
     }
