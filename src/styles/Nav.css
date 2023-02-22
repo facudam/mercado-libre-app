@@ -117,6 +117,7 @@
     font-size: 11px;
 }
 
+
 .nav-item-container ul{
     display: flex;
     gap: 20px;
@@ -129,7 +130,7 @@
 .nav-item-container ul li {
     display: inherit;
     align-items: center;
-    
+    color: #33333399;
 }
 
 .nav-item-container ul li a {
@@ -151,18 +152,57 @@
     width: 15px;
 }
 
-.nav__top-second {
-    display: flex;
-    align-items: end;
-    
+.menu-desplegable {
+    display: none;
+    position: absolute;
+    width: 260px;
+    background-color: #333;
+    padding: 30px;
+    top: 25px;
+    left: -75px;
+    border-radius: 5px;
+    pointer-events: none;
 }
+
+.menu-desplegable::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #333;
+    transform: rotate(45deg);
+    top: -5px;
+    left: 150px;
+}
+
+.menu-desplegable ul {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.menu-desplegable ul li {
+   list-style: none;
+}
+
+.menu-desplegable ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
 
 .carrito-img {
     width: 25px;
     cursor: pointer;
 }
 
-
+.nav__top-second {
+     display: flex;
+     align-items: end;
+     margin-bottom: -6px;
+}
 
 /* Responsive */
 
@@ -214,7 +254,7 @@
 
 .nav-mobile-superior__input input::placeholder {
     color: #d3d3d3;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .nav-mobile-superior__input input:focus {
@@ -256,40 +296,3 @@
 }
 
 
-.menu-desplegable {
-    display: none;
-    position: absolute;
-    width: 260px;
-    background-color: #333;
-    padding: 30px;
-    top: 25px;
-    left: -75px;
-    border-radius: 5px;
-}
-
-.menu-desplegable::before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background-color: #333;
-    transform: rotate(45deg);
-    top: -5px;
-    left: 150px;
-}
-
-.menu-desplegable ul {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-}
-
-.menu-desplegable ul li {
-   list-style: none;
-}
-
-.menu-desplegable ul li a{
-    color: #fff;
-    text-decoration: none;
-}

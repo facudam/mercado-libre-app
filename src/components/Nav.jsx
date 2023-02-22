@@ -7,7 +7,7 @@ import carrito from '../images/cart.svg'
 import mobileLogo from '../images/meli-mobile-logo.png'
 import '../styles/Nav.css'
 import { MenuHamburguesa } from './MenuHamburguesa';
-import { useEffect } from 'react';
+
 
 
 export const Nav = () => {
@@ -45,14 +45,14 @@ export const Nav = () => {
                 <div>
                     <nav className='nav-item-container'>
                         <ul>
-                            <li
-                                onMouseOver={() => menuDesplegable.style.setProperty('display', 'flex')}
-                                onMouseOut={() => menuDesplegable.style.setProperty('display','none')}
-                                className='li-img'><a  href='' target='_blank'>Categorías</a><img src={ row_down } alt='row down' />
+                            <li 
+                                onMouseOver={() => document.querySelector('.menu-desplegable').style.setProperty('display', 'flex')}
+                                onMouseOut={() => document.querySelector('.menu-desplegable').style.setProperty('display', 'none')}
+                                className='li-img'>Categorías<img src={ row_down } alt='row down' />
                                 <div 
-                                    onMouseOver={() => menuDesplegable.style.setProperty('display', 'flex')}
-                                    onMouseOut={() => menuDesplegable.style.setProperty('display','none')}
-                                    className='menu-desplegable'>
+                                    className='menu-desplegable'
+                                    onMouseOver={() => document.querySelector('.menu-desplegable').style.setProperty('display', 'flex')}
+                                    onMouseOut={() => document.querySelector('.menu-desplegable').style.setProperty('display', 'none')}>
                                     <ul>
                                         <li><a href=''>Vehiculos</a></li>
                                         <li><a href=''>Inmuebles</a></li>
