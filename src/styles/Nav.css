@@ -293,6 +293,10 @@
     .btn-mobile {
         display: none;
     }
+
+    .dropdown-mobile {
+        display: none;
+    }
 }
 
 
