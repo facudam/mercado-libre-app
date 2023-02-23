@@ -3,30 +3,20 @@ import '../styles/MenuHamburguesa.css';
 
 export const MenuHamburguesa = () => {
 
-useEffect(() => {
-    const menu = document.querySelector('.hamburger-menu');
-    menu.addEventListener('click', toggleMenu)
+  const toggleMenu = () => {
+    const hamburger = document.querySelector('.hamburger')
+      hamburger.classList.toggle('is-active')
+  };  
 
-    return () => {
-      menu.removeEventListener('click', toggleMenu)
-    }
-
-}, [])
-
-const toggleMenu = () => {
-    const bar = document.querySelectorAll('.bar')
-
-    bar.forEach(div => {
-      div.classList.toggle('animate')
-    });  
-}
 
   return (   
-    <div className="hamburger-menu">
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-    </div>
+    <button
+      onClick={ toggleMenu }
+      className="hamburger hamburger--slider" type="button">
+      <span className="hamburger-box">
+        <span className="hamburger-inner"></span>
+      </span>
+    </button>
 
   )
 }
