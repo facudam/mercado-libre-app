@@ -1,0 +1,59 @@
+
+.desplegable-mobile-menu {
+    background-color: #fff;
+}
+
+.desplegable-mobile-menu__header {
+    display: flex;
+    background-color: var(--amarillo);
+    padding: 12px 15px;
+    gap: 15px;
+    flex-wrap: nowrap;
+}
+
+.img-user img {
+    width: 52px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.ingreso-cuenta {
+    width: 100%;
+    padding-right: 45px;
+}
+
+.ingreso-cuenta p:first-child {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.ingreso-cuenta p:nth-child(2) {
+    font-size: 14px;
+    color: #4f4b4b;
+    margin-bottom: 15px;
+}
+
+.btn-count-container {
+    display: flex;
+    gap: 3px;
+}
+
+.btn-count-container button {
+    background-color: #fff;
+    width: 50%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--azul);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-count-container button:first-child {
+    background-color: var(--azul);
+    color: #fff;
+}
+
+.btn-count-container button:nth-child(2) {
+    color: var(--azul);
+}

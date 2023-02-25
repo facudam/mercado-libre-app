@@ -19,6 +19,7 @@ import resumen from '../images/resumen.png'
 import vender from '../images/vender.png'
 import compra_vende from '../images/comprayvende.png'
 import { EnlaceMenu } from './EnlaceMenu'
+import '../styles/DropdownMobileMenu.css'
 
 
 export const DropdownMobileMenu = () => {
