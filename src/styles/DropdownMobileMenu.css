@@ -1,6 +1,7 @@
 
 .desplegable-mobile-menu {
     background-color: #fff;
+    
 }
 
 .desplegable-mobile-menu__header {
@@ -63,6 +64,7 @@
     display: flex;
     flex-direction: column;
     padding: 16px 0px;
+    
 }
 
 @media screen and (max-width: 450px) {
