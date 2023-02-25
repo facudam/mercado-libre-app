@@ -1,3 +1,4 @@
+import '../styles/EnlaceMenu.css'
 
 export const EnlaceMenu = ({ imagen, titulo }) => {
     return(

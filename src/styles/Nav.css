@@ -207,6 +207,10 @@
 /* Responsive */
 
 @media screen and (max-width: 1082px) {
+
+    .nav {
+        padding-bottom: 0px;
+    }
     .nav__top {
         display: none;
     }

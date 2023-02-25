@@ -57,3 +57,16 @@
 .btn-count-container button:nth-child(2) {
     color: var(--azul);
 }
+
+
+.desplegable-mobile-menu__anchors {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0px;
+}
+
+@media screen and (max-width: 450px) {
+    .ingreso-cuenta {
+        padding-right: 5px;
+    }
+}
