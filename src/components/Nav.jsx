@@ -8,11 +8,13 @@ import mobileLogo from '../images/meli-mobile-logo.png'
 import '../styles/Nav.css'
 import { MenuHamburguesa } from './MenuHamburguesa';
 import { DropdownMobileMenu } from './DropdownMobileMenu';
+import { useContext } from 'react';
+import { MeliContext } from '../contexts/meliContext';
 
 
 export const Nav = () => {
 
-    const menuDesplegable = document.querySelector('.menu-desplegable');
+   const { menuActive } = useContext(MeliContext) 
 
   return (
     <div className='nav'>
@@ -119,16 +121,23 @@ export const Nav = () => {
             <MenuHamburguesa />
             <img className='carrito-img' src={ carrito } alt='carrito de compras' />
         </div>
-        <button className='nav__top btn-mobile'>
-            <div className='btn-mobile__location'>
-                <img src={ location_img } alt='location image'/>
-                <span>Enviar a Buenos Aires</span>
-            </div>
+        {
+            !menuActive && 
+            <button className='nav__top btn-mobile'>
+                <div className='btn-mobile__location'>
+                    <img src={ location_img } alt='location image'/>
+                    <span>Enviar a Buenos Aires</span>
+                </div>
             
-            <img src={ row_right } alt='flecha mirando a la derecha' />
-        </button>
+                <img src={ row_right } alt='flecha mirando a la derecha' />
+            </button>
+        }
+        
         <div className='dropdown-mobile'>
-            <DropdownMobileMenu />
+            {
+                menuActive && <DropdownMobileMenu />
+            }
+            
         </div>
         
     </div>
