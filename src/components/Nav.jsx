@@ -8,13 +8,13 @@ import mobileLogo from '../images/meli-mobile-logo.png'
 import '../styles/Nav.css'
 import { MenuHamburguesa } from './MenuHamburguesa';
 import { DropdownMobileMenu } from './DropdownMobileMenu';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { MeliContext } from '../contexts/meliContext';
 
 
 export const Nav = () => {
 
-   const { menuActive } = useContext(MeliContext) 
+   const { menuActive } = useContext(MeliContext)
 
   return (
     <div className='nav'>
@@ -47,40 +47,31 @@ export const Nav = () => {
                 <div>
                     <nav className='nav-item-container'>
                         <ul>
-                            <li 
-                                onMouseOver={() => document.querySelector('.menu-desplegable').style.setProperty('display', 'flex')}
-                                onMouseOut={() => document.querySelector('.menu-desplegable').style.setProperty('display', 'none')}
-                                className='li-img'>Categorías<img src={ row_down } alt='row down' />
-                                <div 
-                                    className='menu-desplegable'
-                                    onMouseOver={() => document.querySelector('.menu-desplegable').style.setProperty('display', 'flex')}
-                                    onMouseOut={() => document.querySelector('.menu-desplegable').style.setProperty('display', 'none')}>
-                                    <ul>
-                                        <li><a href=''>Vehiculos</a></li>
-                                        <li><a href=''>Inmuebles</a></li>
-                                        <li><a href=''>Inmuebles</a></li>
-                                        <li><a href=''>Supermercado</a></li>
-                                        <li><a href=''>Tecnología</a></li>
-                                        <li><a href=''>Hogar y Muebles</a></li>
-                                        <li><a href=''>Electrodomésticos</a></li>
-                                        <li><a href=''>Herramientas</a></li>
-                                        <li><a href=''>Construcción</a></li>
-                                        <li><a href=''>Deportes y Fitness</a></li>
-                                        <li><a href=''>Accesorios para Vehículos</a></li>
-                                        <li><a href=''>Moda</a></li>
-                                        <li><a href=''>Juegos y Juguetes</a></li>
-                                        <li><a href=''>Bebés</a></li>
-                                        <li><a href=''>Belleza y Cuidado Personal</a></li>
-                                        <li><a href=''>Salud y Equipamiento Médico</a></li>
-                                        <li><a href=''>Industrias y Oficinas</a></li>
-                                        <li><a href=''>Agro</a></li>
-                                        <li><a href=''>Productos sustentables</a></li>
-                                        <li><a href=''>Servicios</a></li>
-                                        <li><a href=''>Más vendidos</a></li>
-                                        <li><a href=''>Tiendas oficiales</a></li>
-                                        <li><a href=''>Ver más categorías</a></li>
-                                    </ul> 
-                                </div> 
+                            <li className='li-img'><span>Categorías</span><img src={ row_down } alt='row down' />
+                                <ul className='menu-desplegable'>
+                                    <li><a className='h-ref' href=''>Vehiculos</a></li>
+                                    <li><a className='h-ref' href=''>Inmuebles</a></li>
+                                    <li><a className='h-ref' href=''>Supermercado</a></li>
+                                    <li><a className='h-ref' href=''>Tecnología</a></li>
+                                    <li><a className='h-ref' href=''>Hogar y Muebles</a></li>
+                                    <li><a className='h-ref' href=''>Electrodomésticos</a></li>
+                                    <li><a className='h-ref' href=''>Herramientas</a></li>
+                                    <li><a className='h-ref' href=''>Construcción</a></li>
+                                    <li><a className='h-ref' href=''>Deportes y Fitness</a></li>
+                                    <li><a className='h-ref' href=''>Accesorios para Vehículos</a></li>
+                                    <li><a className='h-ref' href=''>Moda</a></li>
+                                    <li><a className='h-ref' href=''>Juegos y Juguetes</a></li>
+                                    <li><a className='h-ref' href=''>Bebés</a></li>
+                                    <li><a className='h-ref' href=''>Belleza y Cuidado Personal</a></li>
+                                    <li><a className='h-ref' href=''>Salud y Equipamiento Médico</a></li>
+                                    <li><a className='h-ref' href=''>Industrias y Oficinas</a></li>
+                                    <li><a className='h-ref' href=''>Agro</a></li>
+                                    <li><a className='h-ref' href=''>Productos sustentables</a></li>
+                                    <li><a className='h-ref' href=''>Servicios</a></li>
+                                    <li><a className='h-ref' href=''>Más vendidos</a></li>
+                                    <li><a className='h-ref' href=''>Tiendas oficiales</a></li>
+                                    <li><a className='h-ref' href=''>Ver más categorías</a></li>
+                                </ul>   
                             </li>
                             <li><a href=''>Ofertas</a></li>
                             <li><a href=''>Historial</a></li>
