@@ -1,2 +1,31 @@
 
+.swiper {
+    width: 100%;
+}
+
+.swiper-wrapper {
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
+    
+}
+
+.swiper-slide {
+    width: 100%;
+    
+}
+
+.swiper-slide a img {
+    
+    height: 340px;
+    width: 100%;
+    max-width: 1600px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) {
+    .swiper-slide a img {
+        height: 255px;
+    }
+}
 

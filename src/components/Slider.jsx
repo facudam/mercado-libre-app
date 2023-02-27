@@ -16,7 +16,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import 'swiper/css/autoplay'
+
 
 export default () => {
   
@@ -30,7 +30,8 @@ export default () => {
       centeredSlides={true}
         autoplay={{
           delay: 5000,
-          disableOnInteraction: true,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         }}
       navigation
       pagination={{ clickable: true }}
