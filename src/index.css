@@ -4,12 +4,15 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Proxima Nova", -apple-system, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-}
-
 :root {
   --amarillo: #fff159;
   --max-width: 1250px;
   --azul: #3484fa;
+  --background: #ebebeb;
 }
+
+body {
+  font-family: "Proxima Nova", -apple-system, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  background-color: var(--background);
+}
+

@@ -154,6 +154,7 @@
 }
 
 .li-img .menu-desplegable {
+    z-index: 10;
     display: none;
     flex-direction: column;
     position: absolute;
