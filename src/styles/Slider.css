@@ -1,27 +1,57 @@
 
 .swiper {
-    width: 100%;
+    width: 100%; 
 }
 
 .swiper-wrapper {
     width: 100%;
     max-width: 1600px;
-    margin: auto;
-    
-}
-
-.swiper-slide {
-    width: 100%;
-    
+    margin: auto;   
 }
 
 .swiper-slide a img {
-    
     height: 340px;
     width: 100%;
     max-width: 1600px;
     object-fit: cover;
 }
+
+.swiper-button-prev, .swiper-button-next {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    --swiper-navigation-size: 16px;
+    font-weight: bolder;
+    opacity: 0;
+    width: 65px !important;
+    height: 65px !important;
+    top: var(--swiper-navigation-top-offset,40%) !important;   
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    box-shadow: 2px 2px 61px -22px #535050;
+}
+
+.swiper-button-prev {
+    justify-content: flex-end !important;
+    left: -30px !important;
+    padding-right: 15px;  
+}
+
+.swiper-button-next {
+    justify-content: flex-start !important;
+    right: -30px !important;
+    padding-left: 15px;
+}
+
+.swiper:hover .swiper-button-prev, .swiper:hover .swiper-button-next {
+    opacity: 1;
+}
+
+.swiper-pagination-horizontal {
+    bottom: var(--swiper-pagination-bottom,30px) !important;
+    
+}
+
 
 @media screen and (max-width: 1024px) {
     .swiper-slide a img {
