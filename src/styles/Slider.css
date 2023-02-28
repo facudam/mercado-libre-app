@@ -48,10 +48,18 @@
 }
 
 .swiper-pagination-horizontal {
-    bottom: var(--swiper-pagination-bottom,30px) !important;
-    
+    bottom: var(--swiper-pagination-bottom,30px) !important;   
 }
 
+.swiper-pagination-bullet {
+    border: 1px solid white;
+    width: var(--swiper-pagination-bullet-width,var(--swiper-pagination-bullet-size,7px)) !important;
+    height: var(--swiper-pagination-bullet-height,var(--swiper-pagination-bullet-size,7px) )!important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #fff !important;
+}
 
 @media screen and (max-width: 1024px) {
     .swiper-slide a img {
