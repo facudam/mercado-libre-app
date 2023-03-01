@@ -7,8 +7,8 @@ export const PaymentData = ({ img, paymentTitle, paymentSubtitle, link }) => {
             <img src={ img } alt='payment-img' />
         </div>
         <div className="payment-data__titles">
-            <div>{ paymentTitle }</div>
-            <div><a href={ link }>{ paymentSubtitle }</a></div>
+            <div className='payment-title'>{ paymentTitle }</div>
+            <div className='payment-subtitle'><a href={ link }>{ paymentSubtitle }</a></div>
         </div>
     </div>
   )

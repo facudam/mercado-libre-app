@@ -14,7 +14,12 @@ export const PaymentsContainer = () => {
             <PaymentData img={ cuotas } paymentTitle='Cuotas sin tarjeta' paymentSubtitle='Conocé Mercado Crédito' link='' />
             <PaymentData img={ efectivo } paymentTitle='Efectivo' paymentSubtitle='Ver más' link='' />
         </div>
-        <div className='payment-button'></div>
+        <div className='payment-button'>
+          <div className='payment-button__border'>
+            <button>+</button>
+          </div>
+          
+        </div>
     </section>
   )
 }

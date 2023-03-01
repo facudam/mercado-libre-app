@@ -1,0 +1,20 @@
+.payment-data {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.payment-title {
+    font-size: 18px; 
+}
+
+.payment-subtitle a {
+    text-decoration: none;
+    color: #3483fa;
+    font-size: 14px;
+}
+
+.payment-subtitle a:hover {
+    color: #1259c3;
+}
