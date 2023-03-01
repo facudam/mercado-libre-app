@@ -19,16 +19,17 @@ export const DropdownMobileMenu = () => {
   return (
     <div className='desplegable-mobile-menu'>
         <div className='desplegable-mobile-menu__header'>
-            <div className='img-user'>
+            <div className='user-bienvenida'>
                 <img src={ userImg } alt='user profile image' />
+                <div className='bienvenida'>
+                    <p>Bienvenido</p>
+                    <p>Ingresa a tu cuenta para ver tus compras, favoritos, etc</p>
+                </div>
+                
             </div>
             <div className='ingreso-cuenta'>
-                <p>Bienvenido</p>
-                <p>Ingresa a tu cuenta para ver tus compras, favoritos, etc</p>
-                <div className='btn-count-container'>
-                    <button>Ingresá</button>
-                    <button>Creá tu cuenta</button>
-                </div>
+                <button>Ingresá</button>
+                <button>Creá tu cuenta</button> 
             </div>
         </div>
         <div className='desplegable-mobile-menu__anchors'>

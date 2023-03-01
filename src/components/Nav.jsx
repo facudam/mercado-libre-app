@@ -86,7 +86,7 @@ export const Nav = () => {
             
             <div className='nav__top-second'>
                 <nav className='nav-item-container'>
-                    <ul>
+                    <ul id='login-nav'>
                         <li><a href=''>Creá tu cuenta</a></li>
                         <li><a href=''>Ingresá</a></li>
                         <li><a href=''>Mis compras</a></li>

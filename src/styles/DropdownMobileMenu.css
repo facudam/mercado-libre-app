@@ -6,13 +6,29 @@
 
 .desplegable-mobile-menu__header {
     display: flex;
+    flex-direction: column;
     background-color: var(--amarillo);
     padding: 12px 15px;
-    gap: 15px;
-    flex-wrap: nowrap;
 }
 
-.img-user img {
+.user-bienvenida {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.bienvenida p:first-child{
+    font-size: 16px;
+    color: #333333;
+    font-weight: bold;
+}
+
+.bienvenida p:nth-child(2) {
+    font-size: 14px;
+    color: rgba(0, 0, 0, .45);
+}
+
+.user-bienvenida img {
     width: 52px;
     border-radius: 50%;
     overflow: hidden;
@@ -20,26 +36,25 @@
 
 .ingreso-cuenta {
     width: 100%;
-    padding-right: 45px;
-}
-
-.ingreso-cuenta p:first-child {
-    font-weight: bold;
-    margin-bottom: 3px;
-}
-
-.ingreso-cuenta p:nth-child(2) {
-    font-size: 14px;
-    color: #4f4b4b;
-    margin-bottom: 15px;
-}
-
-.btn-count-container {
     display: flex;
-    gap: 3px;
+    padding: 0 20px 0 67px;
+    justify-content: flex-end;
+    gap: 4px;
 }
 
-.btn-count-container button {
+@media (max-width: 450px) {
+    .desplegable-mobile-menu__header {
+        padding: 12px 15px 5px;
+    }
+
+    .ingreso-cuenta {
+        padding: 15px 0;
+        justify-content: center;
+    }
+}
+
+
+.ingreso-cuenta button {
     background-color: #fff;
     width: 50%;
     padding: 12px;
@@ -50,12 +65,12 @@
     cursor: pointer;
 }
 
-.btn-count-container button:first-child {
+.ingreso-cuenta button:first-child {
     background-color: var(--azul);
     color: #fff;
 }
 
-.btn-count-container button:nth-child(2) {
+.ingreso-cuenta button:nth-child(2) {
     color: var(--azul);
 }
 
