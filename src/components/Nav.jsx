@@ -41,7 +41,7 @@ export const Nav = () => {
                     <img src={ location_img } alt='location image'/>
                     <div className='btn-location__sending-to'>
                         <p>Enviar a</p>
-                        <p>Buenos Aires 1888</p>
+                        <p>Capital Federal</p>
                     </div>
                 </button>
                 <div>
