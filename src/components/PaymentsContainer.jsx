@@ -1,11 +1,17 @@
+import { useContext } from 'react'
+import { MeliContext } from '../contexts/meliContext'
 import credito from '../images/credit-card.svg'
 import debito from '../images/debit-card.svg'
 import cuotas from '../images/mercado-creditsv2.svg'
 import efectivo from '../images/payment-agreement.svg'
+import { MediosDePago } from '../modals/MediosDePago'
 import '../styles/PaymentsContainer.css'
 import { PaymentData } from './PaymentData'
 
 export const PaymentsContainer = () => {
+
+  const { mediosDePagoIsActive, setMediosDePagoIsActive } = useContext(MeliContext)
+
   return (
     <section className="payment-data-container">
         <div className='payment-datas'>
@@ -16,10 +22,14 @@ export const PaymentsContainer = () => {
         </div>
         <div className='payment-button'>
           <div className='payment-button__border'>
-            <button>+</button>
+            <button onClick={() => setMediosDePagoIsActive(true)}>+</button>
           </div>
           
         </div>
+        {
+          mediosDePagoIsActive && <MediosDePago />
+        }
+        
     </section>
   )
 }

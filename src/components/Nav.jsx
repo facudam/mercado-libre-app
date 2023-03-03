@@ -8,13 +8,17 @@ import mobileLogo from '../images/meli-mobile-logo.png'
 import '../styles/Nav.css'
 import { MenuHamburguesa } from './MenuHamburguesa';
 import { DropdownMobileMenu } from './DropdownMobileMenu';
-import { useContext, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { MeliContext } from '../contexts/meliContext';
 
 
 export const Nav = () => {
 
    const { menuActive } = useContext(MeliContext)
+
+   useEffect(() => {
+    document.getElementById('search-products').focus();
+   }, [])
 
   return (
     <div className='nav'>
@@ -23,7 +27,7 @@ export const Nav = () => {
             <div className='nav__top-marca'>
                 <a href='#'><img className='logo' src={ logo } alt='logo de mercado libre' /></a>
                 <form className='form'>
-                    <input type='search' placeholder='Buscar productos, marcas y más...'/>
+                    <input id='search-products' type='search' placeholder='Buscar productos, marcas y más...'/>
                     <div className='form__img-container'>
                         <img className='lupa' src={ lupa } alt='lupa search' />
                     </div>
