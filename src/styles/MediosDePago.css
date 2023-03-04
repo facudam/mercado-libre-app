@@ -11,25 +11,29 @@
 
 .medios-de-pago-modal {
     position: absolute;
-    max-height: 88%;
+    height: 88vh;
+    max-height: 755px;
     width: 100%;
     max-width: 830px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 64px;
+    padding: 96px 64px 64px 64px;
     background-color: #fff;
     z-index: 20;
     border-radius: 5px;
+    overflow-y: auto;
 }
 
 .header-modal {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #fff;
+    transition: all .5 ease; 
 }
 
-.header-modal span {
+.header-modal__span {
     font-size: 28px;
     font-weight: 600;
     color: #000;
@@ -49,8 +53,18 @@
     cursor: pointer;
 }
 
+.header-modal.on-scroll {
+    padding: 15px 64px;
+    box-shadow: var(--shadow-container);
+    top: 25px; 
+}
+
+.header-modal__span.scrolling {
+    font-size: 18px;
+}
+
 .payment-modal-subtitle {
-    margin-top: 50px;
+    margin-top: 45px;
     color: rgba(0, 0, 0, .8);
 }
 
@@ -61,6 +75,125 @@
     background-color: #ffffff;
     border-top: 1px solid rgba(200, 193, 193, 0.5);
 }
+
+.mercado-credito-section {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid rgba(200, 193, 193, 0.5);
+    border-radius: 3px;
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.mercado-credito-section img{
+    width: 140px;
+}
+
+.mercado-credito-section-paragraph {
+    padding: 0 15px;
+    border-left: 1px solid rgba(200, 193, 193, 0.5);
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.mercado-credito-section-paragraph p:first-child {
+    font-weight: 600;
+}
+
+.mercado-credito-section-paragraph p:nth-child(2) {
+    font-size: 14px;
+}
+
+
+.mercado-credito-section button {
+    width: 113px;
+    padding: 7px;
+    font-size: 13px;
+    border: none;
+    background-color: rgba(52, 132, 250, .1);
+    color: rgba(52, 132, 250, .9);
+    font-weight: 600;
+    border-radius: 3px;
+    transition: all .5s ease;
+}
+
+.mercado-credito-section button:hover {
+    cursor: pointer;
+    color: rgb(52, 132, 250);
+    background-color: rgba(52, 132, 250, .2);
+}
+
+.tarjetas-section {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 32px;
+    gap: 16px;
+}
+
+.tarjetas__info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tarjetas-paragraphs {
+    padding-top: 10px;
+}
+
+.tarjetas-paragraphs p:first-child {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+}
+
+.tarjetas-paragraphs p:nth-child(2) {
+    color: rgba(0, 0, 0, .8);
+    font-size: 16px;
+}
+
+.tarjetas-paragraphs p:nth-child(3) {
+    color: rgba(0, 0, 0, .5);
+    font-size: 16px;
+}
+
+.tarjetas-imgs {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.tarjetas-imgs img:nth-child(2) {
+    width: 70px;
+}
+
+.tarjetas__info p {
+    font-size: 16px;
+    color: rgba(0, 0, 0, .5);
+}
+
+.tarjetas__info a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--azul);
+}
+
+.tarjetas-imgs div {
+    width: 90px;
+}
+
+.tarjetas-imgs div p {
+    font-size: 13px;
+}
+
+@media screen and (max-width: 450px) {
+    .medios-de-pago-modal {
+        padding: 96px 15px 15px 15px;
+    }
+}
+
 
 
 

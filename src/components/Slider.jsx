@@ -33,10 +33,7 @@ export default () => {
           pauseOnMouseEnter: true,
         }}
       navigation
-      pagination={{ clickable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')
-      }
+      pagination={{ clickable: true }} 
     >
       <SwiperSlide><a href=''><img src={img1} alt=''/></a></SwiperSlide>
       <SwiperSlide><a href=''><img src={img2} alt=''/></a></SwiperSlide>

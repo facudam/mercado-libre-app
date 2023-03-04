@@ -18,3 +18,13 @@
 .payment-subtitle a:hover {
     color: #1259c3;
 }
+
+@media screen and (max-width: 450px) {
+    .payment-title {
+        font-size: 15px;
+    }
+
+    .payment-subtitle a {
+        font-size: 12px;
+    }
+}
