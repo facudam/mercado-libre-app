@@ -30,7 +30,7 @@ export const MediosDePago = () => {
     useEffect(() => {
         const modal = document.querySelector('.medios-de-pago-modal')
         modal.addEventListener('scroll', (e) => {
-            if(e.target.scrollTop > 25) {
+            if(e.target.scrollTop > 110) {
                 document.querySelector('.header-modal').classList.add('on-scroll');
                 document.querySelector('.header-modal__span').classList.add('scrolling')
             } else {

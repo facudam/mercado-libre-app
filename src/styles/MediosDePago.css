@@ -18,7 +18,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 96px 64px 64px 64px;
+    padding: 0px 64px 64px 64px;
     background-color: #fff;
     z-index: 20;
     border-radius: 5px;
@@ -30,7 +30,9 @@
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    transition: all .5 ease; 
+    position: sticky;
+    top: -130px;
+    padding-top: 96px;
 }
 
 .header-modal__span {
@@ -54,13 +56,14 @@
 }
 
 .header-modal.on-scroll {
-    padding: 15px 64px;
-    box-shadow: var(--shadow-container);
-    top: 25px; 
+    box-shadow: 1px 8px 10px -9px #808080;
+    padding: 14px 0;
+    top: 0;
 }
 
 .header-modal__span.scrolling {
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .payment-modal-subtitle {
@@ -190,7 +193,7 @@
 
 @media screen and (max-width: 450px) {
     .medios-de-pago-modal {
-        padding: 96px 15px 15px 15px;
+        padding: 0px 15px 15px 15px;
     }
 }
 
