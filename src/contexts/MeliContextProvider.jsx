@@ -6,12 +6,17 @@ export const ContextProvider = ({children}) => {
     
     // Modal Medios de pago.
     const [ mediosDePagoIsActive, setMediosDePagoIsActive ] = useState(false)
+
+    // Para obtener la lista de productos en oferta
+    const [ productosEnOferta, setProductosEnOferta ] = useState([])
     return(
         <MeliContext.Provider value={{
             menuActive,
             setMenuActive,
             mediosDePagoIsActive,
-            setMediosDePagoIsActive
+            setMediosDePagoIsActive,
+            productosEnOferta,
+            setProductosEnOferta,
         }}>{ children }</MeliContext.Provider>
     )
 }

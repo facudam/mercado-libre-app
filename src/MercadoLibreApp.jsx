@@ -1,12 +1,12 @@
+import { useContext, useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router'
 import { Nav } from './components/Nav'
-import { PaymentsContainer } from './components/PaymentsContainer'
-import Slider from './components/Slider'
 import { MainRoute } from './routes/MainRoute'
 
 
 
 export const MercadoLibreApp = () => {
+
   return (
     <>
       <Nav /> 
