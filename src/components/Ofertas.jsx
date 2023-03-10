@@ -1,44 +1,45 @@
 import { useContext, useEffect } from "react"
 import { MeliContext } from "../contexts/meliContext"
+import { getProductImages } from "../helpers/getProductImages"
+import { getProducts } from "../helpers/getProducts"
+import { ProductoContainer } from "./ProductoContainer"
 
 
 export const Ofertas = () => {
 
     const { productosEnOferta, setProductosEnOferta } = useContext(MeliContext)
 
-    useEffect(() => {
-        const getProducts = async () => {
-            const url = "https://api.mercadolibre.com/sites/MLA/search?q=ofertas"
-            const respuesta = await fetch(url)
-            const resultado = await respuesta.json()
-
-            //console.log(resultado.results)
-
-            const listaDeProductos = resultado.results.map(producto => {
-                const productosObject = {
-                    titulo: producto.title,
-                    id: producto.id,
-                    imagen: producto.variations_data[0].thumbnail,
-                    precio: producto.price,
-                    precioAnterior: producto.original_price,
-                    descuento: producto.discounts,
-                    cuotas: producto.installments.quantity,
-                    precioCuota: producto.installments.amount, 
-                }
-                return productosObject
-            })
-            setProductosEnOferta(listaDeProductos) 
+    const getInfoProducts = async() => {
+            const listaProductos = await getProducts('promociones');
+            setProductosEnOferta(listaProductos)
+            
         }
-       
-        getProducts();
-    }, [])
+        console.log(productosEnOferta)
+   
 
+    useEffect(() => {    
+        getInfoProducts()
+    }, [])
+    
     
 
+    
   return (
     <section>
         {
-            
+            productosEnOferta.map(producto => {
+           return (
+                <ProductoContainer
+                    key={ producto.id} 
+                    // img={}
+                    title={producto.title}
+                    price={producto.price}
+                    descuento={producto.discounts}
+                    cuotas={producto.installments.quantity}
+                    envio='Envío gratis'
+                />
+                
+            ) })  
         }
     </section>
   )

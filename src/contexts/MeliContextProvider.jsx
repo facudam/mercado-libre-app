@@ -9,6 +9,7 @@ export const ContextProvider = ({children}) => {
 
     // Para obtener la lista de productos en oferta
     const [ productosEnOferta, setProductosEnOferta ] = useState([])
+    const [ urlProductImage, setUrlProductImage ] = useState('')
     return(
         <MeliContext.Provider value={{
             menuActive,
@@ -17,6 +18,8 @@ export const ContextProvider = ({children}) => {
             setMediosDePagoIsActive,
             productosEnOferta,
             setProductosEnOferta,
+            urlProductImage,
+            setUrlProductImage
         }}>{ children }</MeliContext.Provider>
     )
 }
