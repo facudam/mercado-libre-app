@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react"
 import { MeliContext } from "../contexts/meliContext"
 import { getProducts } from "../helpers/getProducts"
 import { ProductoContainer } from "./ProductoContainer"
+import '../styles/Ofertas.css'
 
 
 export const Ofertas = () => {
@@ -20,7 +21,14 @@ export const Ofertas = () => {
     
     console.log(productosEnOferta)
   return (
-    <section>
+    <section className="ofertas_section">
+
+        <div className="ofertas-title">
+            <h2 className="ofertas-title__h2">Ofertas</h2>
+            <a className="ofertas-title__anchor" href="">Ver todas</a>
+        </div>
+        
+        
         {
             productosEnOferta.map(producto => {
               

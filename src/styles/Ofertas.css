@@ -1,0 +1,30 @@
+
+.ofertas_section {
+    outline: 1px solid red;
+    height: 500px;
+    width: 100%;
+    max-width: 1185px;
+    margin: auto;
+    margin-top: 55px;
+    padding: 8px;
+}
+
+.ofertas-title {
+    display: flex;
+    gap: 15px;
+    align-items: end;
+    margin-bottom: 16px;
+}
+
+.ofertas-title__h2 {
+    color: #666;
+    font-weight: 400;
+}
+
+.ofertas-title__anchor {
+    text-decoration: none;
+    color: var(--azul);
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 2px;
+}
