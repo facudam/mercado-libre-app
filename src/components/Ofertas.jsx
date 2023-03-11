@@ -18,7 +18,7 @@ export const Ofertas = () => {
         getInfoProducts()
     }, [])
     
-    
+    console.log(productosEnOferta)
   return (
     <section>
         {
@@ -33,6 +33,7 @@ export const Ofertas = () => {
                     descuento={producto.discounts}
                     cuotas={producto.installments.quantity}
                     envio='Envío gratis'
+                    precioCuota={producto.installments.amount}
                 />
                 
             ) })  

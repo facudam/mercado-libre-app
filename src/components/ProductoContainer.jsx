@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
-import { getProductImages } from "../helpers/getProductImages"
+import { getProductImages } from "../helpers/getProductImages";
+import corazon from '../images/corazon.png'
+import '../styles/ProductoContainer.css'
 
-export const ProductoContainer = ({ img, title, price, descuento, cuotas, envio }) => {
+export const ProductoContainer = ({ img, title, price, descuento, cuotas, envio, precioCuota }) => {
 
   const [ urlImage, setUrlImage ] = useState('')
 
@@ -15,15 +17,18 @@ export const ProductoContainer = ({ img, title, price, descuento, cuotas, envio 
 
   return (
     <div className="main-container">
-        <div>
-          <img src={ urlImage } alt={`imagen del producto ${ title }`} width='224' />
+        <div className="img-container">
+          <div className="img-container__heart"><img src={ corazon } alt='corazon svg' width='20' /></div>
+  
+          <img className="product-image" src={ urlImage } alt={`imagen del producto ${ title }`}  />
         </div>
-        <div>
-            <div>
+        <div className="separator-line"></div>
+        <div className="info-container">
+            <div className="full-price">
                 <span>$ { price }</span>
                 <span>{ descuento }</span>
             </div>
-            <span>{ cuotas }</span>
+            <span>{ `Mismo precio en ${cuotas} cuotas de $ ${precioCuota}`  }</span>
             <span>{ envio }</span>
             <span>{ title }</span>
         </div>

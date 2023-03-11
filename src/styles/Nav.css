@@ -34,9 +34,6 @@
     justify-content: center;
     align-items: center;
     border-radius: 3px;
-    /*border-left: 1px solid #dedbdb;
-    border-bottom: 1px solid #dedbdb;
-    border-right: 1px solid #dedbdb;*/
     border: 1.5px solid #ffffff;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
     overflow: hidden;
