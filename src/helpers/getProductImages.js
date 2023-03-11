@@ -4,5 +4,5 @@ export const getProductImages = async(id) => {
     const response = await fetch(url);
     const resultado = await response.json()
 
-    return resultado[0].body.pictures[0].url;
+    return resultado;
 }

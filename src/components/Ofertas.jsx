@@ -9,7 +9,7 @@ export const Ofertas = () => {
     const { productosEnOferta, setProductosEnOferta } = useContext(MeliContext)
 
     const getInfoProducts = async() => {
-            const listaProductos = await getProducts('promociones');
+            const listaProductos = await getProducts('oferta');
             setProductosEnOferta(listaProductos)
             
         }
