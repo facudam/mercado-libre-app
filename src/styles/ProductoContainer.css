@@ -55,8 +55,9 @@
 }
 
 .full-price span:first-child {
-    font-size: 22px;
+    font-size: 21px;
     font-weight: bold;
+    color: #464646;
 }
 
 .full-price span:nth-child(2) {
@@ -79,8 +80,23 @@
     font-size: 14px;
 }
 
+
 .info-container span:nth-child(4) {
     font-size: 14px;
     color: #33333399;
+    margin-top: 5px;
     display: none;
+}
+
+.main-container:hover {
+    cursor: pointer;
+    box-shadow: 5px 2px 26px -5px #b2aeae;
+}
+
+.main-container:hover .img-container__heart {
+    display: flex;
+}
+
+.main-container:hover .info-container span:nth-child(4) {
+    display: flex;
 }
