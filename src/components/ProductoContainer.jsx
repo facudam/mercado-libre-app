@@ -1,9 +1,22 @@
+import { useEffect, useState } from "react"
+import { getProductImages } from "../helpers/getProductImages"
 
 export const ProductoContainer = ({img, title, price, descuento, cuotas, envio}) => {
+
+  const [ urlImage, setUrlImage ] = useState('')
+
+  const getUrlImage = async() => {
+    const main_img = await getProductImages(img)
+    setUrlImage(main_img)
+  }
+  useEffect(() => {
+    getUrlImage()
+  }, [])
+
   return (
     <div className="main-container">
         <div>
-          <img src={ img } alt={`imagen del producto ${title}`} width='224' />
+          <img src={ urlImage } alt={`imagen del producto ${title}`} width='224' />
         </div>
         <div>
             <div>
