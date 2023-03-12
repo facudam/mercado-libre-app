@@ -1,12 +1,10 @@
 
 .ofertas_section {
-    outline: 1px solid red;
-    height: 500px;
-    width: 100%;
+    height: 470px;
+    width: 90%;
     max-width: 1185px;
     margin: auto;
     margin-top: 55px;
-    padding: 8px;
 }
 
 .ofertas-title {
@@ -28,3 +26,23 @@
     font-weight: 700;
     padding-bottom: 2px;
 }
+
+.mySwiper {
+    height: 470px;
+    flex-wrap: wrap;
+}
+
+.mySwiper .swiper-button-next {
+    top: 30% !important;
+    z-index: 1000;
+}
+
+.mySwiper .swiper-button-prev {
+    top: 30% !important;
+}
+/* 
+.mySwiper, swiper-container {
+    width: 90% !important;
+    margin: auto !important;
+    max-width: var(--max-width) !important;
+} */

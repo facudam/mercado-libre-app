@@ -70,7 +70,6 @@
     color: var(--verde);
     display: inline-block;
     font-size: 13px;
-    font-weight: 700;
 }
 
 .info-container span:nth-child(3) {

@@ -32,8 +32,8 @@ export default () => {
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
-      navigation
-      pagination={{ clickable: true }} 
+        navigation={true}
+        pagination={{ clickable: true }} 
     >
       <SwiperSlide><a href=''><img src={img1} alt=''/></a></SwiperSlide>
       <SwiperSlide><a href=''><img src={img2} alt=''/></a></SwiperSlide>

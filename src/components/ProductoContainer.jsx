@@ -28,7 +28,7 @@ export const ProductoContainer = ({ img, title, price, descuento, cuotas, envio,
                 <span>$ { price }</span>
                 <span>{ descuento }</span>
             </div>
-            <span>{ `Mismo precio en ${cuotas} cuotas de $ ${precioCuota}`  }</span>
+            <span>{ `En ${cuotas} cuotas de $${precioCuota}`  }</span>
             <span>{ envio }</span>
             <span>{ title }</span>
         </div>
