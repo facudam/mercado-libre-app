@@ -10,7 +10,7 @@
 }
 
 .medios-de-pago-modal {
-    position: absolute;
+    position: fixed;
     height: 88vh;
     max-height: 755px;
     width: 100%;
