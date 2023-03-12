@@ -3,6 +3,7 @@
     height: 470px;
     width: 90%;
     max-width: 1185px;
+    overflow: hidden;
     margin: auto;
     margin-top: 55px;
 }
@@ -40,9 +41,8 @@
 .mySwiper .swiper-button-prev {
     top: 30% !important;
 }
-/* 
+
 .mySwiper, swiper-container {
-    width: 90% !important;
-    margin: auto !important;
-    max-width: var(--max-width) !important;
-} */
+    overflow: visible !important;
+    max-width: 1185px !important;
+}

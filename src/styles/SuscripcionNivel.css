@@ -1,0 +1,99 @@
+
+.suscripcion {
+    width: 90%;
+    max-width: 1185px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    box-shadow: var(--shadow-container);
+}
+
+.title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: linear-gradient(90deg,#a90f90 55%,#0c1a51);
+    padding: 16px 24px;
+    color: #fff;
+}
+
+.title-section div:first-child {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.title-section div:nth-child(2) {
+    padding: 0px 6px;
+    border-left: 3px solid #fff;
+}
+
+.title-section div:nth-child(2) p:first-child {
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+.title-section div:nth-child(2) p:nth-child(2) {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.title-section div:nth-child(2) p:nth-child(2) span {
+    font-size: 14px;
+}
+
+.benefits-section {
+    padding: 16px 24px;
+}
+
+.benefits-section p:first-child {
+    font-size: 18px;
+}
+
+.benefits-section div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.benefits__info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 360px;
+    font-size: 16px;
+    padding: 29px 0 24px 0;
+}
+
+.benefits__info img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid #efefef;
+}
+
+.button-section {
+    padding: 16px 24px;
+    border-top: 1px solid var(--background);
+    display: flex;
+    justify-content: end;
+}
+
+.button-section button {
+    background-color: var(--azul);
+    padding: 15px 21px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color .5s ease;
+}
+
+.button-section button:hover {
+    cursor: pointer;
+    background-color: #1259c3;
+}
