@@ -5,7 +5,6 @@
     margin: auto;
     background-color: #fff;
     border-radius: 6px;
-    margin-bottom: 25px;
     overflow: hidden;
     box-shadow: var(--shadow-container);
 }

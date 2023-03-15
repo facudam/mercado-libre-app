@@ -1,4 +1,5 @@
 import React from 'react'
+import { MercadoPuntosSection } from '../components/MercadoPuntosSection'
 import { Ofertas } from '../components/Ofertas'
 import { PaymentsContainer } from '../components/PaymentsContainer'
 import Slider from '../components/Slider'
@@ -11,6 +12,7 @@ export const MainRoute = () => {
         <PaymentsContainer />
         <Ofertas />
         <SuscripcionNivel />
+        <MercadoPuntosSection />
     </>
   )
 }

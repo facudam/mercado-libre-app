@@ -1,0 +1,143 @@
+
+.mercado-puntos-section {
+    width: 90%;
+    max-width: 1185px;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.mercado-puntos__title {
+    display: flex;
+    align-items: end;
+    gap: 15px;
+    margin-bottom: 23px;
+}
+
+.mercado-puntos__title h2 {
+    color: #666;
+    font-weight: 400;
+}
+
+.mercado-puntos__title a {
+    text-decoration: none;
+    color: var(--azul);
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 2px;
+}
+
+.mercado-puntos__promos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.promo {
+    width: 384px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    margin-bottom: 56px;
+}
+
+.promo img {
+    width: 100%;  
+}
+
+.info-promo {
+    position: absolute;
+    bottom: 0;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    color: #fff;
+    width: 100%;
+}
+
+.info-promo img {
+    width: 80px;
+    border-radius: 6px;
+}
+
+.info-promo div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-promo div p:first-child {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.info-promo div p:nth-child(2) {
+    font-size: 18px;
+    font-weight: 400;
+    opacity: .9;
+}
+
+.promo:nth-child(2) .info-promo div::before, .promo:nth-child(3) .info-promo div::before {
+    content: "7 DÍAS GRATIS";
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.promo:first-child .info-promo {
+    background: linear-gradient(rgba(235, 235, 235, .0), rgb(1, 7, 28));
+}
+
+.promo:nth-child(2) .info-promo {
+    background: linear-gradient(rgba(235, 235, 235, .0), rgb(58, 3, 78));
+}
+
+.promo:nth-child(3) .info-promo {
+    background: linear-gradient(rgba(235, 235, 235, .0), #0000ee);
+}
+
+.search-promo {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    margin-bottom: 45px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: var(--shadow-container); 
+    flex-wrap: wrap;
+}
+
+.search-promo img {
+    width: 100%;
+    max-width: 699px;
+}
+
+.search-promo__invitacion{
+    width: 100%;
+    max-width: 486px;
+    background-color: rgb(41, 104, 200);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 67px;
+    gap: 14px;
+}
+
+.search-promo div p {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.anchors-search-promo {
+   display: flex;
+   gap: 10px;
+   align-items: center;
+}
+
+.anchors-search-promo a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#anchors-search-promo__p {
+   font-size: 12px;
+}

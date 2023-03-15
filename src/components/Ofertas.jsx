@@ -38,39 +38,35 @@ export const Ofertas = () => {
         <Swiper
             slidesPerView={1}
             slidesPerGroupSkip={1}
-            spaceBetween={16}
-           
-        breakpoints={{
-          523: {
-            slidesPerView: 2,
-            slidesPerGroup: 2
-          },
-          771: {
-            slidesPerView: 3,
-            slidesPerGroup: 3
-          },
-          1026: {
-            slidesPerView: 4,
-            slidesPerGroup: 4
-          },
-          1287: {
-            slidesPerView: 5,
-            slidesPerGroup: 5
-          },
-        }}
-        
-
+            spaceBetween={16}        
+            breakpoints={{
+              523: {
+                slidesPerView: 2,
+                slidesPerGroup: 2
+              },
+              771: {
+                slidesPerView: 3,
+                slidesPerGroup: 3
+              },
+              1026: {
+                slidesPerView: 4,
+                slidesPerGroup: 4
+              },
+              1287: {
+                slidesPerView: 5,
+                slidesPerGroup: 5
+              },
+            }}
             navigation={true}
             modules={[Keyboard, Scrollbar, Navigation]}
             className="mySwiper"
         >
-      
-            {
+          
+            { 
                 productosEnOferta.map(producto => {
                     return (
-                        <SwiperSlide>
-                            <ProductoContainer
-                                key={ producto.id} 
+                        <SwiperSlide key={ producto.id}>
+                            <ProductoContainer 
                                 img={producto.id}
                                 title={producto.title}
                                 price={producto.price}
@@ -81,7 +77,6 @@ export const Ofertas = () => {
                             />
                         </SwiperSlide>
                     ) }) 
-
             } 
         </Swiper>   
         
