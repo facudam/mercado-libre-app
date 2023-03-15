@@ -3,7 +3,7 @@
     height: 470px;
     width: 90%;
     max-width: 1185px;
-    overflow: hidden;
+    position: relative;
     margin: auto;
     margin-top: 55px;
 }
@@ -31,18 +31,17 @@
 .mySwiper {
     height: 470px;
     flex-wrap: wrap;
+    position: static !important;
 }
 
-.mySwiper .swiper-button-next {
-    top: 30% !important;
-    z-index: 1000;
+.mySwiper .swiper-button-next, .mySwiper .swiper-button-prev {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.19);
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: center !important;
 }
 
-.mySwiper .swiper-button-prev {
-    top: 30% !important;
+.mySwiper .swiper-button-next:hover, .mySwiper .swiper-button-prev:hover {
+    box-shadow: 1px 2px 10px 1px rgba(0,0,0,.19);
 }
 
-.mySwiper, swiper-container {
-    overflow: visible !important;
-    max-width: 1185px !important;
-}
