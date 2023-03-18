@@ -2,6 +2,7 @@ import promoImg1 from '../images/mercadoPuntos1.jpg'
 import promoImg2 from '../images/mercadoPuntos2.webp'
 import promoImg3 from '../images/mercadoPuntos3.jpg'
 import promoImg4 from '../images/mercadoPuntos4.jpg'
+import hp from '../images/hp.jpg'
 import combo from '../images/combo-disney.jpg'
 import hbo from '../images/hbo.png'
 import paramount from '../images/paramount.png'
@@ -49,6 +50,7 @@ export const MercadoPuntosSection = () => {
             </div>
 
             <div className='search-promo'>
+                <img src={ hp } alt='hp-logo' />
                 <img src={ promoImg4 } />
                 <div className='search-promo__invitacion'>
                     <div>

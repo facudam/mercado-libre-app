@@ -96,6 +96,7 @@
 }
 
 .search-promo {
+    position: relative;
     width: 100%;
     height: 250px;
     display: flex;
@@ -106,14 +107,23 @@
     flex-wrap: wrap;
 }
 
-.search-promo img {
+.search-promo img:first-child {
+    position: absolute;
+    width: 130px;
+    border-radius: 6px;
+    top: 76px;
+    left: 50px;
+    box-shadow: 1px 2px 9px -3px #1a1919;
+}
+
+.search-promo img:nth-child(2) {
     width: 100%;
-    max-width: 699px;
+    max-width: 705px;
 }
 
 .search-promo__invitacion{
     width: 100%;
-    max-width: 486px;
+    max-width: 480px;
     background-color: rgb(41, 104, 200);
     color: #fff;
     display: flex;
@@ -140,4 +150,10 @@
 
 #anchors-search-promo__p {
    font-size: 12px;
+}
+
+@media screen and (max-width: 1333px) {
+    .search-promo {
+        display: none;
+    }
 }
