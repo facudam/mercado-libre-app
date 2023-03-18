@@ -1,0 +1,56 @@
+
+.descubri-container {
+    width: 100%;
+    max-width: 584px;
+    display: flex;
+    background-color: #fff;
+    height: 250px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: var(--shadow-container);
+    overflow: hidden;
+    transition: all .2s ease;
+}
+
+.descubri-container:hover {
+    box-shadow: 0 7px 16px 0 rgba(0,0,0,.2), 0 1px 3px 0 rgba(0,0,0,.1);
+}
+
+.descubri-container button {
+    width: 96px;
+    background-color: var(--azul);
+    padding: 11px 21px;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 3px;
+    transition: background-color .5s ease;
+}
+
+.descubri-container button:hover {
+    background-color: #1259c3;
+    cursor: pointer;
+}
+
+.descubri-container__info {
+    padding: 30px;
+    margin-top: 30px;
+    min-width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: #4b4b4b;
+}
+
+.descubri-container__info p:first-child {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+.descubri-container__info p:nth-child(2) {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 30px;
+}

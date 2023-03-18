@@ -1,4 +1,5 @@
 import React from 'react'
+import { DescubriSection } from '../components/DescubriSection'
 import { MercadoPuntosSection } from '../components/MercadoPuntosSection'
 import { Ofertas } from '../components/Ofertas'
 import { PaymentsContainer } from '../components/PaymentsContainer'
@@ -13,6 +14,7 @@ export const MainRoute = () => {
         <Ofertas />
         <SuscripcionNivel />
         <MercadoPuntosSection />
+        <DescubriSection />
     </>
   )
 }

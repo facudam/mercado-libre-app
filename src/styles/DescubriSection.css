@@ -1,0 +1,19 @@
+
+.descubri-section {
+    width: 90%;
+    max-width: 1185px;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.descubri-section h2 {
+    color: #666;
+    font-weight: 400;
+}
+
+.descubri-section__info {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
