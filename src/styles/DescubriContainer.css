@@ -4,7 +4,7 @@
     max-width: 584px;
     display: flex;
     background-color: #fff;
-    height: 250px;
+    min-height: 250px;
     border-radius: 6px;
     cursor: pointer;
     box-shadow: var(--shadow-container);

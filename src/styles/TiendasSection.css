@@ -1,0 +1,14 @@
+
+.tiendas-section {
+    width: 90%;
+    max-width: 1185px;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.tiendas-section__tiendas {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}

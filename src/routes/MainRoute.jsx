@@ -5,6 +5,7 @@ import { Ofertas } from '../components/Ofertas'
 import { PaymentsContainer } from '../components/PaymentsContainer'
 import Slider from '../components/Slider'
 import { SuscripcionNivel } from '../components/SuscripcionNivel'
+import { TiendasSection } from '../components/TiendasSection'
 
 export const MainRoute = () => {
   return (
@@ -15,6 +16,7 @@ export const MainRoute = () => {
         <SuscripcionNivel />
         <MercadoPuntosSection />
         <DescubriSection />
+        <TiendasSection />
     </>
   )
 }
