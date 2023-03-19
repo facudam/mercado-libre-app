@@ -4,7 +4,7 @@
     max-width: 584px;
     display: flex;
     background-color: #fff;
-    min-height: 250px;
+    height: 250px;
     border-radius: 6px;
     cursor: pointer;
     box-shadow: var(--shadow-container);
@@ -43,6 +43,10 @@
     color: #4b4b4b;
 }
 
+.descubri-container img {
+    height: 100%;
+}
+
 .descubri-container__info p:first-child {
     font-size: 12px;
     font-weight: 600;
@@ -53,4 +57,15 @@
     font-size: 26px;
     font-weight: 700;
     line-height: 30px;
+}
+
+@media screen and (max-width: 445px) {
+    .descubri-container__info {
+        padding: 30px 0 20px 20px;
+    }
+
+    .descubri-container__info p:nth-child(2) {
+        font-size: 18px;
+        line-height: 20px;
+    }
 }

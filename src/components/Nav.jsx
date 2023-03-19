@@ -25,7 +25,7 @@ export const Nav = () => {
         { /* Desktop Nav */}
         <div className='nav__top'>
             <div className='nav__top-marca'>
-                <a href='#'><img className='logo' src={ logo } alt='logo de mercado libre' /></a>
+                <a href='#'><img className='meli-logo' src={ logo } alt='logo de mercado libre' /></a>
                 <form className='form'>
                     <input id='search-products' type='search' placeholder='Buscar productos, marcas y más...'/>
                     <div className='form__img-container'>
