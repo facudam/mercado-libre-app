@@ -6,7 +6,7 @@ import cuotas from '../images/mercado-creditsv2.svg'
 import efectivo from '../images/payment-agreement.svg'
 import { MediosDePago } from '../modals/MediosDePago'
 import '../styles/PaymentsContainer.css'
-import { PaymentData } from './PaymentData'
+import { PaymentData } from '../components/PaymentData'
 
 export const PaymentsContainer = () => {
 

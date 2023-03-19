@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react"
 import { MeliContext } from "../contexts/meliContext"
 import { getProducts } from "../helpers/getProducts"
-import { ProductoContainer } from "./ProductoContainer"
+import { ProductoContainer } from "../components/ProductoContainer"
 import '../styles/Ofertas.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {  Keyboard, Scrollbar, Navigation, Pagination} from "swiper";

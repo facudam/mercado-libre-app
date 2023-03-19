@@ -1,5 +1,5 @@
 import '../styles/TiendasSection.css'
-import { Tienda } from './Tienda'
+import { Tienda } from '../components/Tienda'
 //Philips images:
 import philipsFondo from '../images/philipsFondo.jpg'
 import philipsLogo from '../images/philipsLogo.webp'

@@ -1,11 +1,11 @@
-import { Categories } from '../components/Categories'
-import { DescubriSection } from '../components/DescubriSection'
-import { MercadoPuntosSection } from '../components/MercadoPuntosSection'
-import { Ofertas } from '../components/Ofertas'
-import { PaymentsContainer } from '../components/PaymentsContainer'
+import { Categories } from '../sections/Categories'
+import { DescubriSection } from '../sections/DescubriSection'
+import { MercadoPuntosSection } from '../sections/MercadoPuntosSection'
+import { Ofertas } from '../sections/Ofertas'
+import { PaymentsContainer } from '../sections/PaymentsContainer'
 import Slider from '../components/Slider'
-import { SuscripcionNivel } from '../components/SuscripcionNivel'
-import { TiendasSection } from '../components/TiendasSection'
+import { SuscripcionNivel } from '../sections/SuscripcionNivel'
+import { TiendasSection } from '../sections/TiendasSection'
 
 
 export const MainRoute = () => {

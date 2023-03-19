@@ -1,5 +1,5 @@
 import React from 'react'
-import { DescubriContainer } from './DescubriContainer'
+import { DescubriContainer } from '../components/DescubriContainer'
 import descubriImg1 from '../images/descubri-img1.webp'
 import descubriImg2 from '../images/descubri-img2.webp'
 import '../styles/DescubriSection.css'
