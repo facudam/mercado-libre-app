@@ -1,6 +1,10 @@
+import { faCake } from '@fortawesome/free-solid-svg-icons'
 import { useContext, useEffect } from 'react'
+import { CategoriaContainer } from '../components/CategoriaContainer'
 import { MeliContext } from '../contexts/meliContext'
 import { getCategories } from '../helpers/getCategories'
+import '../styles/Categories.css'
+
 
 export const Categories = () => {
 
@@ -16,12 +20,10 @@ export const Categories = () => {
     }, [])
 
   return (
-    <section>
+    <section className='categories-section'>
       {
         categories.map(cat => (
-          <div key={cat.id}>
-            <p>{cat.name}</p>
-          </div>
+          <CategoriaContainer icon={faCake} categoryName={ cat.name } />
         ))
       }
     </section>

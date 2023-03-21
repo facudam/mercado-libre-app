@@ -1,0 +1,17 @@
+
+.categoria-container {
+    font-size: 15px;
+    display: flex;
+    min-width: 169px;
+    min-height: 169px;
+    background-color: #fff;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.categoria-container a {
+    color: var(--azul);
+    text-align: center;
+}

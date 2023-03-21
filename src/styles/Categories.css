@@ -1,0 +1,13 @@
+
+.categories-section {
+        width: 90%;
+        max-width: 1185px;
+        margin: auto;
+        margin-top: 80px;
+        display: flex;
+        overflow: hidden;
+        gap: 1px;
+        margin-bottom: 40px;
+        border-radius: 3px;
+        box-shadow: var(--shadow-container);
+}
