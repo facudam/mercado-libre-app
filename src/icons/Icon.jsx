@@ -1,8 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import '../styles/CategoriaContainer.css'
 
 
-export const Icon = ({ styles, icon }) => {
+export const Icon = ({ icon }) => {
   return (
-    <FontAwesomeIcon classname={ styles }  icon={ icon } />
+    <FontAwesomeIcon icon={ icon } className='fa-3x' />
   )
 }

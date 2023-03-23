@@ -4,7 +4,8 @@
         max-width: 1185px;
         margin: auto;
         margin-top: 80px;
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(16, 1fr);
         overflow: hidden;
         gap: 1px;
         margin-bottom: 40px;

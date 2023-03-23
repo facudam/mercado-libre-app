@@ -1,4 +1,4 @@
-import { faCake } from '@fortawesome/free-solid-svg-icons'
+import { faMotorcycle, faTractor, faAppleWhole, faDog, faHourglassEmpty, faPalette, faCar, faBaby, faPumpSoap, faCamera, faDesktop, faGamepad, faHelmetSafety, faFutbol , faPlug, faMicrophone, faTicket, faHammer, faChair, faPrint, faBuilding, faGuitar, faClock, faChess, faBook, faMusic, faShirt, faHospital, faPeopleGroup, faGift, faSquarePlus} from '@fortawesome/free-solid-svg-icons'
 import { useContext, useEffect } from 'react'
 import { CategoriaContainer } from '../components/CategoriaContainer'
 import { MeliContext } from '../contexts/meliContext'
@@ -23,7 +23,10 @@ export const Categories = () => {
     <section className='categories-section'>
       {
         categories.map(cat => (
-          <CategoriaContainer icon={faCake} categoryName={ cat.name } />
+          <CategoriaContainer 
+            key={cat.id}
+            icon={faGift} 
+            categoryName={ cat.name } />
         ))
       }
     </section>

@@ -2,16 +2,36 @@
 .categoria-container {
     font-size: 15px;
     display: flex;
+    flex-direction: column;
     min-width: 169px;
     min-height: 169px;
+    max-height: 169px;
     background-color: #fff;
-    cursor: pointer;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    
+    text-align: center;
+    color: #5094fb;
+    text-decoration: none;
+    padding: 45px 10px;
+    gap: 10px;
 }
 
-.categoria-container a {
-    color: var(--azul);
-    text-align: center;
+
+
+.categoria-container p {
+    color: #000;
+  
+}
+
+.icon-width {
+    width: 100px;
+}
+
+.categoria-container:hover {
+    color: #fff;
+    background-color: #5094fb;
+}
+
+.categoria-container:hover p {
+    color: #fff;
 }
