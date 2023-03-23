@@ -20,6 +20,7 @@ export const MainRoute = () => {
         <DescubriSection />
         <TiendasSection />
         <Categories />
+        
     </>
   )
 }

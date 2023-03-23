@@ -22,16 +22,23 @@ export const Categories = () => {
     }, [])
 
   return (
-    <section className='categories-section'>
-      {
-        categories.map((cat, index) => (
-            <CategoriaContainer 
-              key={cat.id}
-              icon={iconList[index]} 
-              categoryName={ cat.name }
-            />
-          ))
-      }
-    </section>
+      <section className='categories-section'>
+        <div className='pagination'>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div>
+          {
+            categories.map((cat, index) => (
+              <CategoriaContainer 
+                key={cat.id}
+                icon={iconList[index]} 
+                categoryName={ cat.name }
+              />
+            ))
+          }
+        </div>
+      </section>  
   )
 }

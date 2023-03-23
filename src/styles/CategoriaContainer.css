@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     min-width: 169px;
+    max-width: 169px;
     min-height: 169px;
     max-height: 169px;
     background-color: #fff;
@@ -14,6 +15,9 @@
     text-decoration: none;
     padding: 45px 10px;
     gap: 10px;
+    /* border-left: 1px solid var(--background);
+    border-bottom: 1px solid var(--background) */
+    outline: 1px solid var(--background);
 }
 
 

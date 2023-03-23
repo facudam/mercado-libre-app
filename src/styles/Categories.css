@@ -1,14 +1,33 @@
+.section {
+    position: relative;
+}
 
 .categories-section {
-        width: 90%;
-        max-width: 1185px;
-        margin: auto;
-        margin-top: 80px;
-        display: grid;
-        grid-template-columns: repeat(16, 1fr);
-        overflow: hidden;
-        gap: 1px;
-        margin-bottom: 40px;
-        border-radius: 3px;
-        box-shadow: var(--shadow-container);
+    width: 90%;
+    max-width: 1183px;
+    margin: auto;
+    margin-top: 80px; 
+    overflow: hidden;
+    margin-bottom: 40px;
+    border-radius: 3px;
+    box-shadow: var(--shadow-container);  
+           
 }
+
+.categories-section div {
+    width: 320%;
+    max-width: 1185px;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    justify-content: space-between;
+    /* margin-left: -129%; */
+    transition: all .5s ease;
+}
+
+
+
+/* 
+        margin-left: 0;
+        margin-left: -100%
+        margin-left: -129%
+*/
