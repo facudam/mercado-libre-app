@@ -58,12 +58,8 @@
     transition: all .5s ease;
 }
 
-
-
-
-
-/* 
-        margin-left: 0;
-        margin-left: -100%
-        margin-left: -129%
-*/
+@media screen and (max-width: 1318px) {
+    .categories-section {
+        display: none;
+    }
+}

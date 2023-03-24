@@ -6,6 +6,7 @@ import { PaymentsContainer } from '../sections/PaymentsContainer'
 import Slider from '../components/Slider'
 import { SuscripcionNivel } from '../sections/SuscripcionNivel'
 import { TiendasSection } from '../sections/TiendasSection'
+import { Footer } from '../sections/Footer'
 
 export const MainRoute = () => {
   
@@ -19,7 +20,7 @@ export const MainRoute = () => {
         <DescubriSection />
         <TiendasSection />
         <Categories />
-        
+        <Footer />
     </>
   )
 }
