@@ -41,7 +41,6 @@ export default () => {
       <SwiperSlide><a href=''><img src={img4} alt=''/></a></SwiperSlide>
       <SwiperSlide><a href=''><img src={img5} alt=''/></a></SwiperSlide>
       <SwiperSlide><a href=''><img src={img6} alt=''/></a></SwiperSlide>
-      ...
     </Swiper>
   );
 };

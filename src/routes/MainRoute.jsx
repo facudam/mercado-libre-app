@@ -7,7 +7,6 @@ import Slider from '../components/Slider'
 import { SuscripcionNivel } from '../sections/SuscripcionNivel'
 import { TiendasSection } from '../sections/TiendasSection'
 
-
 export const MainRoute = () => {
   
   return (

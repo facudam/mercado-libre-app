@@ -18,17 +18,45 @@ export const Categories = () => {
     }
 
     useEffect(() => {
+      const categoriesMainContainer = document.querySelector('.categories-container__main');
+      const spanButtons = document.querySelectorAll('.span')
+    
+      document.addEventListener('click', (e) => {
+        // Reconocemos donde se ejecutó el evento click, modificamos el margin left y añadimos la clase span-is-active:
+        if (e.target === spanButtons[0]) {
+          categoriesMainContainer.style.marginLeft = '0%'
+          spanButtons[0].classList.add('span-is-active')
+          spanButtons[1].classList.remove('span-is-active')
+          spanButtons[2].classList.remove('span-is-active')
+        } if (e.target === spanButtons[1]) {
+          categoriesMainContainer.style.marginLeft = '-100%'
+          spanButtons[0].classList.remove('span-is-active')
+          spanButtons[1].classList.add('span-is-active')
+          spanButtons[2].classList.remove('span-is-active')
+        } if (e.target === spanButtons[2]) {
+          categoriesMainContainer.style.marginLeft = '-129%'
+          spanButtons[0].classList.remove('span-is-active')
+          spanButtons[1].classList.remove('span-is-active')
+          spanButtons[2].classList.add('span-is-active')
+        }
+      })
+    }, [])
+
+
+    useEffect(() => {
         obtenerDatos()
     }, [])
 
   return (
       <section className='categories-section'>
+        <h2 className='categories-section__title'>Categorías populares</h2>
         <div className='pagination'>
-          <span></span>
-          <span></span>
-          <span></span>
+          <span className={`span span-is-active`}></span>
+          <span className='span'></span>
+          <span className='span'></span>
         </div>
-        <div>
+        <div className='categories-container'>
+          <div className='categories-container__main'>
           {
             categories.map((cat, index) => (
               <CategoriaContainer 
@@ -38,6 +66,7 @@ export const Categories = () => {
               />
             ))
           }
+          </div>
         </div>
       </section>  
   )
