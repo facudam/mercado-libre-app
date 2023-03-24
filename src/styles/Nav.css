@@ -2,6 +2,7 @@
 .nav {
     background-color: var(--amarillo);
     box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
+    z-index: 50;
 }
 
 .nav__top {
@@ -158,7 +159,7 @@
 }
 
 .li-img .menu-desplegable {
-    z-index: 10;
+    z-index: 40;
     display: none;
     flex-direction: column;
     position: absolute;
@@ -200,10 +201,14 @@
     }
 }
 
+/* Aparición de menu desplegable */
+
 .li-img:hover .menu-desplegable {
     display: flex; 
     opacity: 1; 
 }
+
+/* ++++++++++++++++++++++++  */
 
 .menu-desplegable li {
     width: 100%;

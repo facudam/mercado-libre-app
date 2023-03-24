@@ -12,12 +12,20 @@ import { useContext, useEffect } from 'react';
 import { MeliContext } from '../contexts/meliContext';
 
 
+
 export const Nav = () => {
 
    const { menuActive } = useContext(MeliContext)
 
    useEffect(() => {
     document.getElementById('search-products').focus();
+   }, [])
+
+   useEffect(() => {
+    const menu = document.querySelector('#li-img'),
+     menuDesplegable = document.querySelector('.menu-desplegable');
+
+    
    }, [])
 
   return (
@@ -51,7 +59,7 @@ export const Nav = () => {
                 <div>
                     <nav className='nav-item-container'>
                         <ul>
-                            <li className='li-img'><span>Categorías</span><img src={ row_down } alt='row down' />
+                            <li className='li-img' id='li-img'><span>Categorías</span><img src={ row_down } alt='row down' />
                                 <ul className='menu-desplegable'>
                                     <li><a className='h-ref' href=''>Vehiculos</a></li>
                                     <li><a className='h-ref' href=''>Inmuebles</a></li>
@@ -134,7 +142,6 @@ export const Nav = () => {
             }
             
         </div>
-        
     </div>
   )
 }

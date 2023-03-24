@@ -1,15 +1,12 @@
-import { useContext, useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router'
 import { Nav } from './components/Nav'
 import { MainRoute } from './routes/MainRoute'
-
-
 
 export const MercadoLibreApp = () => {
 
   return (
     <>
-      <Nav /> 
+      <Nav />
       
       <Routes>
         <Route path='/' element={ <MainRoute />} />

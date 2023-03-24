@@ -6,7 +6,8 @@ import { PaymentsContainer } from '../sections/PaymentsContainer'
 import Slider from '../components/Slider'
 import { SuscripcionNivel } from '../sections/SuscripcionNivel'
 import { TiendasSection } from '../sections/TiendasSection'
-import { Footer } from '../sections/Footer'
+import { Footer } from '../components/Footer'
+import { CookiesModal } from '../modals/CookiesModal'
 
 export const MainRoute = () => {
   
@@ -21,6 +22,7 @@ export const MainRoute = () => {
         <TiendasSection />
         <Categories />
         <Footer />
+        <CookiesModal />
     </>
   )
 }
