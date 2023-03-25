@@ -15,16 +15,29 @@ import { MeliContext } from '../contexts/meliContext';
 
 export const Nav = () => {
 
-   const { menuActive } = useContext(MeliContext)
+   const { menuActive, setNavIsHover } = useContext(MeliContext)
 
    useEffect(() => {
     document.getElementById('search-products').focus();
    }, [])
 
-   useEffect(() => {
-    const menu = document.querySelector('#li-img'),
-     menuDesplegable = document.querySelector('.menu-desplegable');
+  /* Observamos si el display en el menudesplegable se encuentra en 'flex', si así es modificamos el
+     estado en navIsHover en true para que aparezca el navHoverModal, en caso contrario lo establecemos en false.
+  */
+   const observarDisplayEnMenu = () => {
+    const menuDesplegable = document.querySelector('.menu-desplegable')
+    if (getComputedStyle(menuDesplegable).getPropertyValue('display') === 'flex') {
+        setNavIsHover(true)
+    } else {
+        setNavIsHover(false)
+    }
+   }
 
+   useEffect(() => {
+    /* Llamamos a la función observarDisplayEnMenu cada vez que haya un movimiento sobre el documento */
+    document.addEventListener('mouseover', e => {
+        observarDisplayEnMenu()
+    })
     
    }, [])
 

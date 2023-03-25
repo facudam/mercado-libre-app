@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router'
 import { Nav } from './components/Nav'
+import { NavHoverModal } from './modals/navHoverModal'
 import { MainRoute } from './routes/MainRoute'
 
 export const MercadoLibreApp = () => {
@@ -7,7 +8,7 @@ export const MercadoLibreApp = () => {
   return (
     <>
       <Nav />
-      
+      <NavHoverModal />
       <Routes>
         <Route path='/' element={ <MainRoute />} />
 
