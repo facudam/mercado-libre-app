@@ -36,7 +36,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 3px;
-    border: 1.5px solid #ffffff;
+    border: 1.5px solid #fff;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
     overflow: hidden;
 }
@@ -57,6 +57,11 @@
 
 #search-products:focus {
     outline: none;
+}
+
+/* Si dentro de .form existe algún elemento que tenga el focus activo entonces...  */
+.form:focus-within {
+    border-color: var(--azul);
 }
 
 .form__img-container {

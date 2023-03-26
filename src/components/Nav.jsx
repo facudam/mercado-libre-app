@@ -12,26 +12,27 @@ import { useContext, useEffect } from 'react';
 import { MeliContext } from '../contexts/meliContext';
 
 
-
 export const Nav = () => {
 
    const { menuActive, setNavIsHover } = useContext(MeliContext)
 
    useEffect(() => {
+    // Establecemos que el puntero del mouse esté focus en el input ni bien la aplicación corre.
     document.getElementById('search-products').focus();
    }, [])
+
 
   /* Observamos si el display en el menudesplegable se encuentra en 'flex', si así es modificamos el
      estado en navIsHover en true para que aparezca el navHoverModal, en caso contrario lo establecemos en false.
   */
-   const observarDisplayEnMenu = () => {
-    const menuDesplegable = document.querySelector('.menu-desplegable')
-    if (getComputedStyle(menuDesplegable).getPropertyValue('display') === 'flex') {
-        setNavIsHover(true)
-    } else {
-        setNavIsHover(false)
+    const observarDisplayEnMenu = () => {
+        const menuDesplegable = document.querySelector('.menu-desplegable')
+        if (getComputedStyle(menuDesplegable).getPropertyValue('display') === 'flex') {
+            setNavIsHover(true)
+        } else {
+            setNavIsHover(false)
+        }
     }
-   }
 
    useEffect(() => {
     /* Llamamos a la función observarDisplayEnMenu cada vez que haya un movimiento sobre el documento */
@@ -47,7 +48,7 @@ export const Nav = () => {
         <div className='nav__top'>
             <div className='nav__top-marca'>
                 <a href='#'><img className='meli-logo' src={ logo } alt='logo de mercado libre' /></a>
-                <form className='form'>
+                <form className='form' id='form'>
                     <input id='search-products' type='search' placeholder='Buscar productos, marcas y más...'/>
                     <div className='form__img-container'>
                         <img className='lupa' src={ lupa } alt='lupa search' />
