@@ -25,7 +25,6 @@ export const Ofertas = () => {
     useEffect(() => {    
         getInfoProducts()
     }, [])
-    
 
   return (
     <section className="ofertas_section">
