@@ -19,7 +19,8 @@ export const Ofertas = () => {
 
     const getInfoProducts = async() => {
             const listaProductos = await getProducts('promociones');
-            setProductosEnOferta(listaProductos)         
+            setProductosEnOferta(listaProductos.results)   
+            console.log(listaProductos)      
         }
 
     useEffect(() => {    

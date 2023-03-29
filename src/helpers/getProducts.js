@@ -5,5 +5,5 @@ export const getProducts = async(busqueda) => {
     const resultado = await respuesta.json()
 
    
-    return resultado.results   
+    return resultado   
 }
