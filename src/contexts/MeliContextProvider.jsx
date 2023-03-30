@@ -15,6 +15,8 @@ export const ContextProvider = ({children}) => {
 
     const [ navIsHover, setNavIsHover ] = useState(false)
 
+    const [ itemSearched, setItemSearched ] = useState('')
+
     return(
         <MeliContext.Provider value={{
             menuActive,
@@ -28,7 +30,9 @@ export const ContextProvider = ({children}) => {
             categories,
             setCategories,
             navIsHover,
-            setNavIsHover
+            setNavIsHover,
+            itemSearched,
+            setItemSearched
         }}>{ children }</MeliContext.Provider>
     )
 }

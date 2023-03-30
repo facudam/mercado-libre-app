@@ -1,4 +1,46 @@
 
 .filtros-search {
     width: 292px;
+    color: #333;
+}
+
+.filtros-search h2 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.filtros-search h2::first-letter {
+    text-transform: capitalize;
+}
+
+.cantidad-resultado {
+    font-size: 14px;  
+}
+
+.available-filters-container {
+    margin-top: 25px;
+}
+
+.available-filters-container h3 {
+    font-size: 15px;
+    margin: 20px 0px 10px;
+}
+
+.available-filters-container p {
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.available-filters-container p:hover {
+    cursor: pointer;
+}
+
+.available-filters-container p span {
+    color: #999;
+}
+
+.available-filters-container a {
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--azul);
 }
