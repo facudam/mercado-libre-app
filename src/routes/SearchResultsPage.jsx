@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react'
+import { SearchBanner } from '../components/SearchBanner'
 import { MeliContext } from '../contexts/meliContext'
 import { getProducts } from '../helpers/getProducts'
 import { FiltrosSearch } from '../sections/FiltrosSearch'
@@ -8,8 +9,12 @@ export const SearchResultsPage = () => {
 
   const { itemSearched, setItemSearched } = useContext(MeliContext)
 
+  useEffect(() => {
+    document.querySelector('body').style.backgroundColor = "rgb(237, 237, 237)"
+  }, [])
+
   const getItemSearched = async() => {
-    const busqueda = await getProducts('acordeon');
+    const busqueda = await getProducts('bicicletas');
     setItemSearched(busqueda)
     console.log(busqueda)
   }
@@ -20,11 +25,17 @@ export const SearchResultsPage = () => {
 
   if (!itemSearched) return;
   return (
-    <div className='search-results-page'>
-        
-      <FiltrosSearch busqueda={itemSearched.query} cantResultados={itemSearched.paging.total} availableFilters={itemSearched.available_filters} />
-        
-        
+    <div>
+      <SearchBanner />
+      <div className='search-results-page'>
+        <FiltrosSearch 
+          busqueda={itemSearched.query} 
+          cantResultados={itemSearched.paging.total} 
+          availableFilters={itemSearched.available_filters} 
+        />
+      </div>
+      
+         
     </div>
   )
 }
