@@ -1,3 +1,5 @@
+import { ToggleSwitch } from '../components/ToggleSwitch';
+import full from '../images/full.png'
 import '../styles/FiltrosSearch.css'
 
 export const FiltrosSearch = ({ busqueda, cantResultados, availableFilters }) => {
@@ -9,8 +11,12 @@ export const FiltrosSearch = ({ busqueda, cantResultados, availableFilters }) =>
     <section className='filtros-search'>
         
         <h2>{ busqueda }</h2>
-        <span className='cantidad-resultado'>{ cantResultados } resultados</span>
+        <p className='cantidad-resultado'>{ cantResultados } resultados</p>
         
+        <ToggleSwitch title='Llegan mañana' />
+        <ToggleSwitch title='te da envío gratis' subtitle='En carritos desde $ 8.000' img={ full } />
+        <ToggleSwitch title='Envío gratis' />
+
         <div className='available-filters-container'>
           {
             
