@@ -15,7 +15,7 @@ export const SearchResultsPage = () => {
   }, [])
 
   const getItemSearched = async() => {
-    const busqueda = await getProducts('bicicletas');
+    const busqueda = await getProducts('remeras');
     setItemSearched(busqueda)
     console.log(busqueda.results)
   }

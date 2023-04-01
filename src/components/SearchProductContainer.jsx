@@ -16,7 +16,7 @@ export const SearchProductContainer = ({ identifier, img, name, price }) => {
     }, [])
 
   return (
-    <div className="search-product-container" id={ identifier }>
+    <div className="search-product-container">
         <div className="product-img-container">
             <img src={ productUrlImage } alt={ name } />
         </div>
@@ -25,6 +25,11 @@ export const SearchProductContainer = ({ identifier, img, name, price }) => {
             <span>$ { price }</span>
             <span>Envío gratis</span>
         </div>
+        <div className='seleccionar-producto'>
+            <input type='checkbox' id={ identifier} />
+            <label htmlFor={ identifier }>Seleccionar</label>
+        </div>
+        
     </div>
   )
 }
