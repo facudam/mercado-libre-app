@@ -4,6 +4,7 @@ import { MeliContext } from '../contexts/meliContext'
 import { getProducts } from '../helpers/getProducts'
 import { FiltrosSearch } from '../sections/FiltrosSearch'
 import '../styles/SearchResultsPage.css'
+import { SearchProductsSection } from '../sections/SearchProductsSection'
 
 export const SearchResultsPage = () => {
 
@@ -16,7 +17,7 @@ export const SearchResultsPage = () => {
   const getItemSearched = async() => {
     const busqueda = await getProducts('bicicletas');
     setItemSearched(busqueda)
-    console.log(busqueda)
+    console.log(busqueda.results)
   }
 
   useEffect(() => {
@@ -33,6 +34,7 @@ export const SearchResultsPage = () => {
           cantResultados={itemSearched.paging.total} 
           availableFilters={itemSearched.available_filters} 
         />
+        <SearchProductsSection results={ itemSearched.results } />
       </div>
       
          

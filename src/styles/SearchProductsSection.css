@@ -2,5 +2,9 @@
 .search-products-section {
     width: 100%;
     max-width: 885px;
-    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
 }

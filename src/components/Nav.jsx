@@ -10,6 +10,7 @@ import { MenuHamburguesa } from './MenuHamburguesa';
 import { DropdownMobileMenu } from './DropdownMobileMenu';
 import { useContext, useEffect } from 'react';
 import { MeliContext } from '../contexts/meliContext';
+import { Link } from 'react-router-dom';
 
 
 export const Nav = () => {
@@ -47,7 +48,7 @@ export const Nav = () => {
         { /* Desktop Nav */}
         <div className='nav__top'>
             <div className='nav__top-marca'>
-                <a href='#'><img className='meli-logo' src={ logo } alt='logo de mercado libre' /></a>
+                <Link to="/"><img className='meli-logo' src={ logo } alt='logo de mercado libre' /></Link>
                 <form className='form' id='form'>
                     <input id='search-products' type='search' placeholder='Buscar productos, marcas y más...'/>
                     <div className='form__img-container'>

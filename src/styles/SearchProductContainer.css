@@ -1,0 +1,18 @@
+
+.search-product-container {
+    background-color: #fff;
+    display: flex;
+    padding: 20px 50px 20px 0;
+}
+
+.product-img-container {
+    width: 208px;
+    height: 160px;
+    padding: 0 24px;
+    
+}
+
+.product-img-container img {
+    max-width: 160px;
+    max-height: 160px;
+}

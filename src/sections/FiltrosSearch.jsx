@@ -10,7 +10,7 @@ export const FiltrosSearch = ({ busqueda, cantResultados, availableFilters }) =>
   return (
     <section className='filtros-search'>
         
-        <h2>{ busqueda }</h2>
+        <h1>{ busqueda }</h1>
         <p className='cantidad-resultado'>{ cantResultados } resultados</p>
         
         <ToggleSwitch 
@@ -33,7 +33,7 @@ export const FiltrosSearch = ({ busqueda, cantResultados, availableFilters }) =>
             
             availableFilters.map(obj => (
               <div key={obj.id}>
-                <h3>{ obj.name }</h3>
+                <h2>{ obj.name }</h2>
                 <div>
                   {
                     // Con slice obtenemos sólo los primeros 9 values de cada obj.

@@ -4,13 +4,13 @@
     color: #333;
 }
 
-.filtros-search h2 {
+.filtros-search h1 {
     font-size: 26px;
     font-weight: 700;
     text-transform: lowercase;
 }
 
-.filtros-search h2::first-letter {
+.filtros-search h1::first-letter {
     text-transform: capitalize;
 }
 
@@ -23,7 +23,7 @@
     margin-top: 35px;
 }
 
-.available-filters-container h3 {
+.available-filters-container h2 {
     font-size: 15px;
     margin: 20px 0px 10px;
 }
