@@ -8,14 +8,29 @@ import mobileLogo from '../images/meli-mobile-logo.png'
 import '../styles/Nav.css'
 import { MenuHamburguesa } from './MenuHamburguesa';
 import { DropdownMobileMenu } from './DropdownMobileMenu';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { MeliContext } from '../contexts/meliContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 export const Nav = () => {
 
-   const { menuActive, setNavIsHover } = useContext(MeliContext)
+    const { menuActive, setNavIsHover, setProductToBuy } = useContext(MeliContext)
+    const [itemAbuscar, setItemAbuscar] = useState('')
+    const navigate = useNavigate()
+
+
+
+    const changeInputValue = (e) => {
+        setItemAbuscar(e.target.value)
+   }
+
+   const handleSearchInput = (e) => {
+        e.preventDefault()
+        setProductToBuy(itemAbuscar)
+        navigate("/search")    
+   }
+
 
    useEffect(() => {
     // Establecemos que el puntero del mouse esté focus en el input ni bien la aplicación corre.
@@ -48,10 +63,28 @@ export const Nav = () => {
         { /* Desktop Nav */}
         <div className='nav__top'>
             <div className='nav__top-marca'>
-                <Link to="/"><img className='meli-logo' src={ logo } alt='logo de mercado libre' /></Link>
-                <form className='form' id='form'>
-                    <input id='search-products' type='search' placeholder='Buscar productos, marcas y más...'/>
-                    <div className='form__img-container'>
+                <Link to="/">
+                    <img 
+                        className='meli-logo' 
+                        src={ logo } 
+                        alt='logo de mercado libre' />
+                </Link>
+                <form
+                    onSubmit={handleSearchInput}
+                    className='form' 
+                    id='form'
+                >
+                    <input 
+                        id='search-products' 
+                        type='search' 
+                        placeholder='Buscar productos, marcas y más...'
+                        value={itemAbuscar}
+                        onChange={changeInputValue}
+                    />
+                    <div
+                        onClick={handleSearchInput}
+                        className='form__img-container'
+                    >
                         <img className='lupa' src={ lupa } alt='lupa search' />
                     </div>
                 </form>

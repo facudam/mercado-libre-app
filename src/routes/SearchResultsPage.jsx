@@ -8,21 +8,21 @@ import { SearchProductsSection } from '../sections/SearchProductsSection'
 
 export const SearchResultsPage = () => {
 
-  const { itemSearched, setItemSearched } = useContext(MeliContext)
+  const { itemSearched, setItemSearched, productToBuy } = useContext(MeliContext)
 
   useEffect(() => {
     document.querySelector('body').style.backgroundColor = "rgb(237, 237, 237)"
   }, [])
 
   const getItemSearched = async() => {
-    const busqueda = await getProducts('remeras');
+    const busqueda = await getProducts(productToBuy);
     setItemSearched(busqueda)
     console.log(busqueda.results)
   }
 
   useEffect(() => {
     getItemSearched()
-  }, [])
+  }, [ productToBuy ])
 
   if (!itemSearched) return;
   return (

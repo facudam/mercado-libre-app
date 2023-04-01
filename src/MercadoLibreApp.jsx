@@ -3,8 +3,12 @@ import { Nav } from './components/Nav'
 import { NavHoverModal } from './modals/navHoverModal'
 import { MainRoute } from './routes/MainRoute'
 import { SearchResultsPage } from './routes/SearchResultsPage'
+import { useContext } from 'react'
+import { MeliContext } from './contexts/meliContext'
 
 export const MercadoLibreApp = () => {
+
+  const { productToBuy } = useContext(MeliContext)
 
   return (
     <>

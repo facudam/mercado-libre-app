@@ -70,7 +70,8 @@
     align-items: center;
     width: 50px;
     border-left: 1px solid #d7d2d2;
-    padding-bottom: 5px;  
+    padding-bottom: 5px;
+    cursor: pointer;  
 }
 
 .lupa {
