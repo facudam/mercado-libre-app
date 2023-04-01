@@ -28,18 +28,19 @@ export const Nav = () => {
    const handleSearchInput = (e) => {
         e.preventDefault()
         setProductToBuy(itemAbuscar)
-        navigate("/search")    
+        
+        navigate(`/search/${itemAbuscar}`)    
    }
 
 
    useEffect(() => {
-    // Establecemos que el puntero del mouse esté focus en el input ni bien la aplicación corre.
+    // Establecemos que el form input se encuentre en focus ni bien la aplicación corra.
     document.getElementById('search-products').focus();
    }, [])
 
 
-  /* Observamos si el display en el menudesplegable se encuentra en 'flex', si así es modificamos el
-     estado en navIsHover en true para que aparezca el navHoverModal, en caso contrario lo establecemos en false.
+  /* Observamos si el display en el menudesplegable se encuentra en 'flex', si es así modificamos el
+     estado en navIsHover en true para que aparezca el navHoverModal, caso contrario lo establecemos en false.
   */
     const observarDisplayEnMenu = () => {
         const menuDesplegable = document.querySelector('.menu-desplegable')

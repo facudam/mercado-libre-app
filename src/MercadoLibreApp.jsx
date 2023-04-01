@@ -16,7 +16,9 @@ export const MercadoLibreApp = () => {
       <NavHoverModal />
       <Routes>
         <Route path='/' element={ <MainRoute />} />
-        <Route path='/search' element={ <SearchResultsPage />} />
+
+        {/* establecemos la ruta search como dinamica al agregar los dos puntos */}
+        <Route path='/search/:product' element={ <SearchResultsPage />} />
 
         {/* En caso de que el usuario escriba una url inexistente lo enviamos a la url principal: */}
         <Route path='/*' element={ <Navigate to='/' /> } />

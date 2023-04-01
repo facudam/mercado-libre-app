@@ -4,4 +4,5 @@
     margin: auto; 
     padding: 20px 30px;
     display: flex;
+    gap: 10px;
 }
