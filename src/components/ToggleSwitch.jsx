@@ -1,19 +1,24 @@
 import '../styles/ToggleSwitch.css'
 
-export const ToggleSwitch = ({ title, subtitle, img }) => {
+export const ToggleSwitch = ({ title, subtitle, img, identifier }) => {
+
+  const pressToggleButton = (identifier) => {
+    const button = document.getElementById(identifier);
+    button.classList.toggle('active')
+  }
+
   return (
-    <div>
-        <div className='toggle-switch-container'>
-            <div className='toggle-switch-info'>
-                <p> <img src={ img } />  { title }</p>
-                <p>{ subtitle }</p>
-            </div>
-            <div>
-                <input type='checkbox' id="toggle-switch"/>
-                <label htmlFor="toggle-switch" className='toggle-switch'></label>
-            </div>
+    <div className='toggle-switch-container'>
+      <div className='toggle-switch-info'>
+        <p> <img src={ img } />  { title }</p>
+        <p>{ subtitle }</p>
+      </div>
             
-        </div>
-    </div>
+      <button
+        id={ identifier }
+        onClick={() => pressToggleButton(identifier)}
+        className='toggle-switch'>
+      </button>       
+    </div>     
   )
 }

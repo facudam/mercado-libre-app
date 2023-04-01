@@ -28,19 +28,6 @@
     margin-top: 3px;
 }
 
-
-#toggle-switch {
-    display: none;
-}
-
-#toggle-switch:checked ~ .toggle-switch {
-    background-color: var(--azul);
-}
-
-#toggle-switch:checked ~ .toggle-switch::after {
-    left: 15px;
-}
-
 .toggle-switch {
     display: inline-block;
     width: 33px;
@@ -49,7 +36,8 @@
     border-radius: 100px;
     position: relative;
     cursor: pointer;
-    
+    border: none;
+    transition: .3s;
 }
 
 .toggle-switch::after {
@@ -60,8 +48,11 @@
     height: 16px;
     background-color:rgb(255, 255, 255);
     border-radius: 50%;
-    top: 1px;
-    left: 2px;
-    transition: .3s;
+    top: 1px;  
     box-shadow: 0px 2px 2px 0px #808080;
+}
+
+.toggle-switch.active {
+    background-color: var(--azul);
+    padding-left: 15px;
 }

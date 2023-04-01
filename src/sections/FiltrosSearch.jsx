@@ -13,9 +13,20 @@ export const FiltrosSearch = ({ busqueda, cantResultados, availableFilters }) =>
         <h2>{ busqueda }</h2>
         <p className='cantidad-resultado'>{ cantResultados } resultados</p>
         
-        <ToggleSwitch title='Llegan mañana' />
-        <ToggleSwitch title='te da envío gratis' subtitle='En carritos desde $ 8.000' img={ full } />
-        <ToggleSwitch title='Envío gratis' />
+        <ToggleSwitch 
+          title='Llegan mañana' 
+          identifier="first"
+        />
+        <ToggleSwitch 
+          title='te da envío gratis' 
+          subtitle='En carritos desde $ 8.000' 
+          img={ full } 
+          identifier="second"
+        />
+        <ToggleSwitch 
+          title='Envío gratis' 
+          identifier="third"
+        />
 
         <div className='available-filters-container'>
           {
