@@ -19,6 +19,25 @@ export const ContextProvider = ({children}) => {
 
     const [ productToBuy, setProductToBuy ] = useState('')
 
+    const [ currentPage, setCurrentPage ] = useState(1)
+
+    const showButtons = () => {
+        const anterior = document.querySelector('.anterior'),
+          siguiente = document.querySelector('.siguiente');
+        if (currentPage === 1) {
+          anterior.style.display = 'none'
+          siguiente.style.display = 'flex'
+        } 
+        else if (currentPage === 3) {
+          anterior.style.display = 'flex'
+          siguiente.style.display = 'none'
+        } 
+        else {
+          anterior.style.display = 'flex'
+          siguiente.style.display = 'flex'
+        }
+      }
+
     return(
         <MeliContext.Provider value={{
             menuActive,
@@ -36,7 +55,10 @@ export const ContextProvider = ({children}) => {
             itemSearched,
             setItemSearched,
             productToBuy,
-            setProductToBuy
+            setProductToBuy, 
+            currentPage,
+            setCurrentPage,
+            showButtons
         }}>{ children }</MeliContext.Provider>
     )
 }

@@ -17,12 +17,14 @@ export const SearchResultsPage = () => {
   const getItemSearched = async() => {
     const busqueda = await getProducts(productToBuy);
     setItemSearched(busqueda)
-    console.log(busqueda.results)
+    
   }
-
+  
   useEffect(() => {
     getItemSearched()
   }, [ productToBuy ])
+
+  const { query, paging, available_filters, results } = itemSearched
 
   if (!itemSearched) return;
   return (
@@ -30,11 +32,11 @@ export const SearchResultsPage = () => {
       <SearchBanner />
       <div className='search-results-page'>
         <FiltrosSearch 
-          busqueda={itemSearched.query} 
-          cantResultados={itemSearched.paging.total} 
-          availableFilters={itemSearched.available_filters} 
+          busqueda={ query } 
+          cantResultados={ paging.total } 
+          availableFilters={ available_filters } 
         />
-        <SearchProductsSection results={ itemSearched.results } />
+        <SearchProductsSection results={ results } />
       </div>
       
          

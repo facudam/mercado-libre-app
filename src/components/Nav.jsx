@@ -15,7 +15,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export const Nav = () => {
 
-    const { menuActive, setNavIsHover, setProductToBuy } = useContext(MeliContext)
+    const { menuActive, setNavIsHover, setProductToBuy, setCurrentPage, showButtons } = useContext(MeliContext)
     const [itemAbuscar, setItemAbuscar] = useState('')
     const navigate = useNavigate()
 
@@ -28,8 +28,9 @@ export const Nav = () => {
    const handleSearchInput = (e) => {
         e.preventDefault()
         setProductToBuy(itemAbuscar)
-        
-        navigate(`/search/${itemAbuscar}`)    
+        navigate(`/search/${itemAbuscar}`)
+        setCurrentPage(1)
+        showButtons() 
    }
 
 

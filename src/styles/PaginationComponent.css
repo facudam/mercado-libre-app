@@ -1,0 +1,48 @@
+
+.pagination-component {
+    margin: auto;
+    display: flex;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.pagination-component button {
+    color: #3483fa;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 20px;
+    transition: .3s;
+    border-radius: 5px;
+}
+
+.pagination-component button span {
+    font-size: 20px;
+}
+
+.pagination-component button:hover {
+    background-color: rgb(220,220,220);
+    cursor: pointer;
+}
+
+.page-values {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: rgba(0,0,0,0.45);
+}
+
+.page-values input {
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    border: none;
+    background-color: rgb(228,228,228);
+    color: rgba(0,0,0,0.45);
+    font-weight: 700;
+}
