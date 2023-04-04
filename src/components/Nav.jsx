@@ -15,7 +15,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export const Nav = () => {
 
-    const { menuActive, setNavIsHover, setProductToBuy, setCurrentPage, showButtons } = useContext(MeliContext)
+    const { menuActive, setNavIsHover, setProductToBuy, setCurrentPage, showPaginationButtons, setItemSearched } = useContext(MeliContext)
     const [itemAbuscar, setItemAbuscar] = useState('')
     const navigate = useNavigate()
 
@@ -27,10 +27,11 @@ export const Nav = () => {
 
    const handleSearchInput = (e) => {
         e.preventDefault()
+        setItemSearched('')
         setProductToBuy(itemAbuscar)
         navigate(`/search/${itemAbuscar}`)
         setCurrentPage(1)
-        showButtons() 
+        showPaginationButtons() 
    }
 
 
@@ -65,14 +66,17 @@ export const Nav = () => {
         { /* Desktop Nav */}
         <div className='nav__top'>
             <div className='nav__top-marca'>
-                <Link to="/">
+                <Link 
+                    onClick={() => setItemSearched('')}
+                    to="/"
+                >
                     <img 
                         className='meli-logo' 
                         src={ logo } 
                         alt='logo de mercado libre' />
                 </Link>
                 <form
-                    onSubmit={handleSearchInput}
+                    onSubmit={ handleSearchInput }
                     className='form' 
                     id='form'
                 >
@@ -80,11 +84,11 @@ export const Nav = () => {
                         id='search-products' 
                         type='search' 
                         placeholder='Buscar productos, marcas y más...'
-                        value={itemAbuscar}
-                        onChange={changeInputValue}
+                        value={ itemAbuscar }
+                        onChange={ changeInputValue }
                     />
                     <div
-                        onClick={handleSearchInput}
+                        onClick={ handleSearchInput }
                         className='form__img-container'
                     >
                         <img className='lupa' src={ lupa } alt='lupa search' />
@@ -164,11 +168,21 @@ export const Nav = () => {
 
         <div className='nav__top nav-mobile-superior'>
             <img className='mobile-logo' src={ mobileLogo } />
-            <form className='nav-mobile-superior__input'>
-                <div className='lupa-container'>
+            <form
+                onSubmit={ handleSearchInput } 
+                className='nav-mobile-superior__input'
+            >
+                <div
+                    onClick={ handleSearchInput }
+                    className='lupa-container'
+                >
                     <img src={ lupa } alt='lupa' />
                 </div>
-                <input type='search' placeholder='Buscar productos, marcas y más...'/>
+                <input 
+                    value={ itemAbuscar }
+                    onChange={ changeInputValue }
+                    type='search' 
+                    placeholder='Buscar productos, marcas y más...'/>
             </form>
             
             <MenuHamburguesa />

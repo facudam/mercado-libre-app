@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { SearchProductContainer } from '../components/SearchProductContainer'
 import '../styles/SearchProductsSection.css'
 import { PaginationComponent } from '../components/PaginationComponent';

@@ -2,14 +2,14 @@ import { useContext, useEffect } from 'react'
 import '../styles/PaginationComponent.css'
 import { MeliContext } from '../contexts/meliContext'
 
+
 export const PaginationComponent = ({ MAX_PAGES, anterior, siguiente }) => {
 
-  const { currentPage, showButtons } = useContext(MeliContext)
+  const { currentPage, showPaginationButtons } = useContext(MeliContext)
 
-  
 
   useEffect(() => {
-    showButtons()
+    showPaginationButtons()
   }, [ currentPage ])
 
   return (

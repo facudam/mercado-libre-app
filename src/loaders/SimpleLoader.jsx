@@ -1,0 +1,10 @@
+import './SimpleLoader.css'
+
+export const SimpleLoader = () => {
+  return (
+    <div className='loader-container'>
+        <span className="loader"></span>
+    </div>
+    
+  )
+}

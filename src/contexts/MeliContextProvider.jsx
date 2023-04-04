@@ -21,7 +21,7 @@ export const ContextProvider = ({children}) => {
 
     const [ currentPage, setCurrentPage ] = useState(1)
 
-    const showButtons = () => {
+    const showPaginationButtons = () => {
         const anterior = document.querySelector('.anterior'),
           siguiente = document.querySelector('.siguiente');
         if (currentPage === 1) {
@@ -58,7 +58,7 @@ export const ContextProvider = ({children}) => {
             setProductToBuy, 
             currentPage,
             setCurrentPage,
-            showButtons
+            showPaginationButtons
         }}>{ children }</MeliContext.Provider>
     )
 }

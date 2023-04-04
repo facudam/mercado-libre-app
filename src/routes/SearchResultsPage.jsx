@@ -5,6 +5,7 @@ import { getProducts } from '../helpers/getProducts'
 import { FiltrosSearch } from '../sections/FiltrosSearch'
 import '../styles/SearchResultsPage.css'
 import { SearchProductsSection } from '../sections/SearchProductsSection'
+import { SimpleLoader } from '../loaders/SimpleLoader'
 
 export const SearchResultsPage = () => {
 
@@ -26,20 +27,22 @@ export const SearchResultsPage = () => {
 
   const { query, paging, available_filters, results } = itemSearched
 
-  if (!itemSearched) return;
+  
   return (
     <div>
       <SearchBanner />
-      <div className='search-results-page'>
-        <FiltrosSearch 
-          busqueda={ query } 
-          cantResultados={ paging.total } 
-          availableFilters={ available_filters } 
-        />
-        <SearchProductsSection results={ results } />
-      </div>
-      
-         
+      {
+        (!itemSearched) 
+          ? <SimpleLoader />
+          : <div className='search-results-page'>
+              <FiltrosSearch 
+                busqueda={ query } 
+                cantResultados={ paging.total } 
+                availableFilters={ available_filters } 
+              />
+              <SearchProductsSection results={ results } />
+            </div>
+      }
     </div>
   )
 }
