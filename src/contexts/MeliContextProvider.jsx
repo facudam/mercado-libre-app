@@ -25,16 +25,16 @@ export const ContextProvider = ({children}) => {
         const anterior = document.querySelector('.anterior'),
           siguiente = document.querySelector('.siguiente');
         if (currentPage === 1) {
-          anterior.style.display = 'none'
-          siguiente.style.display = 'flex'
+          anterior.style.setProperty('display', 'none')
+          siguiente.style.setProperty('display', 'flex')
         } 
         else if (currentPage === 3) {
-          anterior.style.display = 'flex'
-          siguiente.style.display = 'none'
+          anterior.style.setProperty('display', 'flex')
+          siguiente.style.setProperty('display', 'none')
         } 
         else {
-          anterior.style.display = 'flex'
-          siguiente.style.display = 'flex'
+          anterior.style.setProperty('display', 'flex')
+          siguiente.style.setProperty('display', 'flex')
         }
       }
 

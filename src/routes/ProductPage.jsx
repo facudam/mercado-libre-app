@@ -1,7 +1,9 @@
-
+import '../styles/ProductPage.css'
 
 export const ProductPage = () => {
   return (
-    <div>ProductPage</div>
+    <section className="product-page">
+        hola
+    </section>
   )
 }

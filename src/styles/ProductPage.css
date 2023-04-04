@@ -1,0 +1,9 @@
+.product-page {
+    width: 90%;
+    max-width: 1183px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 3px;
+    margin-top: 20px;
+    padding: 16px;
+}
