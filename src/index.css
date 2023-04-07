@@ -9,7 +9,7 @@
 :root {
   --amarillo: #fff159;
   --max-width: 1250px;
-  --azul: #3484fa;
+  --azul: rgb(52, 132, 250);
   --background: #ebebeb;
   --shadow-container: 0 1px 1px 0 rgb(0 0 0 / 10%);
   --verde: #00a650;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import heart from '../images/corazon.png'
-import { faStar, faStarHalf, faTruckFast, faArrowTurnDown, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faStarHalf, faTruckFast, faArrowTurnDown, faChevronDown, faShieldHalved, faTrophy } from '@fortawesome/free-solid-svg-icons';
 import '../styles/ProductPage.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -35,7 +35,7 @@ console.log(item)
       <div className='product-main-info'>
         <div className='small-pictures-container'>
           {
-              (!item.pictures) ? console.log('error')
+              (!item.pictures) ? console.log('...cargando')
               : item.pictures.map(img => (
                   <div key={img.id} className='small-picture'>
                     <img
@@ -48,13 +48,16 @@ console.log(item)
         </div> 
         <div className='huge-picture-container'>
           {
-            (!item.pictures) ? console.log('otro error')
+            (!item.pictures) ? console.log('...cargando')
               : <img src={ item.pictures[0].secure_url }/>  
           }
         </div>
+        {/* <span className='linea-separador'></span> */}
       </div>
       <div className='buying-info'>
-        <span>{ (item.condition === 'new') ? 'Nuevo' : 'Usado' } | +100 vendidos</span>
+        <span>{ (item.condition === 'new') ? 'Nuevo ' : 'Usado ' }
+         | 
+         {(item.sold_quantity > 100) ? ' +100 vendidos' : ' oferta'}</span>
         <div className='item-title-container'>
           <h1>{ item.title }</h1>
           <img src={ heart } />
@@ -65,11 +68,11 @@ console.log(item)
           <FontAwesomeIcon icon={ faStar } className='star'/>
           <FontAwesomeIcon icon={ faStar } className='star'/>
           <FontAwesomeIcon icon={ faStarHalf } className='star'/>
-          <span>({item.sold_quantity})</span>
+          <span>({ item.sold_quantity })</span>
         </div>
         <div className='pago-container'>
-          <span>$ {item.price}</span>
-          <span>en 6x $ {item.price / 5}</span>
+          <span>$ { item.price }</span>
+          <span>en 6x $ { item.price / 5 }</span>
           <a>Ver los medios de pago</a>
         </div>
         <div className='entrega-container'>
@@ -94,9 +97,9 @@ console.log(item)
             onClick={ activateQuantityItemContainer }
             className='btn-cointainer__btn'
           >
-            Cantidad:{cantidadItem} unidad 
-            <FontAwesomeIcon icon={faChevronDown} className='row-down-icon'/>
-            <span>({item.available_quantity} disponibles)</span>
+            Cantidad:{ cantidadItem } unidad 
+            <FontAwesomeIcon icon={ faChevronDown } className='row-down-icon'/>
+            <span>({ item.available_quantity } disponibles)</span>
           </button>
           <div className='quantity-items'>
             <span>1 unidad</span>
@@ -106,7 +109,7 @@ console.log(item)
             <span>5 unidades</span>
             <span>6 unidades</span>
             {
-              (item.available_quantity > 5) &&
+              (item.available_quantity > 6) &&
               <form className='quantity-items__greater'>
                 <label>Cantidad:</label>
                 <div className='quantity-inputs-container'>
@@ -119,7 +122,18 @@ console.log(item)
             
           </div>
         </div>
-        
+        <div className='buy-btn-container'>
+          <button>Comprar ahora</button>
+          <button>Agregar al carrito</button>
+        </div>
+        <div className='footer-buy-info'>
+          <FontAwesomeIcon icon={ faShieldHalved } className='footer-icon' />
+          <span><a>Compra protegida</a>, recibí el producto que esperabas o te devolvemos tu dinero</span>
+        </div>
+        <div className='footer-buy-info'>
+          <FontAwesomeIcon icon={ faTrophy } className='footer-icon' />
+          <span><a>Mercado Puntos</a>. Sumás 37 puntos</span>
+        </div>
       </div>
     </section>
   )
