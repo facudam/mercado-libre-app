@@ -178,7 +178,94 @@
 }
 
 .buying-info p {
-    margin-top: 20px;
+    margin-top: 25px;
     font-weight: 600;
     color: rgba(0,0,0, .9);
+}
+
+.btn-container {
+    margin-top: 20px;
+    position: relative;
+}
+
+.btn-cointainer__btn {
+    border: none;
+    background-color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.row-down-icon {
+    color: var(--azul);
+    width: 12px;
+    margin: 0 10px 0 10px;
+    transition: .3s all; 
+}
+
+.row-down-icon.rotate {
+    transform: rotate(180deg);
+}
+
+.quantity-items {
+    width: 200px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 1px 1px 8px 0px rgba(0,0,0, .2);
+    background-color: #fff;
+    position: absolute;
+    top: 35px;
+    z-index: 10;
+}
+
+/* -- For btn-container button --  */
+.quantity-items.flexing {
+    display: flex;
+}
+/* ------------------------------  */
+
+.quantity-items span {
+    padding: 14px 16px;
+    font-size: 16px;
+    color: rgba(0,0,0, .9);
+    cursor: pointer;
+}
+
+.quantity-items span:hover {
+    background-color: rgba(0,0,0, .05);
+}
+
+.quantity-items__greater {
+    width: 85%;
+    margin: auto;
+    padding: 25px 10px;
+}
+
+.quantity-inputs-container {
+    display: flex;
+    padding: 10px;
+    border: 2px solid var(--azul);
+    border-radius: 6px;
+}
+
+.quantity-items__greater input:first-child {
+    width: 80px;
+    border: none;  
+}
+
+.quantity-items__greater input:first-child::-webkit-inner-spin-button,
+.quantity-items__greater input:first-child::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.quantity-items__greater input:first-child:focus {
+    outline: none;
+}
+
+.quantity-items__greater input:nth-child(2) {
+    font-size: 12px;
+    padding: 4px 7px;
+    background-color: var(--azul);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
 }

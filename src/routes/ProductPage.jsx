@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import heart from '../images/corazon.png'
-import { faStar, faStarHalf, faTruckFast, faArrowTurnDown } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faStarHalf, faTruckFast, faArrowTurnDown, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import '../styles/ProductPage.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -8,13 +8,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export const ProductPage = () => {
 
   const [item, setItem] = useState([])
+  const [cantidadItem, setCantidadItem] = useState(1)
 
   const getItem = async() => {
     let url = 'https://api.mercadolibre.com/items?ids=MLA801075098';
     const resp = await fetch(url);
     const resultado = await resp.json();
-    setItem(resultado[0].body)
+    setItem(resultado[0].body) 
+  }
 
+  const activateQuantityItemContainer = () => {
+    const icon = document.querySelector('.row-down-icon')
+    const quantityItemsContainer = document.querySelector('.quantity-items')
+    icon.classList.toggle('rotate')
+    quantityItemsContainer.classList.toggle('flexing')
     
   }
 
@@ -82,6 +89,37 @@ console.log(item)
           </div>
         </div>
         <p>Stock disponible</p>
+        <div className='btn-container'>
+          <button 
+            onClick={ activateQuantityItemContainer }
+            className='btn-cointainer__btn'
+          >
+            Cantidad:{cantidadItem} unidad 
+            <FontAwesomeIcon icon={faChevronDown} className='row-down-icon'/>
+            <span>({item.available_quantity} disponibles)</span>
+          </button>
+          <div className='quantity-items'>
+            <span>1 unidad</span>
+            <span>2 unidades</span>
+            <span>3 unidades</span>
+            <span>4 unidades</span>
+            <span>5 unidades</span>
+            <span>6 unidades</span>
+            {
+              (item.available_quantity > 5) &&
+              <form className='quantity-items__greater'>
+                <label>Cantidad:</label>
+                <div className='quantity-inputs-container'>
+                  <input type='number' value='' />
+                  <input type='submit' value='Aplicar'/>
+                </div>
+                
+              </form>
+            }
+            
+          </div>
+        </div>
+        
       </div>
     </section>
   )
