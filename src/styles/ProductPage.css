@@ -91,3 +91,94 @@
     height: 20px;
     margin-top: 3px;
 }
+
+.stars {
+    display: flex;
+    gap: 2px;
+    margin-top: 10px;   
+}
+
+.stars span {
+    color: var(--azul);
+}
+
+.star {
+    width: 18px;
+    color: var(--azul);
+}
+
+.pago-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.pago-container span {
+    color: rgba(0,0,0, .9);
+}
+
+.pago-container span:first-child {
+    font-size: 36px;
+    font-weight: 300;
+}
+
+.pago-container span:nth-child(2) {
+    font-size: 16px;
+}
+
+.pago-container a {
+    text-decoration: none;
+    color: var(--azul);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.entrega-container {
+    display: flex;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.entrega-icon {
+    width: 20px;
+}
+
+.entrega-container div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: -4px;
+}
+
+.entrega-container div span:first-child {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.entrega-container div span:nth-child(2) {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0,0,0, .55);
+}
+
+.entrega-container div a {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--azul);
+    text-decoration: none;
+}
+
+.arrow-turn-down {
+    transform: rotate(90deg);
+    color: var(--verde);
+}
+
+#devolucion {
+    color: var(--verde);
+}
+
+.buying-info p {
+    margin-top: 20px;
+    font-weight: 600;
+    color: rgba(0,0,0, .9);
+}

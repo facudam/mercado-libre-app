@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import heart from '../images/corazon.png'
+import { faStar, faStarHalf, faTruckFast, faArrowTurnDown } from '@fortawesome/free-solid-svg-icons';
 import '../styles/ProductPage.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 export const ProductPage = () => {
@@ -50,6 +52,36 @@ console.log(item)
           <h1>{ item.title }</h1>
           <img src={ heart } />
         </div>
+        <div className='stars'>
+          <FontAwesomeIcon icon={ faStar } className='star'/>
+          <FontAwesomeIcon icon={ faStar } className='star'/>
+          <FontAwesomeIcon icon={ faStar } className='star'/>
+          <FontAwesomeIcon icon={ faStar } className='star'/>
+          <FontAwesomeIcon icon={ faStarHalf } className='star'/>
+          <span>({item.sold_quantity})</span>
+        </div>
+        <div className='pago-container'>
+          <span>$ {item.price}</span>
+          <span>en 6x $ {item.price / 5}</span>
+          <a>Ver los medios de pago</a>
+        </div>
+        <div className='entrega-container'>
+          <FontAwesomeIcon icon={ faTruckFast } className='entrega-icon'/>
+          <div>
+            <span>Llega en 48hs por $ 1.050</span>
+            <span>Beneficio mercado puntos</span>
+            <a>Ver más formas de entrega</a>
+          </div> 
+        </div>
+        <div className='entrega-container'>
+          <FontAwesomeIcon icon={ faArrowTurnDown } className={`entrega-icon arrow-turn-down`} />
+          <div>
+            <span id='devolucion'>Devolución gratis</span>
+            <span>Tenés 30 días desde que lo recibís</span>
+            <a>Conocer más</a>
+          </div>
+        </div>
+        <p>Stock disponible</p>
       </div>
     </section>
   )
