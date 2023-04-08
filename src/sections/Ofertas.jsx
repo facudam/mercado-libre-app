@@ -4,7 +4,7 @@ import { getProducts } from "../helpers/getProducts"
 import { ProductoContainer } from "../components/ProductoContainer"
 import '../styles/Ofertas.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {  Keyboard, Scrollbar, Navigation, Pagination} from "swiper";
+import {  Keyboard, Scrollbar, Navigation } from "swiper";
 
 
 // Import Swiper styles
@@ -24,6 +24,7 @@ export const Ofertas = () => {
 
     useEffect(() => {    
         getInfoProducts()
+        console.log(productosEnOferta)
     }, [])
 
   return (
