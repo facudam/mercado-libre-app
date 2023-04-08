@@ -1,8 +1,8 @@
 .seller-slide {
     width: 100%;
     margin: auto;
-    padding: 25px 0 0 0;
-    padding-left: 73px;
+    padding: 25px 0 42px 73px;
+    margin-bottom: 25px;
 }
 
 .seller-slider {
@@ -97,3 +97,9 @@
     height: 325px;
     overflow-x: hidden;
 }
+
+.seller-slide a {
+    font-size: 14px;
+    color: var(--azul);
+}
+

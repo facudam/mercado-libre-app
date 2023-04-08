@@ -4,6 +4,7 @@ import { faStar, faStarHalf, faTruckFast, faArrowTurnDown, faChevronDown, faShie
 import '../styles/ProductPage.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SellerSlide } from '../components/SellerSlide';
+import { MainCharacterists } from '../sections/MainCharacterists';
 
 
 export const ProductPage = () => {
@@ -50,13 +51,14 @@ export const ProductPage = () => {
           </div> 
           <div className='huge-picture-container'>
             {
-              (!item.pictures) ? console.log('...cargando')
+              (!item.pictures) ? console.log('..cargando')
                 : <img src={ item.pictures[0].secure_url }/>  
             }
           </div>
           
         </div>
-        <SellerSlide id={item.seller_id} />
+        <SellerSlide id={ item.seller_id } />
+        <MainCharacterists caracteristicas={ item } />
       </div>
 
   
