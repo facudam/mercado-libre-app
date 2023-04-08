@@ -24,7 +24,6 @@ export const Ofertas = () => {
 
     useEffect(() => {    
         getInfoProducts()
-        console.log(productosEnOferta)
     }, [])
 
   return (

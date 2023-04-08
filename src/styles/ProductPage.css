@@ -8,7 +8,8 @@
     display: flex;
     justify-content: space-between;
     border: 1px solid rgba(0,0,0, .2);
-    border-top: none;   
+    border-top: none;
+      
 }
 
 .f-direction {
@@ -16,9 +17,12 @@
     flex-direction: column;
 }
 
+.f-direction-width {
+    position: relative;
+}
+
 .product-main-info {
     width: 100%;
-    max-width: 860px;
     display: flex;
     padding: 16px;
 }
@@ -72,7 +76,7 @@
 
 .buying-info {
     width: 325px;
-    margin: 16px;
+    margin: 16px 16px 16px 0;
     border: 1px solid rgba(0,0,0, .1);
     border-radius: 8px;
     padding: 16px;

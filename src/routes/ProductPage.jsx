@@ -30,9 +30,10 @@ export const ProductPage = () => {
     getItem()
   }, [])
 
+  if (!item) return;
   return (
     <section className="product-page">
-      <div className='f-direction'>
+      <div className={`f-direction f-direction-width`}>
         <div className='product-main-info'>
           <div className='small-pictures-container'>
             {
