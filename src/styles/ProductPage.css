@@ -17,10 +17,6 @@
     flex-direction: column;
 }
 
-.f-direction-width {
-    position: relative;
-}
-
 .product-main-info {
     width: 100%;
     display: flex;

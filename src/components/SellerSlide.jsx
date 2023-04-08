@@ -30,7 +30,7 @@ export const SellerSlide = ({ id }) => {
         <Swiper
             slidesPerView={3}
             slidesPerGroupSkip={3}
-            spaceBetween={0}
+            spaceBetween={1}
             navigation={true}
             modules={[Keyboard, Scrollbar, Navigation]}
             className="seller-slider"

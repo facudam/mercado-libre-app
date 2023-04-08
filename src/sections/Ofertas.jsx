@@ -62,7 +62,7 @@ export const Ofertas = () => {
         >
           
             { 
-                productosEnOferta.map(producto => {
+                productosEnOferta.slice(0, 20).map(producto => {
                     return (
                         <SwiperSlide key={ producto.id}>
                             <ProductoContainer 

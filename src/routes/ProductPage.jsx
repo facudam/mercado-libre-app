@@ -33,7 +33,7 @@ export const ProductPage = () => {
   if (!item) return;
   return (
     <section className="product-page">
-      <div className={`f-direction f-direction-width`}>
+      <div className={`f-direction`}>
         <div className='product-main-info'>
           <div className='small-pictures-container'>
             {

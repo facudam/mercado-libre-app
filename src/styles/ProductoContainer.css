@@ -85,6 +85,10 @@
     color: #33333399;
     margin-top: 5px;
     display: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .main-container:hover {
@@ -97,5 +101,5 @@
 }
 
 .main-container:hover .info-container span:nth-child(4) {
-    display: flex;
+    display: -webkit-box;
 }
