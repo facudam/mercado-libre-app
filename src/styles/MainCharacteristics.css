@@ -1,8 +1,9 @@
 
 .characteristics-section {
-    margin: 0 10px 0 75px;
-    padding: 35px 0;
+    margin: 0 10px 10px 75px;
+    padding: 35px 0 45px;
     border-top: 1px solid rgba(0,0,0, .1);
+    border-bottom: 1px solid rgba(0,0,0, .1);
 }
 
 .characteristics-section h2 {
@@ -26,15 +27,23 @@
 
 .characteristics-section table tbody tr th, .characteristics-section table tbody tr td  {
     text-align: left;
-    padding: 10px 15px;
+    padding: 15px;
 }
 
-.negro-punto1 {
-    background-color: rgba(0,0,0, .1);
+.characteristics-section table tbody tr th {
+    width: 194px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, .9);
 }
 
-.negro-punto05 {
-    background-color: rgba(0,0,0, .05);
+.negro1 {
+    background-color: #ebebeb;
 }
+
+.negro2 {
+    background-color: #f5f5f5;
+}
+
 
 

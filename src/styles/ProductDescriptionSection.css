@@ -1,0 +1,18 @@
+
+.description-section {
+    margin: 35px 10px 25px 74px;
+}
+
+.description-section h2 {
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(0,0,0, .9);
+}
+
+.description-section p {
+    margin-top: 24px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #666;
+    line-height: 2.5;
+}
