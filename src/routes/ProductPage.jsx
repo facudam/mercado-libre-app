@@ -4,7 +4,7 @@ import { faStar, faStarHalf, faTruckFast, faArrowTurnDown, faChevronDown, faShie
 import '../styles/ProductPage.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SellerSlide } from '../components/SellerSlide';
-import { MainCharacterists } from '../sections/MainCharacterists';
+import { MainCharacteristics } from '../sections/MainCharacteristics';
 
 
 export const ProductPage = () => {
@@ -58,7 +58,7 @@ export const ProductPage = () => {
           
         </div>
         <SellerSlide id={ item.seller_id } />
-        <MainCharacterists caracteristicas={ item } />
+        <MainCharacteristics caracteristicas={ item } />
       </div>
 
   

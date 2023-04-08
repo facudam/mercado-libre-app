@@ -1,0 +1,40 @@
+
+.characteristics-section {
+    margin: 0 10px 0 75px;
+    padding: 35px 0;
+    border-top: 1px solid rgba(0,0,0, .1);
+}
+
+.characteristics-section h2 {
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, .9);
+    margin-bottom: 20px;
+}
+
+.characteristics-section table {
+    width: 100%;
+    border: 1px solid rgba(0,0,0, .1);
+    border-radius: 8px;
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+.characteristics-section table tbody tr {
+    margin: 0;
+}
+
+.characteristics-section table tbody tr th, .characteristics-section table tbody tr td  {
+    text-align: left;
+    padding: 10px 15px;
+}
+
+.negro-punto1 {
+    background-color: rgba(0,0,0, .1);
+}
+
+.negro-punto05 {
+    background-color: rgba(0,0,0, .05);
+}
+
+

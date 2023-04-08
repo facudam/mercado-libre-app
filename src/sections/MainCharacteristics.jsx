@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
+import '../styles/MainCharacteristics.css'
 
-export const MainCharacterists = ({ caracteristicas }) => {
+export const MainCharacteristics = ({ caracteristicas }) => {
 
     const [charArray, setCharArray] = useState([])
 
@@ -9,16 +10,17 @@ export const MainCharacterists = ({ caracteristicas }) => {
     }, [caracteristicas])
     
     return(
-        <section>
+        <section className="characteristics-section">
             <h2>Características principales</h2>
             <table>
                 <tbody>
                     {
                         (!charArray) ? null
-                        : charArray.map(char => (
+                        : charArray.map((char, index) => (
                             <tr key={ char.id }>
-                                <th>{ char.name }</th>
-                                <td>{ char.value_name }</td>
+                                <th className={(index % 2 === 0) ? 'negro-punto1' : 'negro-punto05'}>{ char.name }</th>
+                                {/* Si utilizo abajo: && 'negro-punto05 me arroja un warning y me pide que use ? y : */}
+                                <td className={(index % 2 === 0) ? 'negro-punto05' : null}>{ char.value_name }</td>
                             </tr>
                         ))
                     }
