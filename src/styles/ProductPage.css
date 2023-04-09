@@ -15,10 +15,12 @@
 .f-direction {
     display: flex;
     flex-direction: column;
+    max-width: 840px;
 }
 
 .product-main-info {
     width: 100%;
+    max-width: 840px;
     display: flex;
     padding: 16px;
 }

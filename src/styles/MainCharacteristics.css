@@ -4,6 +4,7 @@
     padding: 35px 0 45px;
     border-top: 1px solid rgba(0,0,0, .1);
     border-bottom: 1px solid rgba(0,0,0, .1);
+    max-width: 840px;
 }
 
 .characteristics-section h2 {
@@ -15,6 +16,7 @@
 
 .characteristics-section table {
     width: 100%;
+    max-width: 755px !important;
     border: 1px solid rgba(0,0,0, .1);
     border-radius: 8px;
     border-spacing: 0;
@@ -23,15 +25,21 @@
 
 .characteristics-section table tbody tr {
     margin: 0;
+    max-width: 625px;
 }
 
 .characteristics-section table tbody tr th, .characteristics-section table tbody tr td  {
     text-align: left;
     padding: 15px;
+    
+}
+
+.characteristics-section table tbody tr td {
+    max-width: 625px;
 }
 
 .characteristics-section table tbody tr th {
-    width: 194px;
+    width: 130px;
     font-size: 16px;
     font-weight: 600;
     color: rgba(0, 0, 0, .9);

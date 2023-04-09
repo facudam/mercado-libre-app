@@ -1,5 +1,6 @@
 .seller-slide {
     width: 100%;
+    max-width: 840px;
     margin: auto;
     padding: 25px 0 42px 73px;
 }
