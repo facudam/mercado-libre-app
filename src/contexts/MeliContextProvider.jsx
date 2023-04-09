@@ -41,6 +41,11 @@ export const ContextProvider = ({children}) => {
         }
       }
 
+      const changeItemPageValues = (id, title) => {
+        setItemForPage(id)
+        setItemNameForPage(title)
+      }
+
     return(
         <MeliContext.Provider value={{
             menuActive,
@@ -65,7 +70,8 @@ export const ContextProvider = ({children}) => {
             itemForPage,
             setItemForPage,
             itemNameForPage, 
-            setItemNameForPage 
+            setItemNameForPage,
+            changeItemPageValues
         }}>{ children }</MeliContext.Provider>
     )
 }

@@ -1,6 +1,7 @@
 
 .description-section {
     margin: 35px 10px 25px 74px;
+    overflow: hidden;
 }
 
 .description-section h2 {

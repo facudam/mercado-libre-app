@@ -1,9 +1,12 @@
 
 .main-container {
+    display: block;
     width: 224px;
     background-color: #fff;
     border-radius: 0px 0px 5px 5px;
     box-shadow: var(--shadow-container);
+    background-color: #fff;
+    text-decoration: none;
 }
 
 .img-container {
@@ -16,6 +19,7 @@
 }
 
 .img-container__heart {
+    display: block;
    position: absolute;
    top: 15px;
    right: 15px;
@@ -26,9 +30,12 @@
    width: 30px;
    height: 30px;
    border-radius: 50%;
+   overflow: hidden;
 }
 
-.img-container__heart img {
+#img-container__heart-img{
+    width: 20px;
+    height: 20px;
     opacity: 1;
 }
 
