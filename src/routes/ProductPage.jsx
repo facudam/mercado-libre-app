@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SellerSlide } from '../components/SellerSlide';
 import { MainCharacteristics } from '../sections/MainCharacteristics';
 import { ProductDescriptionSection } from '../sections/ProductDescriptionSection';
+import { SellerReputation } from '../sections/SellerReputation';
 
 
 export const ProductPage = () => {
@@ -14,7 +15,7 @@ export const ProductPage = () => {
   const [cantidadItem, setCantidadItem] = useState(1)
 
   const getItem = async() => {
-    let url = 'https://api.mercadolibre.com/items?ids=MLA801075098';
+    let url = 'https://api.mercadolibre.com/items?ids=MLA612037339';
     const resp = await fetch(url);
     const resultado = await resp.json();
     setItem(resultado[0].body) 
@@ -145,7 +146,9 @@ export const ProductPage = () => {
             <FontAwesomeIcon icon={ faTrophy } className='footer-icon' />
             <span><a>Mercado Puntos</a>. Sumás 37 puntos</span>
           </div>
+          
         </div>
+        <SellerReputation sellerID={item.seller_id} />
       </div>
     </section>
   )
