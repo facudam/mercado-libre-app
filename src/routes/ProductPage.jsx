@@ -34,7 +34,7 @@ export const ProductPage = () => {
 
   useEffect(() => {
     getItem()
-  }, [])
+  }, [itemForPage])
 
   if (!item) return;
   return (

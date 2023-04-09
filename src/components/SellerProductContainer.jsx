@@ -1,8 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { getProductImages } from '../helpers/getProductImages';
+import { Link } from "react-router-dom";
 import '../styles/SellerSlide.css'
+import { MeliContext } from '../contexts/meliContext';
 
 export const SellerProductContainer = ({ id, title, price }) => {
+
+    const { itemNameForPage, changeItemPageValues } = useContext(MeliContext)
 
     const [ srcImage, setSrcImage ] = useState('')
 
@@ -16,7 +20,12 @@ export const SellerProductContainer = ({ id, title, price }) => {
     }, [])
 
   return (
-    <div key={ id } className='item-box'>
+    <Link 
+        key={ id } 
+        className='item-box'
+        to={`/item/${itemNameForPage}`}
+        onClick={() => changeItemPageValues(id, title)}
+    >
         <div className='item-box__img-container'>
             <img src={ srcImage } alt={ title } />
         </div>
@@ -25,6 +34,6 @@ export const SellerProductContainer = ({ id, title, price }) => {
             <span>{ title }</span>
         </div>
                         
-    </div>
+    </Link>
   )
 }

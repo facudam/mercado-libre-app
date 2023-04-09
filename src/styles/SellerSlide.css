@@ -20,16 +20,18 @@
 }
 
 .item-box {
+    display: block;
     width: 220px;
     height: 320px;
     border: 2px solid rgba(0,0,0, .05);
     border-radius: 6px;
+    text-decoration: none;
+    overflow: hidden;
     
 }
 
 .item-box:hover {
-    cursor: pointer;
-    box-shadow: 0px 0px 14px -5px #808080;
+    box-shadow: 0px 0px 14px -5px #363636;
 }
 
 .item-box__img-container {
@@ -95,7 +97,7 @@
 .seller-slide .swiper-slide {
     width: 220px;
     height: 325px;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .seller-slide a {

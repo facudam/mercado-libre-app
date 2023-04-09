@@ -1,13 +1,13 @@
 import { useEffect, useState, useContext } from 'react'
 import '../styles/SearchProductContainer.css'
 import { getProductImages } from '../helpers/getProductImages'
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MeliContext } from '../contexts/meliContext';
 
 
 export const SearchProductContainer = ({ identifier, img, name, price }) => {
 
-    const {setItemForPage, setItemNameForPage, itemNameForPage} = useContext(MeliContext)
+    const { itemNameForPage, changeItemPageValues } = useContext(MeliContext)
 
     const [ productUrlImage, setProductUrlImage ] = useState('')
 
@@ -16,20 +16,16 @@ export const SearchProductContainer = ({ identifier, img, name, price }) => {
         setProductUrlImage(imagen[0].body.pictures[0].url)
     }
 
-    const navigate = useNavigate()
-
-    const goToItemPage = (identifier, name) => {
-      setItemForPage(identifier)
-      setItemNameForPage(name)
-      navigate(`/item/${itemNameForPage}`)
-    }
-
     useEffect(() => {
         getProductUrlImage()
     }, [])
 
   return (
-    <div className="search-product-container" onClick={() => { goToItemPage(identifier, name)}}>
+    <Link
+        className="search-product-container" 
+        onMouseOver={() => changeItemPageValues(identifier, name)}
+        to={`/item/${itemNameForPage}`}
+    >
         <div className="product-img-container">
             <img src={ productUrlImage } alt={ name } />
         </div>
@@ -43,6 +39,6 @@ export const SearchProductContainer = ({ identifier, img, name, price }) => {
             <label htmlFor={ identifier }>Seleccionar</label>
         </div>
         
-    </div>
+    </Link>
   )
 }
