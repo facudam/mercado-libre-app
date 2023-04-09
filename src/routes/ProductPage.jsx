@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import heart from '../images/corazon.png'
 import { faStar, faStarHalf, faTruckFast, faArrowTurnDown, faChevronDown, faShieldHalved, faTrophy } from '@fortawesome/free-solid-svg-icons';
 import '../styles/ProductPage.css'
@@ -7,15 +7,18 @@ import { SellerSlide } from '../components/SellerSlide';
 import { MainCharacteristics } from '../sections/MainCharacteristics';
 import { ProductDescriptionSection } from '../sections/ProductDescriptionSection';
 import { SellerReputation } from '../sections/SellerReputation';
+import { MeliContext } from '../contexts/meliContext';
 
 
 export const ProductPage = () => {
 
+  const { itemForPage } = useContext(MeliContext)
+
   const [item, setItem] = useState([])
   const [cantidadItem, setCantidadItem] = useState(1)
 
-  const getItem = async() => {
-    let url = 'https://api.mercadolibre.com/items?ids=MLA612037339';
+  const getItem = async(productID) => {
+    let url = `https://api.mercadolibre.com/items?ids=${itemForPage}`;
     const resp = await fetch(url);
     const resultado = await resp.json();
     setItem(resultado[0].body) 

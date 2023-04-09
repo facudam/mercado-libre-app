@@ -21,6 +21,9 @@ export const ContextProvider = ({children}) => {
 
     const [ currentPage, setCurrentPage ] = useState(1)
 
+    const [itemForPage, setItemForPage] = useState('MLA612037339')
+    const [itemNameForPage, setItemNameForPage] = useState('')
+
     const showPaginationButtons = () => {
         const anterior = document.querySelector('.anterior'),
           siguiente = document.querySelector('.siguiente');
@@ -58,7 +61,11 @@ export const ContextProvider = ({children}) => {
             setProductToBuy, 
             currentPage,
             setCurrentPage,
-            showPaginationButtons
+            showPaginationButtons,
+            itemForPage,
+            setItemForPage,
+            itemNameForPage, 
+            setItemNameForPage 
         }}>{ children }</MeliContext.Provider>
     )
 }

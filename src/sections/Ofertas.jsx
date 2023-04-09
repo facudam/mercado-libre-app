@@ -6,7 +6,6 @@ import '../styles/Ofertas.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {  Keyboard, Scrollbar, Navigation } from "swiper";
 
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -18,9 +17,11 @@ export const Ofertas = () => {
     const { productosEnOferta, setProductosEnOferta } = useContext(MeliContext)
 
     const getInfoProducts = async() => {
-            const listaProductos = await getProducts('promociones');
-            setProductosEnOferta(listaProductos.results)         
+          const listaProductos = await getProducts('promociones');
+          setProductosEnOferta(listaProductos.results)         
         }
+
+    
 
     useEffect(() => {    
         getInfoProducts()
@@ -65,7 +66,8 @@ export const Ofertas = () => {
                 productosEnOferta.slice(0, 20).map(producto => {
                     return (
                         <SwiperSlide key={ producto.id}>
-                            <ProductoContainer 
+                            <ProductoContainer
+                                id={producto.id}
                                 img={producto.id}
                                 title={producto.title}
                                 price={producto.price}
