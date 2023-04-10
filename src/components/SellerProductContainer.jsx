@@ -23,7 +23,7 @@ export const SellerProductContainer = ({ id, title, price }) => {
     <Link 
         key={ id } 
         className='item-box'
-        to={`/item/${itemNameForPage}`}
+        to={`/item/${id}/${itemNameForPage}`}
         onClick={() => changeItemPageValues(id, title)}
     >
         <div className='item-box__img-container'>

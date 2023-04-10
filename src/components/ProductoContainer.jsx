@@ -22,7 +22,7 @@ export const ProductoContainer = ({ id, img, title, price, descuento, cuotas, en
   return (
     <Link 
       className="main-container" 
-      to={`/item/${itemNameForPage}`} 
+      to={`/item/${id}/${itemNameForPage}`} 
       onMouseOver={() => changeItemPageValues(id, title)}
       >
         <div className="img-container">

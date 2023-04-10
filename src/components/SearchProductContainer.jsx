@@ -24,7 +24,7 @@ export const SearchProductContainer = ({ identifier, img, name, price }) => {
     <Link
         className="search-product-container" 
         onMouseOver={() => changeItemPageValues(identifier, name)}
-        to={`/item/${itemNameForPage}`}
+        to={`/item/${identifier}/${itemNameForPage}`}
     >
         <div className="product-img-container">
             <img src={ productUrlImage } alt={ name } />
