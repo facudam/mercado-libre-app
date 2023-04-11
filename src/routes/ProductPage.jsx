@@ -51,7 +51,7 @@ export const ProductPage = () => {
                     <div
                       onMouseOver={() => setPictureIndex(index)}
                       key={img.id} 
-                      className={(index === pictureIndex) ? `small-picture border-img` : `small-picture`}
+                      className={(index === pictureIndex) ? `small-picture outline-img` : `small-picture`}
                     >
                       <img
                         src={img.secure_url}
