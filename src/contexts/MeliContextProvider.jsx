@@ -43,7 +43,8 @@ export const ContextProvider = ({children}) => {
 
       const changeItemPageValues = (id, title) => {
         setItemForPage(id)
-        setItemNameForPage(title)
+        let productName = title.replace(/\//g, "");
+        setItemNameForPage(productName)
       }
 
     return(
