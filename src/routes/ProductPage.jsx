@@ -16,6 +16,7 @@ export const ProductPage = () => {
 
   const [item, setItem] = useState([])
   const [cantidadItem, setCantidadItem] = useState(1)
+  const [ pictureIndex, setPictureIndex] = useState(0)
 
   const getItem = async(productID) => {
     let url = `https://api.mercadolibre.com/items?ids=${itemForPage}`;
@@ -34,6 +35,8 @@ export const ProductPage = () => {
 
   useEffect(() => {
     getItem()
+    // Cada vez que se actualice el item, que se muestre la primera imagen.
+    setPictureIndex(0)
   }, [itemForPage])
 
   if (!item) return;
@@ -44,8 +47,12 @@ export const ProductPage = () => {
           <div className='small-pictures-container'>
             {
                 (!item.pictures) ? console.log('...cargando')
-                : item.pictures.slice(0, 8).map(img => (
-                    <div key={img.id} className='small-picture'>
+                : item.pictures.slice(0, 8).map((img, index) => (
+                    <div
+                      onMouseOver={() => setPictureIndex(index)}
+                      key={img.id} 
+                      className={(index === pictureIndex) ? `small-picture border-img` : `small-picture`}
+                    >
                       <img
                         src={img.secure_url}
                       />
@@ -57,7 +64,7 @@ export const ProductPage = () => {
           <div className='huge-picture-container'>
             {
               (!item.pictures) ? console.log('..cargando')
-                : <img src={ item.pictures[0].secure_url }/>  
+                : <img src={ item.pictures[pictureIndex].secure_url }/>  
             }
           </div>
           
@@ -128,8 +135,8 @@ export const ProductPage = () => {
                 <form className='quantity-items__greater'>
                   <label>Cantidad:</label>
                   <div className='quantity-inputs-container'>
-                    <input type='number' value='' />
-                    <input type='submit' value='Aplicar'/>
+                    <input type='number' value='' readOnly/>
+                    <input type='submit' value='Aplicar' readOnly/>
                   </div>
                 
                 </form>

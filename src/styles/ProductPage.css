@@ -47,7 +47,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
+
+/* clase para small picture active*/
+.border-img {
+    border: 2px solid var(--azul);
+}
+/* ++++++++++++++++++++++++++++++ */
 
 .small-picture img {
     max-width: 100%;
