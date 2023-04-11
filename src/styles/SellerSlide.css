@@ -78,11 +78,11 @@
 }
 
 .seller-slider .swiper-button-prev {
-    left: 3px !important;  
+    left: -17px !important;  
 }
 
 .seller-slider .swiper-button-next {
-    right: 20px !important;
+    right: -2px !important;
 }
 
 .seller-slide .swiper {
