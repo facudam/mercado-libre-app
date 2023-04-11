@@ -8,6 +8,7 @@ import { MainCharacteristics } from '../sections/MainCharacteristics';
 import { ProductDescriptionSection } from '../sections/ProductDescriptionSection';
 import { SellerReputation } from '../sections/SellerReputation';
 import { MeliContext } from '../contexts/meliContext';
+import { OpcionesDePago } from '../sections/OpcionesDePago';
 
 
 export const ProductPage = () => {
@@ -159,6 +160,7 @@ export const ProductPage = () => {
           
         </div>
         <SellerReputation sellerID={item.seller_id} />
+        <OpcionesDePago />
       </div>
     </section>
   )

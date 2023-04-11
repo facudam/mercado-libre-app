@@ -1,0 +1,39 @@
+
+.cuotas-container {
+    display: flex;
+    gap: 10px;
+    background-color: var(--verde);
+    border-radius: 5px;
+    color: #fff;
+    padding: 12px 20px;
+}
+
+.cuotas-container img {
+    width: 20px;
+    outline: 1px solid red;
+}
+
+.cuotas-container span {
+    font-size: 13px;
+    font-weight: 400;
+    color: #fff; 
+}
+
+.opciones-de-pago h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(0,0,0, .9);
+    margin-top: 24px;
+}
+
+.opciones-de-pago__tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.opciones-de-pago__anchor {
+    display: block;
+    margin-top: 24px;
+}

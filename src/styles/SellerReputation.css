@@ -27,7 +27,8 @@
 .p-container p:first-child {
     color: #00a650;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
+    text-transform: capitalize;
 }
 
 .p-container p:nth-child(2) {
