@@ -1,0 +1,76 @@
+.carrito-section {
+    width: 100%;
+    max-width: 1173px;
+    margin: auto;
+}
+
+.carrito-page {
+    width: 100%;
+    background-color: #fff;
+    margin: 30px 0 100px;
+    padding: 40px 64px;
+    box-shadow: 0 1px 2px 0 #737373;
+    border-radius: 3px;
+}
+
+.carrito-page ul {
+    list-style: none;
+    display: flex;
+    border-bottom: 1px solid rgba(0,0,0, .1);
+}
+
+.carrito-page-li {
+    padding: 0 64px 15px;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.carrito-page-li.active {
+    font-weight: 700;
+    color: var(--azul);
+    border-bottom: 2px solid var(--azul);
+}
+
+.carrito-page__info {
+    padding: 64px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.carrito-page__info span {
+    display: block;
+    text-align: center;
+}
+
+.carrito-page__info span:first-child {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+}
+
+.carrito-page__info span:nth-child(2) {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0,0,0, .55);
+}
+
+.carrito-page__info button {
+    width: 180px;
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 18px 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--azul);
+    color: #fff;
+    transition: .5s all ease;
+}
+
+.carrito-page__info button:hover {
+    background-color: #1764d6;
+    cursor: pointer;
+}

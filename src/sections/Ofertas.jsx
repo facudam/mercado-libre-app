@@ -12,12 +12,12 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 
-export const Ofertas = () => {
+export const Ofertas = ({ titulo, paraBuscar }) => {
 
     const { productosEnOferta, setProductosEnOferta } = useContext(MeliContext)
 
     const getInfoProducts = async() => {
-          const listaProductos = await getProducts('electrodomesticos');
+          const listaProductos = await getProducts(paraBuscar);
           setProductosEnOferta(listaProductos.results)         
         }
 
@@ -31,7 +31,7 @@ export const Ofertas = () => {
     <section className="ofertas_section">
 
         <div className="ofertas-title">
-            <h2 className="ofertas-title__h2">Ofertas</h2>
+            <h2 className="ofertas-title__h2">{ titulo }</h2>
             <a className="ofertas-title__anchor" href="">Ver todas</a>
         </div>
         

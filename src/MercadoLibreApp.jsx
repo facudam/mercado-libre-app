@@ -6,6 +6,7 @@ import { SearchResultsPage } from './routes/SearchResultsPage'
 import { useContext } from 'react'
 import { MeliContext } from './contexts/meliContext'
 import { ProductPage } from './routes/ProductPage'
+import { CarritoPage } from './routes/CarritoPage'
 
 export const MercadoLibreApp = () => {
 
@@ -20,6 +21,8 @@ export const MercadoLibreApp = () => {
         <Route path='/search/:product' element={ <SearchResultsPage />} />
 
         <Route path='/item/:item/:item' element={ <ProductPage /> } />
+
+        <Route path='/gz/cart/v2' element={ <CarritoPage />} />
 
         {/* En caso de que el usuario escriba una url inexistente lo enviamos a la url principal: */}
         <Route path='/*' element={ <Navigate to='/' /> } />
