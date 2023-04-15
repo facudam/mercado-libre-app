@@ -15,11 +15,9 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export const Nav = () => {
 
-    const { menuActive, setNavIsHover, setProductToBuy, setCurrentPage, showPaginationButtons, setItemSearched } = useContext(MeliContext)
+    const { menuActive, setNavIsHover, setProductToBuy, setCurrentPage, showPaginationButtons, setItemSearched, carritoState } = useContext(MeliContext)
     const [itemAbuscar, setItemAbuscar] = useState('')
     const navigate = useNavigate()
-
-
 
     const changeInputValue = (e) => {
         setItemAbuscar(e.target.value)
@@ -156,7 +154,12 @@ export const Nav = () => {
                         <li><a href=''>Creá tu cuenta</a></li>
                         <li><a href=''>Ingresá</a></li>
                         <li><a href=''>Mis compras</a></li>
-                        <li><img className='carrito-img' src={ carrito } alt='carrito de compras'/></li>
+                        <li className='relative-position'>
+                            <img className='carrito-img' src={ carrito } alt='carrito de compras'/>
+                            {
+                                (carritoState.length > 0 ) && <div className='cant-products-cart'>{ carritoState.length }</div>
+                            }
+                        </li>
                     </ul>
                 </nav>
             </div>

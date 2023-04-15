@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useState, useReducer } from "react"
 import { MeliContext } from "./meliContext"
+import { carritoActions } from "../actions/carritoActions"
 export const ContextProvider = ({children}) => {
 
     const [ menuActive, setMenuActive ] = useState(false)
@@ -23,6 +24,45 @@ export const ContextProvider = ({children}) => {
 
     const [itemForPage, setItemForPage] = useState('MLA612037339')
     const [itemNameForPage, setItemNameForPage] = useState('')
+
+  /* ++++++++++++ UseReducer código +++++++++++ */
+
+    const initialState = []
+
+    const carritoReducer = (carritoState, action) => {
+      switch (action.type) {
+        case carritoActions.ADD_PRODUCT: {
+          const nuevoProducto = action.payload;
+          return [...carritoState, nuevoProducto]
+        }
+        case carritoActions.DELETE_PRODUCT: {
+          console.log(action.payload)
+        }
+        default:
+          return carritoState
+      }
+    }
+
+    const addProductToCart = (producto) => {
+      const infoProduct = producto;
+      dispatch({
+        type: carritoActions.ADD_PRODUCT,
+        payload: infoProduct
+      })
+      
+    }
+
+    const deleteProductFromCart = (producto) => {
+      dispatch({
+        type: carritoActions.DELETE_PRODUCT,
+        payload: producto.id
+      })
+    }
+
+    const [ carritoState, dispatch ] = useReducer(carritoReducer, initialState);
+
+  /* +++++++++++++++++++++++++++++++++++++++++ */
+
 
     const showPaginationButtons = () => {
         const anterior = document.querySelector('.anterior'),
@@ -72,7 +112,9 @@ export const ContextProvider = ({children}) => {
             setItemForPage,
             itemNameForPage, 
             setItemNameForPage,
-            changeItemPageValues
+            changeItemPageValues,
+            carritoState,
+            addProductToCart
         }}>{ children }</MeliContext.Provider>
     )
 }

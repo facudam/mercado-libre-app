@@ -13,7 +13,7 @@ import { OpcionesDePago } from '../sections/OpcionesDePago';
 
 export const ProductPage = () => {
 
-  const { itemForPage } = useContext(MeliContext)
+  const { itemForPage, carritoState, addProductToCart } = useContext(MeliContext)
 
   const [item, setItem] = useState([])
   const [cantidadItem, setCantidadItem] = useState(1)
@@ -31,7 +31,7 @@ export const ProductPage = () => {
     const quantityItemsContainer = document.querySelector('.quantity-items')
     icon.classList.toggle('rotate')
     quantityItemsContainer.classList.toggle('flexing')
-    
+   
   }
 
   useEffect(() => {
@@ -147,7 +147,11 @@ export const ProductPage = () => {
           </div>
           <div className='buy-btn-container'>
             <button>Comprar ahora</button>
-            <button>Agregar al carrito</button>
+            <button
+              onClick={() => addProductToCart(item)}
+            >
+              Agregar al carrito
+            </button>
           </div>
           <div className='footer-buy-info'>
             <FontAwesomeIcon icon={ faShieldHalved } className='footer-icon' />
