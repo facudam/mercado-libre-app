@@ -239,6 +239,7 @@
 
 .relative-position {
     position: relative;
+    height: 25px;
 }
 .carrito-img {
     width: 25px;

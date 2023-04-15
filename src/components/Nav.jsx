@@ -95,7 +95,7 @@ export const Nav = () => {
             </div>
             
             <div className='propaganda'>
-                <a href=''><img src='https://http2.mlstatic.com/D_NQ_887100-MLA50801817839_072022-OO.webp' alt='promo-disney' /></a>
+                <a><img src='https://http2.mlstatic.com/D_NQ_887100-MLA50801817839_072022-OO.webp' alt='promo-disney' /></a>
             </div>
         </div>
 
@@ -113,36 +113,36 @@ export const Nav = () => {
                         <ul>
                             <li className='li-img' id='li-img'><span>Categorías</span><img src={ row_down } alt='row down' />
                                 <ul className='menu-desplegable'>
-                                    <li><a className='h-ref' href=''>Vehiculos</a></li>
-                                    <li><a className='h-ref' href=''>Inmuebles</a></li>
-                                    <li><a className='h-ref' href=''>Supermercado</a></li>
-                                    <li><a className='h-ref' href=''>Tecnología</a></li>
-                                    <li><a className='h-ref' href=''>Hogar y Muebles</a></li>
-                                    <li><a className='h-ref' href=''>Electrodomésticos</a></li>
-                                    <li><a className='h-ref' href=''>Herramientas</a></li>
-                                    <li><a className='h-ref' href=''>Construcción</a></li>
-                                    <li><a className='h-ref' href=''>Deportes y Fitness</a></li>
-                                    <li><a className='h-ref' href=''>Accesorios para Vehículos</a></li>
-                                    <li><a className='h-ref' href=''>Moda</a></li>
-                                    <li><a className='h-ref' href=''>Juegos y Juguetes</a></li>
-                                    <li><a className='h-ref' href=''>Bebés</a></li>
-                                    <li><a className='h-ref' href=''>Belleza y Cuidado Personal</a></li>
-                                    <li><a className='h-ref' href=''>Salud y Equipamiento Médico</a></li>
-                                    <li><a className='h-ref' href=''>Industrias y Oficinas</a></li>
-                                    <li><a className='h-ref' href=''>Agro</a></li>
-                                    <li><a className='h-ref' href=''>Productos sustentables</a></li>
-                                    <li><a className='h-ref' href=''>Servicios</a></li>
-                                    <li><a className='h-ref' href=''>Más vendidos</a></li>
-                                    <li><a className='h-ref' href=''>Tiendas oficiales</a></li>
-                                    <li><a className='h-ref' href=''>Ver más categorías</a></li>
+                                    <li><a className='h-ref' >Vehiculos</a></li>
+                                    <li><a className='h-ref' >Inmuebles</a></li>
+                                    <li><a className='h-ref' >Supermercado</a></li>
+                                    <li><a className='h-ref' >Tecnología</a></li>
+                                    <li><a className='h-ref' >Hogar y Muebles</a></li>
+                                    <li><a className='h-ref' >Electrodomésticos</a></li>
+                                    <li><a className='h-ref' >Herramientas</a></li>
+                                    <li><a className='h-ref' >Construcción</a></li>
+                                    <li><a className='h-ref' >Deportes y Fitness</a></li>
+                                    <li><a className='h-ref' >Accesorios para Vehículos</a></li>
+                                    <li><a className='h-ref' >Moda</a></li>
+                                    <li><a className='h-ref' >Juegos y Juguetes</a></li>
+                                    <li><a className='h-ref' >Bebés</a></li>
+                                    <li><a className='h-ref' >Belleza y Cuidado Personal</a></li>
+                                    <li><a className='h-ref' >Salud y Equipamiento Médico</a></li>
+                                    <li><a className='h-ref' >Industrias y Oficinas</a></li>
+                                    <li><a className='h-ref' >Agro</a></li>
+                                    <li><a className='h-ref' >Productos sustentables</a></li>
+                                    <li><a className='h-ref' >Servicios</a></li>
+                                    <li><a className='h-ref' >Más vendidos</a></li>
+                                    <li><a className='h-ref' >Tiendas oficiales</a></li>
+                                    <li><a className='h-ref' >Ver más categorías</a></li>
                                 </ul>   
                             </li>
-                            <li><a href=''>Ofertas</a></li>
-                            <li><a href=''>Historial</a></li>
-                            <li><a href=''>Supermercado</a></li>
-                            <li><a href=''>Moda</a></li>
-                            <li><a href=''>Vender</a></li>
-                            <li><a href=''>Ayuda</a></li>
+                            <li><a >Ofertas</a></li>
+                            <li><a >Historial</a></li>
+                            <li><a >Supermercado</a></li>
+                            <li><a >Moda</a></li>
+                            <li><a >Vender</a></li>
+                            <li><a >Ayuda</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -151,11 +151,13 @@ export const Nav = () => {
             <div className='nav__top-second'>
                 <nav className='nav-item-container'>
                     <ul id='login-nav'>
-                        <li><a href=''>Creá tu cuenta</a></li>
-                        <li><a href=''>Ingresá</a></li>
-                        <li><a href=''>Mis compras</a></li>
+                        <li><a>Creá tu cuenta</a></li>
+                        <li><a>Ingresá</a></li>
+                        <li><a>Mis compras</a></li>
                         <li className='relative-position'>
-                            <img className='carrito-img' src={ carrito } alt='carrito de compras'/>
+                            <Link to="/gz/cart/v2">
+                                <img className='carrito-img' src={ carrito } alt='carrito de compras'/>
+                            </Link>
                             {
                                 (carritoState.length > 0 ) && <div className='cant-products-cart'>{ carritoState.length }</div>
                             }
