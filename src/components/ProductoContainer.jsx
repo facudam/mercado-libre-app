@@ -25,9 +25,9 @@ export const ProductoContainer = ({ id, img, title, price, descuento, cuotas, en
       to={`/item/${id}/${itemNameForPage}`} 
       onMouseOver={() => changeItemPageValues(id, title)}
       >
-        <div className="img-container">
+        <div id="img-container">
           <div className="img-container__heart"><img id="img-container__heart-img" src={ corazon } alt='corazon svg'/></div>
-          <img className="product-image" src={ urlImage } alt={`imagen del producto ${ title }`}  />
+          <img id="product-image" src={ urlImage } alt={`imagen del producto ${ title }`}  />
         </div>
         <div className="separator-line"></div>
         <div className="info-container">

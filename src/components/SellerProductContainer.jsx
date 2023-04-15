@@ -27,7 +27,7 @@ export const SellerProductContainer = ({ id, title, price }) => {
         onClick={() => changeItemPageValues(id, title)}
     >
         <div className='item-box__img-container'>
-            <img src={ srcImage } alt={ title } />
+            <img id='item-box-img' src={ srcImage } alt={ title } />
         </div>
         <div className='item-box__info'>
             <span>$ { price }</span>
