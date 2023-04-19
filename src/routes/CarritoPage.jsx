@@ -2,10 +2,12 @@ import { useContext } from "react"
 import { MeliContext } from "../contexts/meliContext"
 import '../styles/CarritoPage.css'
 import { Ofertas } from "../sections/Ofertas"
+import { ProductInCart } from "../components/ProductInCart"
 
 export const CarritoPage = () => {
 
     const { carritoState } = useContext(MeliContext)
+
     return(
         <section className="carrito-section">
           <main className="carrito-page">
@@ -22,9 +24,26 @@ export const CarritoPage = () => {
                             <button>Descubrir ofertas</button>
                           </div>
 
-                        : <p>Hola</p>
+                        : 
+                            carritoState.map(item => (
+                              <ProductInCart
+                                key={item.id}
+                                imgUrl={item.secure_thumbnail} 
+                                title={item.title}
+                                attributes={item.attributes}
+                                price={item.price}
+                              />
+                            ))
+                          
                 }       
                 
+            </div>
+            <div>
+              <span>Total con envío</span>
+              <span>$ 20000</span>
+            </div>
+            <div>
+              <button>Continuar compra</button>
             </div>
           </main>
 
