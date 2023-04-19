@@ -38,11 +38,11 @@ export const CarritoPage = () => {
                 }       
                 
             </div>
-            <div>
+            <div className="total-price">
               <span>Total con envío</span>
               <span>$ 20000</span>
             </div>
-            <div>
+            <div className="total-pay-button">
               <button>Continuar compra</button>
             </div>
           </main>

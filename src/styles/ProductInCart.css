@@ -26,7 +26,7 @@
 }
 
 .item-info__main {
-    max-width: 513px;
+    width: 513px;
     display: flex;
     flex-direction: column;
     gap: 15px;
