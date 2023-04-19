@@ -38,13 +38,19 @@ export const CarritoPage = () => {
                 }       
                 
             </div>
-            <div className="total-price">
-              <span>Total con envío</span>
-              <span>$ 20000</span>
-            </div>
-            <div className="total-pay-button">
-              <button>Continuar compra</button>
-            </div>
+            {
+              (carritoState.length > 0) &&
+              <>
+                <div className="total-price">
+                  <span>Total con envío</span>
+                  <span>$ 20000</span>
+                </div>
+                <div className="total-pay-button">
+                  <button>Continuar compra</button>
+                </div>
+              </> 
+            }
+            
           </main>
 
           <Ofertas titulo='Productos que te pueden interesar' paraBuscar='ropa invierno' />
