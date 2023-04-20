@@ -85,14 +85,18 @@ export const ProductPage = () => {
             <h1>{ item.title }</h1>
             <img src={ heart } />
           </div>
-          <div className='stars'>
-            <FontAwesomeIcon icon={ faStar } className='star'/>
-            <FontAwesomeIcon icon={ faStar } className='star'/>
-            <FontAwesomeIcon icon={ faStar } className='star'/>
-            <FontAwesomeIcon icon={ faStar } className='star'/>
-            <FontAwesomeIcon icon={ faStarHalf } className='star'/>
-            <span>({ item.sold_quantity })</span>
-          </div>
+          {
+            (item.sold_quantity > 0) &&
+            <div className='stars'>
+              <FontAwesomeIcon icon={ faStar } className='star'/>
+              <FontAwesomeIcon icon={ faStar } className='star'/>
+              <FontAwesomeIcon icon={ faStar } className='star'/>
+              <FontAwesomeIcon icon={ faStar } className='star'/>
+              <FontAwesomeIcon icon={ faStarHalf } className='star'/>
+              <span>({ item.sold_quantity })</span>
+            </div>
+          }
+          
           <div className='pago-container'>
             <span>$ { item.price }</span>
             <span>en 6x $ { item.price / 5 }</span>
@@ -101,7 +105,7 @@ export const ProductPage = () => {
           <div className='entrega-container'>
             <FontAwesomeIcon icon={ faTruckFast } className='entrega-icon'/>
             <div>
-              <span>Llega en 48hs por $ 1.050</span>
+              <span>Llega gratis en 48hs</span>
               <span>Beneficio mercado puntos</span>
               <a>Ver más formas de entrega</a>
             </div> 

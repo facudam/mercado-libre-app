@@ -76,10 +76,8 @@ export const ContextProvider = ({children}) => {
           siguiente = document.querySelector('.siguiente');
         if (currentPage === 1) {
           anterior.style.setProperty('display', 'none')
-          // siguiente.style.setProperty('display', 'flex')
         } 
         else if (currentPage >= maxPage) {
-          // anterior.style.setProperty('display', 'flex')
           siguiente.style.setProperty('display', 'none')
         } 
         else {

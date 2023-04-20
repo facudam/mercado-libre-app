@@ -20,7 +20,7 @@ export const SellerReputation = ({ sellerID }) => {
         getSellerInfo()
     }, [ reputation, sellerID ])
 
-  if (!reputation) console.log('..cargando informacion')
+  if (reputation.power_seller_status == null) return
   return (
     <section className="buying-info">
         <h2 className='reputation-h2'>Información sobre el vendedor</h2>
