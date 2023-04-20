@@ -1,0 +1,79 @@
+.preguntas-respuestas {
+    margin: 55px 10px 25px 74px;
+    overflow: hidden;
+    max-width: 700px;
+    margin-bottom: 60px;
+}
+
+.preguntas-respuestas h2 {
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(0,0,0, .9);
+}
+
+.preguntas-respuestas p {
+    font-size: 18px;
+    color: rgba(0,0,0, .9);
+    font-weight: 600;
+    margin: 30px 0 20px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tags span {
+    padding: 5px 12px;
+    background-color: rgb(227, 237, 251);
+    color: var(--azul);
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-ask {
+    margin-top: 35px;
+}
+
+.form-ask h3 {
+    font-size: 18px;
+    color: rgba(0,0,0, .9);
+    font-weight: 600;
+}
+
+.form-ask form {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+.form-ask form input[type=text] {
+   width: calc(100% - 131px); 
+   padding-left: 15px;
+   border: 1px solid rgba(0,0,0, .1);
+   border-radius: 5px;
+}
+
+.form-ask form input[type=text]::placeholder {
+    font-size: 16px;
+    color: rgba(0,0,0, .3);
+}
+
+.form-ask form input[type=text]:focus {
+    outline-color: var(--azul);
+}
+
+.form-ask form input[type=submit] {
+    background-color: var(--azul);
+    padding: 12px 35px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+}

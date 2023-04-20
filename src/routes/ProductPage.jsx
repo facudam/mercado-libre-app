@@ -9,6 +9,7 @@ import { ProductDescriptionSection } from '../sections/ProductDescriptionSection
 import { SellerReputation } from '../sections/SellerReputation';
 import { MeliContext } from '../contexts/meliContext';
 import { OpcionesDePago } from '../sections/OpcionesDePago';
+import { PreguntasYRespuestas } from '../sections/PreguntasYRespuestas';
 
 
 export const ProductPage = () => {
@@ -73,6 +74,7 @@ export const ProductPage = () => {
         <SellerSlide id={ item.seller_id } />
         <MainCharacteristics caracteristicas={ item } />
         <ProductDescriptionSection id={item.id} />
+        <PreguntasYRespuestas />
       </div>
 
   
