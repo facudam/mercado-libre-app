@@ -8,11 +8,8 @@ import { MeliContext } from '../contexts/meliContext';
 export const SearchProductsSection = ({ results }) => {
 
   const MAX_ITEMS = 20;
-  const { currentPage, setCurrentPage } = useContext(MeliContext)
+  const { currentPage, setCurrentPage, getMaxPages } = useContext(MeliContext)
  
-
-
-  const MAX_PAGES = Math.round(results.length / MAX_ITEMS);
 
   const handleNext = () => { 
     setCurrentPage(currentPage + 1)
@@ -38,11 +35,18 @@ export const SearchProductsSection = ({ results }) => {
         ))
       }
 
-      <PaginationComponent 
-        MAX_PAGES={ MAX_PAGES } 
-        anterior={handleBefore}
-        siguiente={handleNext}
-      />
+      {
+        //En caso que no haya más de una página, que no se renderice:
+        (currentPage === 1 && getMaxPages(results) == 1) 
+          ? null
+          : <PaginationComponent 
+              MAX_PAGES={ getMaxPages(results) } 
+              anterior={handleBefore}
+              siguiente={handleNext}
+            />
+      }
+
+      
       
     </div>
   )

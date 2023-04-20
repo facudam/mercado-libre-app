@@ -63,16 +63,23 @@ export const ContextProvider = ({children}) => {
 
   /* +++++++++++++++++++++++++++++++++++++++++ */
 
+    const getMaxPages = (results) => {
+      const MAX_ITEMS = 20;
+      const MAX_PAGES = Math.round(results.length / MAX_ITEMS);
+      console.log(MAX_PAGES)
 
-    const showPaginationButtons = () => {
+      return MAX_PAGES
+    }
+
+    const showPaginationButtons = (maxPage) => {
         const anterior = document.querySelector('.anterior'),
           siguiente = document.querySelector('.siguiente');
         if (currentPage === 1) {
           anterior.style.setProperty('display', 'none')
-          siguiente.style.setProperty('display', 'flex')
+          // siguiente.style.setProperty('display', 'flex')
         } 
-        else if (currentPage === 3) {
-          anterior.style.setProperty('display', 'flex')
+        else if (currentPage >= maxPage) {
+          // anterior.style.setProperty('display', 'flex')
           siguiente.style.setProperty('display', 'none')
         } 
         else {
@@ -86,6 +93,8 @@ export const ContextProvider = ({children}) => {
         let productName = title.replace(/\//g, "");
         setItemNameForPage(productName)
       }
+
+    
 
     return(
         <MeliContext.Provider value={{
@@ -114,7 +123,8 @@ export const ContextProvider = ({children}) => {
             setItemNameForPage,
             changeItemPageValues,
             carritoState,
-            addProductToCart
+            addProductToCart,
+            getMaxPages
         }}>{ children }</MeliContext.Provider>
     )
 }

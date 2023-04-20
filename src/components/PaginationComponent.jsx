@@ -9,7 +9,7 @@ export const PaginationComponent = ({ MAX_PAGES, anterior, siguiente }) => {
 
 
   useEffect(() => {
-    showPaginationButtons()
+    showPaginationButtons(MAX_PAGES)
   }, [ currentPage ])
 
   return (
