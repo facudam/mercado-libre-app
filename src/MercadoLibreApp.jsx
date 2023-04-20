@@ -3,12 +3,20 @@ import { Nav } from './components/Nav'
 import { NavHoverModal } from './modals/navHoverModal'
 import { MainRoute } from './routes/MainRoute'
 import { SearchResultsPage } from './routes/SearchResultsPage'
-import { useContext } from 'react'
-import { MeliContext } from './contexts/meliContext'
 import { ProductPage } from './routes/ProductPage'
 import { CarritoPage } from './routes/CarritoPage'
+import { useLocation } from "react-router-dom";
+import { useEffect } from 'react'
+
 
 export const MercadoLibreApp = () => {
+
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    //Nos aseguramos que cada vez que haya un cambio de ruta, vayamos al top de la pagina.
+    window.scrollTo(0,0)
+  }, [pathname])
 
   return (
     <>
