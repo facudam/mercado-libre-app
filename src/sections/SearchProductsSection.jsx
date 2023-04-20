@@ -5,6 +5,7 @@ import { PaginationComponent } from '../components/PaginationComponent';
 import { MeliContext } from '../contexts/meliContext';
 
 
+
 export const SearchProductsSection = ({ results }) => {
 
   const MAX_ITEMS = 20;
@@ -12,10 +13,12 @@ export const SearchProductsSection = ({ results }) => {
  
 
   const handleNext = () => { 
+    window.scrollTo(0,0)
     setCurrentPage(currentPage + 1)
   }
 
   const handleBefore = () => {
+    window.scrollTo(0,0)
     setCurrentPage(currentPage - 1)
   }
 
@@ -44,10 +47,7 @@ export const SearchProductsSection = ({ results }) => {
               anterior={handleBefore}
               siguiente={handleNext}
             />
-      }
-
-      
-      
+      } 
     </div>
   )
 }
