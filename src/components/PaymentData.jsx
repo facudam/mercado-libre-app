@@ -8,7 +8,7 @@ export const PaymentData = ({ img, paymentTitle, paymentSubtitle, link }) => {
         </div>
         <div className="payment-data__titles">
             <div className='payment-title'>{ paymentTitle }</div>
-            <div className='payment-subtitle'><a href={ link }>{ paymentSubtitle }</a></div>
+            <div className='payment-subtitle'><a>{ paymentSubtitle }</a></div>
         </div>
     </div>
   )
