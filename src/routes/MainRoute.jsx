@@ -8,8 +8,17 @@ import { SuscripcionNivel } from '../sections/SuscripcionNivel'
 import { TiendasSection } from '../sections/TiendasSection'
 import { Footer } from '../components/Footer'
 import { CookiesModal } from '../modals/CookiesModal'
+import { useContext, useEffect } from 'react'
+import { MeliContext } from '../contexts/meliContext'
 
 export const MainRoute = () => {
+
+  const { setLastProductAdded } = useContext(MeliContext)
+
+  useEffect(() => {
+    //Reiniciamos lastProductAdded a vacio.
+    setLastProductAdded([])
+  }, [])
   
   return (
     <>

@@ -20,7 +20,7 @@
 
 .main-info__imgs {
     position: relative;
-    width: 60px;
+    min-width: 60px;
     height: 60px;
     border-radius: 50%;
     outline: 2px solid var(--background);

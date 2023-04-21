@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { MeliContext } from "../contexts/meliContext"
 import '../styles/CarritoPage.css'
 import { Ofertas } from "../sections/Ofertas"
@@ -6,7 +6,11 @@ import { ProductInCart } from "../components/ProductInCart"
 
 export const CarritoPage = () => {
 
-    const { carritoState } = useContext(MeliContext)
+    const { carritoState,setLastProductAdded } = useContext(MeliContext)
+
+    useEffect(() => {
+      setLastProductAdded([])
+    }, [])
 
     return(
         <section className="carrito-section">

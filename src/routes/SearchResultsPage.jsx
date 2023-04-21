@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { SearchBanner } from '../components/SearchBanner'
 import { MeliContext } from '../contexts/meliContext'
 import { getProducts } from '../helpers/getProducts'
@@ -9,7 +9,7 @@ import { SimpleLoader } from '../loaders/SimpleLoader'
 
 export const SearchResultsPage = () => {
 
-  const { itemSearched, setItemSearched, productToBuy } = useContext(MeliContext)
+  const { itemSearched, setItemSearched, productToBuy, setLastProductAdded } = useContext(MeliContext)
 
   useEffect(() => {
     document.querySelector('body').style.backgroundColor = "rgb(237, 237, 237)"
@@ -23,6 +23,7 @@ export const SearchResultsPage = () => {
   
   useEffect(() => {
     getItemSearched()
+    setLastProductAdded([])
   }, [ productToBuy ])
 
   const { query, paging, available_filters, results } = itemSearched

@@ -15,8 +15,7 @@ import { ProductAdded } from '../components/ProductAdded';
 
 export const ProductPage = () => {
 
-  const { itemForPage, addProductToCart, lastProductAdded } = useContext(MeliContext)
-  const {id, url, title} = lastProductAdded[0]
+  const { itemForPage, addProductToCart, lastProductAdded, setLastProductAdded } = useContext(MeliContext)
 
   const [item, setItem] = useState([])
   const [cantidadItem, setCantidadItem] = useState(1)
@@ -37,7 +36,14 @@ export const ProductPage = () => {
    
   }
 
+  const addToCartAndToLasProductAdded = () => {
+    addProductToCart(item)
+    setLastProductAdded([item])
+    
+  }
+console.log(lastProductAdded)
   useEffect(() => {
+    setLastProductAdded([])
     getItem()
     // Cada vez que se actualice el item, que se muestre la primera imagen.
     setPictureIndex(0)
@@ -48,7 +54,7 @@ export const ProductPage = () => {
    <>
     {
       (lastProductAdded.length > 0) &&
-        <ProductAdded img={url} title={title} />
+        <ProductAdded img={lastProductAdded[0].thumbnail} title={lastProductAdded[0].title}  />
     }
     
     <section className="product-page">
@@ -162,7 +168,7 @@ export const ProductPage = () => {
           <div className='buy-btn-container'>
             <button>Comprar ahora</button>
             <button
-              onClick={() => addProductToCart(item)}
+              onClick={addToCartAndToLasProductAdded}
             >
               Agregar al carrito
             </button>
