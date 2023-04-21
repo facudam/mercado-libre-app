@@ -22,8 +22,10 @@ export const ContextProvider = ({children}) => {
 
     const [ currentPage, setCurrentPage ] = useState(1)
 
-    const [itemForPage, setItemForPage] = useState('MLA612037339')
-    const [itemNameForPage, setItemNameForPage] = useState('')
+    const [ itemForPage, setItemForPage ] = useState('MLA612037339')
+    const [ itemNameForPage, setItemNameForPage ] = useState('')
+
+    const [ lastProductAdded, setLastProductAdded ] = useState([{id: '12323232', url:'https://http2.mlstatic.com/D_912561-MLA44936388693_022021-I.jpg', title: 'Silla De Caño Palmeta Reforzada - Con Tarjeta - Promociones!'}])
 
   /* ++++++++++++ UseReducer código +++++++++++ */
 
@@ -122,7 +124,9 @@ export const ContextProvider = ({children}) => {
             changeItemPageValues,
             carritoState,
             addProductToCart,
-            getMaxPages
+            getMaxPages,
+            lastProductAdded, 
+            setLastProductAdded
         }}>{ children }</MeliContext.Provider>
     )
 }

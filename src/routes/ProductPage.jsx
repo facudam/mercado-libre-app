@@ -10,17 +10,19 @@ import { SellerReputation } from '../sections/SellerReputation';
 import { MeliContext } from '../contexts/meliContext';
 import { OpcionesDePago } from '../sections/OpcionesDePago';
 import { PreguntasYRespuestas } from '../sections/PreguntasYRespuestas';
+import { ProductAdded } from '../components/ProductAdded';
 
 
 export const ProductPage = () => {
 
-  const { itemForPage, carritoState, addProductToCart } = useContext(MeliContext)
+  const { itemForPage, addProductToCart, lastProductAdded } = useContext(MeliContext)
+  const {id, url, title} = lastProductAdded[0]
 
   const [item, setItem] = useState([])
   const [cantidadItem, setCantidadItem] = useState(1)
   const [ pictureIndex, setPictureIndex] = useState(0)
 
-  const getItem = async(productID) => {
+  const getItem = async() => {
     let url = `https://api.mercadolibre.com/items?ids=${itemForPage}`;
     const resp = await fetch(url);
     const resultado = await resp.json();
@@ -43,6 +45,12 @@ export const ProductPage = () => {
 
   if (!item) return;
   return (
+   <>
+    {
+      (lastProductAdded.length > 0) &&
+        <ProductAdded img={url} title={title} />
+    }
+    
     <section className="product-page">
       <div className={`f-direction`}>
         <div className='product-main-info'>
@@ -173,5 +181,6 @@ export const ProductPage = () => {
         <OpcionesDePago />
       </div>
     </section>
+   </>
   )
 }

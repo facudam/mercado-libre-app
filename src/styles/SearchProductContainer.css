@@ -38,11 +38,11 @@
 
 .product-information span:nth-child(3) {
     font-size: 14px;
-    font-weight: 700;
-    background-color: #00a650;
+    font-weight: 600;
+    color: #00a650;
     width: 85px;
     text-align: center;
-    color: #fff;
+   
     border-radius: 3px;
 }
 
