@@ -3,10 +3,13 @@ import { MeliContext } from "../contexts/meliContext"
 import '../styles/CarritoPage.css'
 import { Ofertas } from "../sections/Ofertas"
 import { ProductInCart } from "../components/ProductInCart"
+import { convertToCurrencyFormat } from "../helpers/convertToCurrencyFormat"
 
 export const CarritoPage = () => {
 
-    const { carritoState,setLastProductAdded } = useContext(MeliContext)
+    const { carritoState,setLastProductAdded, getTotalPriceFromCart } = useContext(MeliContext)
+
+    let pago = convertToCurrencyFormat(getTotalPriceFromCart()) 
 
     useEffect(() => {
       setLastProductAdded([])
@@ -47,7 +50,7 @@ export const CarritoPage = () => {
               <>
                 <div className="total-price">
                   <span>Total con envío</span>
-                  <span>$ 20000</span>
+                  <span>{ pago }</span>
                 </div>
                 <div className="total-pay-button">
                   <button>Continuar compra</button>

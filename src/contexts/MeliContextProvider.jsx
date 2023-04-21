@@ -65,6 +65,14 @@ export const ContextProvider = ({children}) => {
 
   /* +++++++++++++++++++++++++++++++++++++++++ */
 
+    let totalPrice = 0;
+    const getTotalPriceFromCart = () => {
+      const totalPrice = carritoState.reduce((accumulator, currentItem) => {
+        return accumulator + currentItem.price;
+      }, 0);
+      return Math.round(totalPrice)
+    }
+
     const getMaxPages = (results) => {
       const MAX_ITEMS = 20;
       const MAX_PAGES = Math.round(results.length / MAX_ITEMS);
@@ -126,7 +134,8 @@ export const ContextProvider = ({children}) => {
             addProductToCart,
             getMaxPages,
             lastProductAdded, 
-            setLastProductAdded
+            setLastProductAdded,
+            getTotalPriceFromCart
         }}>{ children }</MeliContext.Provider>
     )
 }

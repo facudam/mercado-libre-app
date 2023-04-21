@@ -4,6 +4,7 @@ import corazon from '../images/corazon.png'
 import '../styles/ProductoContainer.css'
 import { Link } from "react-router-dom";
 import { MeliContext } from "../contexts/meliContext";
+import { convertToCurrencyFormat } from "../helpers/convertToCurrencyFormat";
 
 export const ProductoContainer = ({ id, img, title, price, descuento, cuotas, envio, precioCuota }) => {
 
@@ -32,10 +33,10 @@ export const ProductoContainer = ({ id, img, title, price, descuento, cuotas, en
         <div className="separator-line"></div>
         <div className="info-container">
             <div className="full-price">
-                <span>$ { price }</span>
+                <span>{ convertToCurrencyFormat(price) }</span>
                 <span>{ descuento }</span>
             </div>
-            <span>{ `En ${cuotas} cuotas de $${precioCuota}`  }</span>
+            <span>{ `En ${cuotas} cuotas de ${precioCuota}`  }</span>
             <span>{ envio }</span>
             <span>{ title }</span>
         </div>

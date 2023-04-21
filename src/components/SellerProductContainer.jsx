@@ -3,6 +3,7 @@ import { getProductImages } from '../helpers/getProductImages';
 import { Link } from "react-router-dom";
 import '../styles/SellerSlide.css'
 import { MeliContext } from '../contexts/meliContext';
+import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
 
 export const SellerProductContainer = ({ id, title, price }) => {
 
@@ -30,7 +31,7 @@ export const SellerProductContainer = ({ id, title, price }) => {
             <img id='item-box-img' src={ srcImage } alt={ title } />
         </div>
         <div className='item-box__info'>
-            <span>$ { price }</span>
+            <span>{ convertToCurrencyFormat(price) }</span>
             <span>{ title }</span>
         </div>
                         

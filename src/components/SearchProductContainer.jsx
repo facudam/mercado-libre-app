@@ -3,6 +3,7 @@ import '../styles/SearchProductContainer.css'
 import { getProductImages } from '../helpers/getProductImages'
 import { Link } from "react-router-dom";
 import { MeliContext } from '../contexts/meliContext';
+import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
 
 
 export const SearchProductContainer = ({ identifier, img, name, price }) => {
@@ -31,7 +32,7 @@ export const SearchProductContainer = ({ identifier, img, name, price }) => {
         </div>
         <div className="product-information">
             <h2>{ name }</h2>
-            <span>$ { price }</span>
+            <span> { convertToCurrencyFormat(price) }</span>
             <span>Envío gratis</span>
         </div>
         <div className='seleccionar-producto'>

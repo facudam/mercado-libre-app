@@ -11,6 +11,7 @@ import { MeliContext } from '../contexts/meliContext';
 import { OpcionesDePago } from '../sections/OpcionesDePago';
 import { PreguntasYRespuestas } from '../sections/PreguntasYRespuestas';
 import { ProductAdded } from '../components/ProductAdded';
+import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
 
 
 export const ProductPage = () => {
@@ -41,7 +42,7 @@ export const ProductPage = () => {
     setLastProductAdded([item])
     
   }
-console.log(lastProductAdded)
+
   useEffect(() => {
     setLastProductAdded([])
     getItem()
@@ -114,8 +115,8 @@ console.log(lastProductAdded)
           }
           
           <div className='pago-container'>
-            <span>$ { item.price }</span>
-            <span>en 6x $ { item.price / 5 }</span>
+            <span>{ convertToCurrencyFormat(item.price)  }</span>
+            <span>en 6x { convertToCurrencyFormat(item.price / 5)  }</span>
             <a>Ver los medios de pago</a>
           </div>
           <div className='entrega-container'>

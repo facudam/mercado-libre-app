@@ -10,6 +10,7 @@ import {  Keyboard, Scrollbar, Navigation } from "swiper";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { convertToCurrencyFormat } from "../helpers/convertToCurrencyFormat"
 
 
 export const Ofertas = ({ titulo, paraBuscar }) => {
@@ -74,7 +75,7 @@ export const Ofertas = ({ titulo, paraBuscar }) => {
                                 descuento={producto.discounts}
                                 cuotas={producto.installments.quantity}
                                 envio='Envío gratis'
-                                precioCuota={producto.installments.amount}
+                                precioCuota={convertToCurrencyFormat(producto.installments.amount)}
                             />
                         </SwiperSlide>
                     ) }) 

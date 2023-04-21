@@ -1,3 +1,4 @@
+import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat'
 import '../styles/ProductInCart.css'
 
 export const ProductInCart = ({ imgUrl, title, attributes, price }) => {
@@ -27,7 +28,7 @@ export const ProductInCart = ({ imgUrl, title, attributes, price }) => {
             <button>+</button>
         </div>
         <div className='item-price'>
-            <span>$ { price }</span>
+            <span>{ convertToCurrencyFormat(price) }</span>
         </div>
     </div>
   )

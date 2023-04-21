@@ -3,10 +3,14 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { useContext } from "react"
 import { MeliContext } from "../contexts/meliContext"
 import '../styles/ProductAdded.css'
+import { useNavigate } from "react-router-dom"
+import { convertToCurrencyFormat } from "../helpers/convertToCurrencyFormat"
 
 export const ProductAdded = ({ img, title }) => {
 
-    const { carritoState } = useContext(MeliContext)
+    const { carritoState, getTotalPriceFromCart } = useContext(MeliContext)
+    const navigate = useNavigate()
+    let totalAPagar = convertToCurrencyFormat(getTotalPriceFromCart()) ;
 
     return(
         <div className="product-added">
@@ -30,7 +34,7 @@ export const ProductAdded = ({ img, title }) => {
                                 ? `1 producto en tu carrito` 
                                 : `${carritoState.length} productos en tu carrito` }
                     </span>
-                    <span>$ TOTAL</span>
+                    <span>{ totalAPagar }</span>
                     <span>¡Envío gratis!</span>
                 </div>
                 <div className="secondary-info__carrito-imgs">
@@ -47,8 +51,16 @@ export const ProductAdded = ({ img, title }) => {
                     }
                 </div>
                 <div className="secondary-info__btns">
-                    <button>Ver carrito</button>
-                    <button>Comprar carrito</button>
+                    <button
+                        onClick={() => navigate('/gz/cart/v2') }
+                    >
+                        Ver carrito
+                    </button>
+                    <button
+
+                    >
+                    Comprar carrito
+                    </button>
                 </div>
             </div>
           </div>
