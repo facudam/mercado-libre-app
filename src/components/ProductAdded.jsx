@@ -19,7 +19,7 @@ export const ProductAdded = ({ img, title }) => {
                 <div className="main-info__imgs">
                     <img src={ img } className="product-img"/>
                     <div className="check-icon-container">
-                        <FontAwesomeIcon icon={faCheck} className="check-icon" />
+                        <FontAwesomeIcon icon={faCheck} className='check-icon' />
                     </div>
                     
                 </div>

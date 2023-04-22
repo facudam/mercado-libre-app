@@ -1,6 +1,7 @@
 .product-added {
     width: 100%;
     background-color: #fff;
+    animation: deslizar .4s ease forwards;
 }
 
 .product-added-max-width {
@@ -46,6 +47,7 @@
     border-radius: 50%;
     top: 40px;
     left: 40px;
+    animation: heartBeat .8s ease-in .4s forwards;
 }
 
 .check-icon {
@@ -164,4 +166,28 @@
 
 .secondary-info__btns button:nth-child(2):hover {
     background-color: rgba(52, 131, 250, .2);
+}
+
+@keyframes deslizar {
+    0% {
+        margin-top: -100px;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
+
+@keyframes heartBeat{
+    0% {
+        transform: scale(1.5);
+    }
+    33% {
+        transform: scale(1);
+    }
+    66% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

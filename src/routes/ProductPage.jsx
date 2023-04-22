@@ -40,7 +40,10 @@ export const ProductPage = () => {
   const addToCartAndToLasProductAdded = () => {
     addProductToCart(item)
     setLastProductAdded([item])
-    
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
   }
 
   useEffect(() => {
