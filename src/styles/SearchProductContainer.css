@@ -7,6 +7,10 @@
     text-decoration: none;
 }
 
+.search-product-container a {
+    text-decoration: none;
+}
+
 .product-img-container {
     min-width: 208px;
     height: 160px;

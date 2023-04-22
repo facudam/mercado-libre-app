@@ -22,24 +22,28 @@ export const SearchProductContainer = ({ identifier, img, name, price }) => {
     }, [])
 
   return (
-    <Link
-        className="search-product-container" 
-        onMouseOver={() => changeItemPageValues(identifier, name)}
-        to={`/item/${identifier}/${itemNameForPage}`}
-    >
-        <div className="product-img-container">
+    <div className="search-product-container" >
+        <Link 
+            onMouseOver={() => changeItemPageValues(identifier, name)}
+            to={`/item/${identifier}/${itemNameForPage}`}
+            className="product-img-container"
+        >
             <img src={ productUrlImage } alt={ name } />
-        </div>
+        </Link>
         <div className="product-information">
-            <h2>{ name }</h2>
+            <Link
+                onMouseOver={() => changeItemPageValues(identifier, name)}
+                to={`/item/${identifier}/${itemNameForPage}`}
+            >
+                <h2>{ name }</h2>
+            </Link>
             <span> { convertToCurrencyFormat(price) }</span>
             <span>Envío gratis</span>
         </div>
         <div className='seleccionar-producto'>
             <input type='checkbox' id={ identifier} />
             <label htmlFor={ identifier }>Seleccionar</label>
-        </div>
-        
-    </Link>
+        </div> 
+    </div>
   )
 }
