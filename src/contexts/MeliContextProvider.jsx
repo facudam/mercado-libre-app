@@ -27,6 +27,8 @@ export const ContextProvider = ({children}) => {
 
     const [ lastProductAdded, setLastProductAdded ] = useState([])
 
+    const [cantidadItem, setCantidadItem] = useState(1)
+
   /* ++++++++++++ UseReducer código +++++++++++ */
 
     const initialState = []
@@ -38,7 +40,11 @@ export const ContextProvider = ({children}) => {
           return [...carritoState, nuevoProducto]
         }
         case carritoActions.DELETE_PRODUCT: {
-          console.log(action.payload)
+          return carritoState.filter(item => item.id !== action.payload.id)
+        }
+        case carritoActions.MODIFY_QUANTITY: {
+          const itemModified = action.payload;
+          return carritoState.map(item => item.id === itemModified.id ? itemModified : item )
         }
         default:
           return carritoState
@@ -57,7 +63,14 @@ export const ContextProvider = ({children}) => {
     const deleteProductFromCart = (producto) => {
       dispatch({
         type: carritoActions.DELETE_PRODUCT,
-        payload: producto.id
+        payload: producto
+      })
+    }
+
+    const modifyQuantityProduct = (producto, quantity) => {
+      dispatch({
+        type: carritoActions.MODIFY_QUANTITY,
+        payload: {...producto, quantity }
       })
     }
 
@@ -132,10 +145,14 @@ export const ContextProvider = ({children}) => {
             changeItemPageValues,
             carritoState,
             addProductToCart,
+            deleteProductFromCart,
+            modifyQuantityProduct,
             getMaxPages,
             lastProductAdded, 
             setLastProductAdded,
-            getTotalPriceFromCart
+            getTotalPriceFromCart,
+            cantidadItem, 
+            setCantidadItem
         }}>{ children }</MeliContext.Provider>
     )
 }

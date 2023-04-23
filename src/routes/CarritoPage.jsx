@@ -7,9 +7,9 @@ import { convertToCurrencyFormat } from "../helpers/convertToCurrencyFormat"
 
 export const CarritoPage = () => {
 
-    const { carritoState,setLastProductAdded, getTotalPriceFromCart } = useContext(MeliContext)
+    const { carritoState, setLastProductAdded, getTotalPriceFromCart } = useContext(MeliContext)
 
-    let pago = convertToCurrencyFormat(getTotalPriceFromCart()) 
+    let pago = convertToCurrencyFormat(getTotalPriceFromCart())
 
     useEffect(() => {
       setLastProductAdded([])
@@ -39,6 +39,8 @@ export const CarritoPage = () => {
                                 title={item.title}
                                 attributes={item.attributes}
                                 price={item.price}
+                                cantidad={item.quantity}
+                                item={item}
                               />
                             ))
                           

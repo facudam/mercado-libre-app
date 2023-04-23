@@ -61,6 +61,10 @@
     color: var(--azul);
 }
 
+.item-info__main-span span {
+    cursor: pointer;
+}
+
 .item-quantity-button {
     width: 118px;
     height: 44px;
@@ -77,6 +81,7 @@
     background-color: transparent;
     font-size: 26px;
     color: rgba(0,0,0, .55);
+    cursor: pointer;
 }
 
 .item-price span {

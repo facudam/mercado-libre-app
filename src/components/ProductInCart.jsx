@@ -1,7 +1,19 @@
+import { useContext, useState } from 'react'
 import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat'
 import '../styles/ProductInCart.css'
+import { MeliContext } from '../contexts/meliContext'
 
-export const ProductInCart = ({ imgUrl, title, attributes, price }) => {
+export const ProductInCart = ({ imgUrl, title, attributes, price, item }) => {
+    const { setCantidadItem, deleteProductFromCart, modifyQuantityProduct } = useContext(MeliContext)
+    const [unidades, setUnidades] = useState(item.quantity)
+
+    const modifyQuantityForItem = (operator) => {
+        (operator === '-') ? setUnidades(unidades - 1) : setUnidades(unidades + 1)
+        item.quantity = unidades;
+        const cantidad = item.quantity
+        modifyQuantityProduct(item, cantidad )
+    }
+
   return (
     <div className='product-in-cart'>
         <div className="item-info">
@@ -16,16 +28,16 @@ export const ProductInCart = ({ imgUrl, title, attributes, price }) => {
                     <span>{attributes[2].name}: {attributes[2].value_name}</span>
                 </div>
                 <div className='item-info__main-span'>
-                    <span>Eliminar</span>
+                    <span onClick={() => deleteProductFromCart(item) }>Eliminar</span>
                     <span>Más productos del vendedor</span>
                     <span>Comprar ahora</span>
                 </div>
             </div>
         </div>
         <div className='item-quantity-button'>
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button onClick={() => modifyQuantityForItem('-', item)}>-</button>
+            <span>{unidades}</span>
+            <button onClick={() => modifyQuantityForItem('+', item)}>+</button>
         </div>
         <div className='item-price'>
             <span>{ convertToCurrencyFormat(price) }</span>

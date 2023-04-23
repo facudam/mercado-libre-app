@@ -12,14 +12,14 @@ import { OpcionesDePago } from '../sections/OpcionesDePago';
 import { PreguntasYRespuestas } from '../sections/PreguntasYRespuestas';
 import { ProductAdded } from '../components/ProductAdded';
 import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
+import { Footer } from '../components/Footer';
 
 
 export const ProductPage = () => {
 
-  const { itemForPage, addProductToCart, lastProductAdded, setLastProductAdded } = useContext(MeliContext)
+  const { itemForPage, addProductToCart, lastProductAdded, setLastProductAdded, cantidadItem, setCantidadItem } = useContext(MeliContext)
 
   const [item, setItem] = useState([])
-  const [cantidadItem, setCantidadItem] = useState(1)
   const [ pictureIndex, setPictureIndex] = useState(0)
 
   const getItem = async() => {
@@ -37,7 +37,13 @@ export const ProductPage = () => {
    
   }
 
+  const addQuantityItems = (cant) => {
+    setCantidadItem(cant)
+    activateQuantityItemContainer()
+  }
+
   const addToCartAndToLasProductAdded = () => {
+    item.quantity = cantidadItem;
     addProductToCart(item)
     setLastProductAdded([item])
     window.scrollTo({
@@ -58,7 +64,7 @@ export const ProductPage = () => {
    <>
     {
       (lastProductAdded.length > 0) &&
-        <ProductAdded img={lastProductAdded[0].thumbnail} title={lastProductAdded[0].title}  />
+        <ProductAdded img={lastProductAdded[0].thumbnail} title={lastProductAdded[0].title} />
     }
     
     <section className="product-page">
@@ -144,17 +150,17 @@ export const ProductPage = () => {
               onClick={ activateQuantityItemContainer }
               className='btn-cointainer__btn'
             >
-              Cantidad:{ cantidadItem } unidad 
+              Cantidad:{ (cantidadItem === 1 ) ? ` ${cantidadItem} unidad` : ` ${cantidadItem} unidades` } 
               <FontAwesomeIcon icon={ faChevronDown }   className='row-down-icon'/>
               <span>({ item.available_quantity } disponibles)</span>
             </button>
             <div className='quantity-items'>
-              <span>1 unidad</span>
-              <span>2 unidades</span>
-              <span>3 unidades</span>
-              <span>4 unidades</span>
-              <span>5 unidades</span>
-              <span>6 unidades</span>
+              <span onClick={() => addQuantityItems(1)}>1 unidad</span>
+              <span onClick={() => addQuantityItems(2)}>2 unidades</span>
+              <span onClick={() => addQuantityItems(3)}>3 unidades</span>
+              <span onClick={() => addQuantityItems(4)}>4 unidades</span>
+              <span onClick={() => addQuantityItems(5)}>5 unidades</span>
+              <span onClick={() => addQuantityItems(6)}>6 unidades</span>
               {
                 (item.available_quantity > 6) &&
                 <form className='quantity-items__greater'>
@@ -172,7 +178,7 @@ export const ProductPage = () => {
           <div className='buy-btn-container'>
             <button>Comprar ahora</button>
             <button
-              onClick={addToCartAndToLasProductAdded}
+              onClick={ addToCartAndToLasProductAdded }
             >
               Agregar al carrito
             </button>
@@ -191,6 +197,7 @@ export const ProductPage = () => {
         <OpcionesDePago />
       </div>
     </section>
+    <Footer />
    </>
   )
 }
