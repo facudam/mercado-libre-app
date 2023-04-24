@@ -4,15 +4,8 @@ import '../styles/ProductInCart.css'
 import { MeliContext } from '../contexts/meliContext'
 
 export const ProductInCart = ({ imgUrl, title, attributes, price, item }) => {
-    const { setCantidadItem, deleteProductFromCart, modifyQuantityProduct } = useContext(MeliContext)
-    const [unidades, setUnidades] = useState(item.quantity)
+    const { deleteProductFromCart, IncrementQuantityProduct, DecrementQuantityProduct } = useContext(MeliContext)
 
-    const modifyQuantityForItem = (operator) => {
-        (operator === '-') ? setUnidades(unidades - 1) : setUnidades(unidades + 1)
-        item.quantity = unidades;
-        const cantidad = item.quantity
-        modifyQuantityProduct(item, cantidad )
-    }
 
   return (
     <div className='product-in-cart'>
@@ -35,9 +28,9 @@ export const ProductInCart = ({ imgUrl, title, attributes, price, item }) => {
             </div>
         </div>
         <div className='item-quantity-button'>
-            <button onClick={() => modifyQuantityForItem('-', item)}>-</button>
-            <span>{unidades}</span>
-            <button onClick={() => modifyQuantityForItem('+', item)}>+</button>
+            <button onClick={() => DecrementQuantityProduct(item)}>-</button>
+            <span>{item.quantity}</span>
+            <button onClick={() => IncrementQuantityProduct(item)}>+</button>
         </div>
         <div className='item-price'>
             <span>{ convertToCurrencyFormat(price) }</span>

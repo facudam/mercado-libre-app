@@ -42,9 +42,13 @@ export const ContextProvider = ({children}) => {
         case carritoActions.DELETE_PRODUCT: {
           return carritoState.filter(item => item.id !== action.payload.id)
         }
-        case carritoActions.MODIFY_QUANTITY: {
-          const itemModified = action.payload;
-          return carritoState.map(item => item.id === itemModified.id ? itemModified : item )
+        case carritoActions.INCREMENT_QUANTITY: {
+          const itemId = action.payload;
+          return carritoState.map((item) => item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item)
+        }
+        case carritoActions.DECREMENT_QUANTITY: {
+          const itemId = action.payload
+          return carritoState.map((item) => (item.id === itemId && item.quantity > 1 ) ? {...item, quantity: item.quantity - 1} : item)
         }
         default:
           return carritoState
@@ -67,10 +71,17 @@ export const ContextProvider = ({children}) => {
       })
     }
 
-    const modifyQuantityProduct = (producto, quantity) => {
+    const IncrementQuantityProduct = (producto) => {
       dispatch({
-        type: carritoActions.MODIFY_QUANTITY,
-        payload: {...producto, quantity }
+        type: carritoActions.INCREMENT_QUANTITY,
+        payload: producto.id
+      })
+    }
+
+    const DecrementQuantityProduct = (producto) => {
+      dispatch({
+        type: carritoActions.DECREMENT_QUANTITY,
+        payload: producto.id
       })
     }
 
@@ -146,7 +157,8 @@ export const ContextProvider = ({children}) => {
             carritoState,
             addProductToCart,
             deleteProductFromCart,
-            modifyQuantityProduct,
+            IncrementQuantityProduct,
+            DecrementQuantityProduct,
             getMaxPages,
             lastProductAdded, 
             setLastProductAdded,
