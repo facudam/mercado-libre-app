@@ -92,9 +92,9 @@ export const ContextProvider = ({children}) => {
     let totalPrice = 0;
     const getTotalPriceFromCart = () => {
       const totalPrice = carritoState.reduce((accumulator, currentItem) => {
-        return accumulator + currentItem.price;
+        return accumulator + currentItem.price * currentItem.quantity;
       }, 0);
-      return Math.round(totalPrice)
+      return totalPrice
     }
 
     const getMaxPages = (results) => {

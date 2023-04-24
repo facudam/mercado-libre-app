@@ -54,6 +54,7 @@ export const ProductPage = () => {
 
   useEffect(() => {
     setLastProductAdded([])
+    setCantidadItem(1)
     getItem()
     // Cada vez que se actualice el item, que se muestre la primera imagen.
     setPictureIndex(0)
