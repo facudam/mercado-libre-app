@@ -256,6 +256,10 @@
     padding: 25px 10px;
 }
 
+.quantity-items__greater span:first-child {
+    padding: 0;
+}
+
 .quantity-inputs-container {
     display: flex;
     padding: 10px;
@@ -268,16 +272,16 @@
     border: none;  
 }
 
-.quantity-items__greater input:first-child::-webkit-inner-spin-button,
+/* .quantity-items__greater input:first-child::-webkit-inner-spin-button,
 .quantity-items__greater input:first-child::-webkit-outer-spin-button {
     -webkit-appearance: none;
-}
+} */
 
 .quantity-items__greater input:first-child:focus {
     outline: none;
 }
 
-.quantity-items__greater input:nth-child(2) {
+.quantity-items__greater button {
     font-size: 12px;
     padding: 4px 7px;
     background-color: var(--azul);

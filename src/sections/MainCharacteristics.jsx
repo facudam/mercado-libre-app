@@ -17,6 +17,7 @@ export const MainCharacteristics = ({ caracteristicas }) => {
                     {
                         (!charArray) ? null
                         : charArray.map((char, index) => (
+                            (char.value_name !== null) &&
                             <tr key={ char.id }>
                                 <th className={(index % 2 === 0) ? 'negro1' : 'negro2'}>{ char.name }</th>
                                 {/* Si utilizo abajo: && 'negro-punto05 me arroja un warning y me pide que use ? y : */}

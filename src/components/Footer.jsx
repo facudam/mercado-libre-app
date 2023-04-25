@@ -7,6 +7,7 @@ export const Footer = () => {
   return (
     <footer>
         <div className='footer-second-container'>
+            
             <div className='footer-info'>
                 <img src={ footer1 } />
                 <div>
@@ -32,6 +33,7 @@ export const Footer = () => {
                 </div>
             </div>
         </div>
+        <span>Developed by Facundo Cáceres</span>
     </footer>
   )
 }

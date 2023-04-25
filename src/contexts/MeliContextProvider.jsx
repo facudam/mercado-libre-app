@@ -29,6 +29,7 @@ export const ContextProvider = ({children}) => {
 
     const [cantidadItem, setCantidadItem] = useState(1)
 
+
   /* ++++++++++++ UseReducer código +++++++++++ */
 
     const initialState = []
@@ -126,7 +127,9 @@ export const ContextProvider = ({children}) => {
         setItemNameForPage(productName)
       }
 
-    
+    const handleQuantityItems = (e) => {
+        setCantidadItem(e.target.value)
+    }
 
     return(
         <MeliContext.Provider value={{
@@ -164,7 +167,8 @@ export const ContextProvider = ({children}) => {
             setLastProductAdded,
             getTotalPriceFromCart,
             cantidadItem, 
-            setCantidadItem
+            setCantidadItem,
+            handleQuantityItems
         }}>{ children }</MeliContext.Provider>
     )
 }

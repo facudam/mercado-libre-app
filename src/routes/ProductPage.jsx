@@ -13,11 +13,12 @@ import { PreguntasYRespuestas } from '../sections/PreguntasYRespuestas';
 import { ProductAdded } from '../components/ProductAdded';
 import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
 import { Footer } from '../components/Footer';
+import { AgregarUnidades } from '../components/AgregarUnidades';
 
 
 export const ProductPage = () => {
 
-  const { itemForPage, addProductToCart, lastProductAdded, setLastProductAdded, cantidadItem, setCantidadItem } = useContext(MeliContext)
+  const { itemForPage, addProductToCart, lastProductAdded, setLastProductAdded, cantidadItem, setCantidadItem, handleQuantityItems } = useContext(MeliContext)
 
   const [item, setItem] = useState([])
   const [ pictureIndex, setPictureIndex] = useState(0)
@@ -156,22 +157,19 @@ export const ProductPage = () => {
               <span>({ item.available_quantity } disponibles)</span>
             </button>
             <div className='quantity-items'>
-              <span onClick={() => addQuantityItems(1)}>1 unidad</span>
-              <span onClick={() => addQuantityItems(2)}>2 unidades</span>
-              <span onClick={() => addQuantityItems(3)}>3 unidades</span>
-              <span onClick={() => addQuantityItems(4)}>4 unidades</span>
-              <span onClick={() => addQuantityItems(5)}>5 unidades</span>
-              <span onClick={() => addQuantityItems(6)}>6 unidades</span>
+              <AgregarUnidades availableItems={item.available_quantity} addQuantityItems={addQuantityItems}/>
               {
                 (item.available_quantity > 6) &&
-                <form className='quantity-items__greater'>
-                  <label>Cantidad:</label>
+                <div className='quantity-items__greater'>
+                  <span>Cantidad:</span>
                   <div className='quantity-inputs-container'>
-                    <input type='number' value='' readOnly/>
-                    <input type='submit' value='Aplicar' readOnly/>
+                    <input type='number' value={cantidadItem} onChange={handleQuantityItems} />
+                    <button
+                      onClick={ activateQuantityItemContainer }
+                    >Aplicar</button>
                   </div>
                 
-                </form>
+                </div>
               }
             
             </div>
@@ -179,7 +177,7 @@ export const ProductPage = () => {
           <div className='buy-btn-container'>
             <button>Comprar ahora</button>
             <button
-              onClick={ addToCartAndToLasProductAdded }
+              onClick={addToCartAndToLasProductAdded}
             >
               Agregar al carrito
             </button>

@@ -4,12 +4,20 @@ footer {
     margin-top: 80px;
 }
 
+footer span {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    padding-bottom: 20px;
+    font-weight: 600;
+}
+
 .footer-second-container {
     width: 90%;
     max-width: 1185px;
     margin: auto;
     display: flex;
-    padding: 75px 0px;
+    padding: 55px 0px 75px;
     justify-content: center;
     flex-wrap: wrap;
 }
