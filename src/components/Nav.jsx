@@ -159,7 +159,12 @@ export const Nav = () => {
                                 <img className='carrito-img' src={ carrito } alt='carrito de compras'/>
                             </Link>
                             {
-                                (carritoState.length > 0 ) && <div className='cant-products-cart'>{ carritoState.length }</div>
+                                (carritoState.length > 0 ) && 
+                                    <div 
+                                        onClick={() => navigate('/gz/cart/v2')}
+                                        className='cant-products-cart'>
+                                        { carritoState.length }
+                                    </div>
                             }
                         </li>
                     </ul>

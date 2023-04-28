@@ -259,7 +259,7 @@
     color: #fff;
     background-color: rgb(217,0,0);
     border-radius: 3px;
-
+    cursor: pointer;
 }
 
 .nav__top-second {
