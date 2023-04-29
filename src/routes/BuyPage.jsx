@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import location from '../images/location-outline.svg'
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles/BuyPage.css'
 
 export const BuyPage = ({ productos }) => {
@@ -22,15 +23,18 @@ export const BuyPage = ({ productos }) => {
                 <h1>¿Cómo querés recibir tu compra?</h1>
                 <h2>Domicilio</h2>
                 <div className="receive-purchase__domicilio">
-                    <div className='location-img-container'>
-                        <img src={ location } alt='location'/>
+                    <div className='receive-purchase__main-dom'>
+                        <div className='location-img-container'>
+                            <FontAwesomeIcon icon={faLocationDot} className='fontIcon' />
+                        </div>
+                        <div className='receive-purchase__domicilio-info'>
+                            <h3>Av. La Plata 2345</h3>
+                            <span>C.P 1234 - Capital Federal</span>
+                            <span>José Pérez - 1123244355</span>
+                        </div>
                     </div>
                     
-                    <div className='receive-purchase__domicilio-info'>
-                        <h3>Av. La Plata 2345</h3>
-                        <span>C.P 1234 - Capital Federal</span>
-                        <span>José Perez - 1123244355</span>
-                    </div>
+                    <a>Editar o elegir otro</a>
                 </div>
                 <h2>Recibir compra</h2>
                 <div className='receive-purchase__recibir'>

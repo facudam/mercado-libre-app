@@ -45,10 +45,18 @@
     width: 100%;
     background-color: rgb(245,245,245);
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 25px;
     padding: 20px 32px;
     margin-bottom: 40px;
     border-radius: 5px;
+    box-shadow: var(--shadow-container);
+}
+
+.receive-purchase__main-dom {
+    display: flex;
+    gap: 15px;
 }
 
 .location-img-container {
@@ -61,8 +69,8 @@
     align-items: center;
 }
 
-.location-img-container img {
-    width: 20px;
+.fontIcon {
+    color: var(--azul);
 }
 
 .receive-purchase__domicilio-info {
@@ -82,6 +90,11 @@
     color: #737373;
 }
 
+.receive-purchase__domicilio a {
+    color: var(--azul);
+    font-size: 14px;
+}
+
 .receive-purchase__recibir {
     width: 100%;
     background-color: #fff;
@@ -91,6 +104,7 @@
     justify-content: space-between;
     gap: 15px;
     margin-bottom: 40px;
+    box-shadow: var(--shadow-container);
 }
 
 .checkbox-container {
@@ -121,6 +135,7 @@
     overflow: hidden;
     margin-bottom: 40px;
     gap: 1px;
+    box-shadow: var(--shadow-container);
 }
 
 .receive-purchase__retirar-children {
