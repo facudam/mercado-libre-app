@@ -1,13 +1,24 @@
 
 .BuyPage {
     width: 100%;
-    height: 200vh;
     max-width: 1173px;
+    min-height: 100vh;
     margin: auto;
     display: flex;
     justify-content: space-between;
     gap: 15px;
     flex-wrap: wrap;
+}
+
+.purchase-summary__info {
+    border-top: 1px solid rgba(0,0,0, .1);
+    border-bottom: 1px solid rgba(0,0,0, .1);
+    padding: 20px 0;
+}
+
+.purchase-summary__info-span-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .BuyPage h1 {
@@ -25,7 +36,8 @@
 }
 
 .receive-purchase {
-    width: 65%;
+    width: 95%;
+    max-width: 705px;
     padding: 50px 0 20px;
 }
 
@@ -142,4 +154,54 @@
 .beneficio-m-p span {
     font-size: 14px;
     color: #737373;
+}
+
+.purchase-summary {
+    width: 100%;
+    max-width: 405px;
+    background-color: rgb(245,245,245);
+    padding: 48px;
+}
+
+.padding-20-0 {
+    padding: 20px 0;
+}
+
+.buy-btn {
+    position: relative;
+    display: block;
+    width: 290px;
+    padding: 15px;
+    border: none;
+    background-color: var(--azul);
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.buy-btn::before {
+    display: var(--display);
+    position: absolute;
+    width: 0px;
+    height: 47px;
+    content: '';
+    background-color: rgb(203, 213, 214);
+    border-radius: 5px;
+    opacity: .2;
+    top: 0;
+    left: 0;
+    animation: buyBtnAnimation 2.5s ease-in forwards;
+}
+
+@keyframes buyBtnAnimation {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 290px;
+    }
 }

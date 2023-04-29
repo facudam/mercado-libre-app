@@ -1,13 +1,20 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import location from '../images/location-outline.svg'
 import '../styles/BuyPage.css'
 
 export const BuyPage = ({ productos }) => {
 
+    const [ btnMessage, setBtnMessage ] = useState('Confirmar Compra')
+
     useEffect(() => {
         document.querySelector('body').style.backgroundColor = "rgb(238, 238, 238)"
+        setBtnMessage('Confirmar Compra')
       }, [])
 
+    const confirmarCompra = () => {
+        setBtnMessage('Procesando compra')
+        document.documentElement.style.setProperty("--display", "block")
+    }
 
     return(
         <section className='BuyPage'>
@@ -62,20 +69,25 @@ export const BuyPage = ({ productos }) => {
             <div className='purchase-summary'>
                 <h2>Resumen compra</h2>
                 <div className='purchase-summary__info'>
-                    <span>Productos (1)</span>
-                    <span>$1310.00</span>
+                    <div className='purchase-summary__info-span-container'>
+                        <span>Productos (1)</span>
+                        <span>$1310.00</span>
+                    </div>
+                    <div className='purchase-summary__info-span-container'>
+                        <span>Envío</span>
+                        <span className='green'>Gratis</span>
+                    </div>
                 </div>
-                <div className='purchase-summary__info'>
-                    <span>Envío</span>
-                    <span>Gratis</span>
-                </div>
-                <div className='purchase-summary__info'>
+                <div className={`purchase-summary__info-span-container padding-20-0`}>
                     <span>Total</span>
                     <span>$1310.00</span>
                 </div>
-                <button>
-                    Confirmar Compra
+                
+                <button className='buy-btn' onClick={ confirmarCompra }>
+                    { btnMessage }
                 </button>
+                
+                
             </div>
         </section>
     )
