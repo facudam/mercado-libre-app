@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles/BuyPage.css'
+import { MeliContext } from '../contexts/meliContext';
+import { CompraFinalizada } from '../modals/CompraFinalizada';
 
 export const BuyPage = ({ productos }) => {
 
+    const { isCompraFinalizadaModalActive, setIsCompraFinalizadaModalActive } = useContext(MeliContext)
     const [ btnMessage, setBtnMessage ] = useState('Confirmar Compra')
 
     useEffect(() => {
@@ -18,6 +21,7 @@ export const BuyPage = ({ productos }) => {
     }
 
     return(
+      <>
         <section className='BuyPage'>
             <div className="receive-purchase">
                 <h1>¿Cómo querés recibir tu compra?</h1>
@@ -94,5 +98,9 @@ export const BuyPage = ({ productos }) => {
                 
             </div>
         </section>
+        {
+            isCompraFinalizadaModalActive && <CompraFinalizada productos={[]} />
+        }
+      </>
     )
 }

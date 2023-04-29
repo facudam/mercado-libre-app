@@ -29,6 +29,8 @@ export const ContextProvider = ({children}) => {
 
     const [cantidadItem, setCantidadItem] = useState(1)
 
+    const [isCompraFinalizadaModalActive, setIsCompraFinalizadaModalActive] = useState(true)
+
 
   /* ++++++++++++ UseReducer código +++++++++++ */
 
@@ -178,7 +180,9 @@ export const ContextProvider = ({children}) => {
             getTotalPriceFromCart,
             cantidadItem, 
             setCantidadItem,
-            handleQuantityItems
+            handleQuantityItems,
+            isCompraFinalizadaModalActive, 
+            setIsCompraFinalizadaModalActive
         }}>{ children }</MeliContext.Provider>
     )
 }
