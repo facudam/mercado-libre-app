@@ -24,7 +24,7 @@ export const MainRoute = () => {
     <>
         <Slider />
         <PaymentsContainer />
-        <Ofertas titulo='Ofertas' paraBuscar='electrodomesticos' />
+        <Ofertas title='Ofertas' toSearch='electrodomesticos' />
         <SuscripcionNivel />
         <MercadoPuntosSection />
         <DescubriSection />

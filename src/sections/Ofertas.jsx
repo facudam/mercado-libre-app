@@ -13,12 +13,12 @@ import 'swiper/css/pagination';
 import { convertToCurrencyFormat } from "../helpers/convertToCurrencyFormat"
 
 
-export const Ofertas = ({ titulo, paraBuscar }) => {
+export const Ofertas = ({ title, toSearch }) => {
 
     const { productosEnOferta, setProductosEnOferta } = useContext(MeliContext)
 
     const getInfoProducts = async() => {
-          const listaProductos = await getProducts(paraBuscar);
+          const listaProductos = await getProducts(toSearch);
           setProductosEnOferta(listaProductos.results)         
         }
 
@@ -32,7 +32,7 @@ export const Ofertas = ({ titulo, paraBuscar }) => {
     <section className="ofertas_section">
 
         <div className="ofertas-title">
-            <h2 className="ofertas-title__h2">{ titulo }</h2>
+            <h2 className="ofertas-title__h2">{ title }</h2>
             <a className="ofertas-title__anchor" href="">Ver todas</a>
         </div>
         
