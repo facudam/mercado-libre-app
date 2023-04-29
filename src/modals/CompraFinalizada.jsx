@@ -27,22 +27,26 @@ export const CompraFinalizada = ({productos}) => {
                     </div>
                 </div>
                 <div className="compra-finalizada__productos">
-                    <span>Llegan en 48 horas a tu domicilio</span>
-                    {
-                        productos.map(item => (
-                            <div key={item.id} className="item-comprado-ctn">
-                                <div className="item-comprado-ctn__img">
-                                    <img src={item.thumbnail} />
+                    <div className="compra-finalizada__productos-ctn">
+                        <span>Llegan en 48 horas a tu domicilio</span>
+                        {
+                            productos.map(item => (
+                                <div key={item.id} className="item-comprado-ctn">
+                                    <div className="item-comprado-ctn__img">
+                                        <img src={item.thumbnail} />
+                                    </div>
+                                    <div className="item-comprado.ctn__info">
+                                        <span>{item.title}</span>
+                                        <span>Unidades: {item.quantity}</span>
+                                    </div>
                                 </div>
-                                <div className="item-comprado.ctn__info">
-                                    <span>{item.title}</span>
-                                    <span>Unidades: {item.quantity}</span>
-                                </div>
-                            </div>
-                        ))
-                    }
+                            ))
+                        }
+                    </div>
+                    
+                    <button className="compra-finalizada__btn">Continuar</button>
                 </div>
-                <button className="compra-finalizada__btn">Continuar</button>
+                
             </div>
         </div>,
         document.getElementById('portal')
