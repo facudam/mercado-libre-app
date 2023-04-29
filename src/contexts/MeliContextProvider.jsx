@@ -38,7 +38,17 @@ export const ContextProvider = ({children}) => {
       switch (action.type) {
         case carritoActions.ADD_PRODUCT: {
           const nuevoProducto = action.payload;
-          return [...carritoState, nuevoProducto]
+
+          // Si el producto ya se encuentra en el carritoState, entonces productAllreadyAdded será un objeto.
+          const productAllreadyAdded = carritoState.find(producto => producto.id === nuevoProducto.id)
+
+          if(productAllreadyAdded) {
+            return carritoState.map(item => item.id === nuevoProducto.id ? {...item, quantity : item.quantity + nuevoProducto.quantity} : item)
+          } else {
+            return [...carritoState, nuevoProducto]
+          }
+
+          
         }
         case carritoActions.DELETE_PRODUCT: {
           return carritoState.filter(item => item.id !== action.payload.id)
