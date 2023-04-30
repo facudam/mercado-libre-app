@@ -4,10 +4,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles/CompraFinalizada.css'
 import { useContext } from "react";
 import { MeliContext } from "../contexts/meliContext";
+import { useNavigate } from "react-router-dom";
 
 export const CompraFinalizada = ({productos}) => {
 
-    const { isCompraFinalizadaModalActive, setIsCompraFinalizadaModalActive } = useContext(MeliContext)
+    const { setIsCompraFinalizadaModalActive, setProductosAComprar } = useContext(MeliContext)
+
+    const navigate = useNavigate()
+
+    const salirDeCompra = () => {
+        setProductosAComprar([])
+        document.documentElement.style.setProperty("--display", "none")
+        setIsCompraFinalizadaModalActive(false)
+        navigate('/')
+    }
 
     return ReactDOM.createPortal(
         <div>
@@ -28,14 +38,14 @@ export const CompraFinalizada = ({productos}) => {
                 </div>
                 <div className="compra-finalizada__productos">
                     <div className="compra-finalizada__productos-ctn">
-                        <span>Llegan en 48 horas a tu domicilio</span>
+                        <span>{productos.length > 1 ? 'Llegan' : 'Llega'} en 48 horas a tu domicilio</span>
                         {
                             productos.map(item => (
                                 <div key={item.id} className="item-comprado-ctn">
                                     <div className="item-comprado-ctn__img">
                                         <img src={item.thumbnail} />
                                     </div>
-                                    <div className="item-comprado.ctn__info">
+                                    <div className="item-comprado-ctn__info">
                                         <span>{item.title}</span>
                                         <span>Unidades: {item.quantity}</span>
                                     </div>
@@ -44,7 +54,11 @@ export const CompraFinalizada = ({productos}) => {
                         }
                     </div>
                     
-                    <button className="compra-finalizada__btn">Continuar</button>
+                    <button 
+                        onClick={salirDeCompra}
+                        className="compra-finalizada__btn">
+                        Continuar
+                    </button>
                 </div>
                 
             </div>

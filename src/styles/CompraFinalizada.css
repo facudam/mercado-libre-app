@@ -42,6 +42,7 @@
 }
 
 .compra-finalizada__header div:nth-child(2) {
+    position: relative;
     background-color: #fff;
     width: 80px;
     height: 80px;
@@ -63,6 +64,7 @@
     height: 25px;
     top: 50px;
     left: 55px;
+    animation: heartBeat .8s ease-in .4s forwards;
 }
 
 .compra-finalizada__productos {
@@ -81,6 +83,9 @@
     padding: 20px;
     border-radius: 5px;
     box-shadow: var(--shadow-container);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .compra-finalizada__productos-ctn span:first-child {
@@ -91,6 +96,7 @@
 .compra-finalizada__btn {
     margin: auto;
     margin-top: 50px;
+    margin-bottom: 50px;
     display: block;
     width: 250px;
     padding: 15px;
@@ -106,4 +112,43 @@
 
 .compra-finalizada__btn:hover {
     background-color: rgb(31, 98, 198);
+}
+
+.item-comprado-ctn {
+    display: flex;
+    gap: 15px;
+}
+
+.item-comprado-ctn__img {
+    min-width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0, .1);
+}
+
+.item-comprado-ctn__img img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+}
+
+.item-comprado-ctn__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item-comprado-ctn__info span:first-child {
+    font-weight: 400;
+    color: #000;
+    font-size: 16px;
+}
+
+.item-comprado-ctn__info span:nth-child(2) {
+    font-size: 14px;
+    color: rgba(0,0,0, .5);
 }

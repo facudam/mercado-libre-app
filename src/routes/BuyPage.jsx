@@ -5,9 +5,9 @@ import '../styles/BuyPage.css'
 import { MeliContext } from '../contexts/meliContext';
 import { CompraFinalizada } from '../modals/CompraFinalizada';
 
-export const BuyPage = ({ productos }) => {
+export const BuyPage = () => {
 
-    const { isCompraFinalizadaModalActive, setIsCompraFinalizadaModalActive } = useContext(MeliContext)
+    const { isCompraFinalizadaModalActive, setIsCompraFinalizadaModalActive,productosAComprar, setProductosAComprar } = useContext(MeliContext)
     const [ btnMessage, setBtnMessage ] = useState('Confirmar Compra')
 
     useEffect(() => {
@@ -18,6 +18,9 @@ export const BuyPage = ({ productos }) => {
     const confirmarCompra = () => {
         setBtnMessage('Procesando compra')
         document.documentElement.style.setProperty("--display", "block")
+        setTimeout(() =>{
+            setIsCompraFinalizadaModalActive(true)
+        }, 2500)
     }
 
     return(
@@ -78,8 +81,8 @@ export const BuyPage = ({ productos }) => {
                 <h2>Resumen compra</h2>
                 <div className='purchase-summary__info'>
                     <div className='purchase-summary__info-span-container'>
-                        <span>Productos (1)</span>
-                        <span>$1310.00</span>
+                        <span>Productos ({ productosAComprar.length })</span>
+                        <span>${productosAComprar[0].price}</span>
                     </div>
                     <div className='purchase-summary__info-span-container'>
                         <span>Envío</span>
@@ -88,7 +91,7 @@ export const BuyPage = ({ productos }) => {
                 </div>
                 <div className={`purchase-summary__info-span-container padding-20-0`}>
                     <span>Total</span>
-                    <span>$1310.00</span>
+                    <span>${productosAComprar[0].price}</span>
                 </div>
                 
                 <button className='buy-btn' onClick={ confirmarCompra }>
@@ -99,7 +102,7 @@ export const BuyPage = ({ productos }) => {
             </div>
         </section>
         {
-            isCompraFinalizadaModalActive && <CompraFinalizada productos={[]} />
+            isCompraFinalizadaModalActive && <CompraFinalizada productos={productosAComprar} />
         }
       </>
     )

@@ -4,12 +4,20 @@ import '../styles/CarritoPage.css'
 import { Ofertas } from "../sections/Ofertas"
 import { ProductInCart } from "../components/ProductInCart"
 import { convertToCurrencyFormat } from "../helpers/convertToCurrencyFormat"
+import { useNavigate } from "react-router-dom"
 
 export const CarritoPage = () => {
 
-    const { carritoState, setLastProductAdded, getTotalPriceFromCart } = useContext(MeliContext)
+    const { carritoState, setLastProductAdded, getTotalPriceFromCart, productosAComprar, setProductosAComprar } = useContext(MeliContext)
 
     let pago = convertToCurrencyFormat(getTotalPriceFromCart())
+
+    const navigate = useNavigate()
+
+    const comprarProductos = () => {
+      setProductosAComprar(carritoState)
+      navigate('/checkout/buying')
+    }
 
     useEffect(() => {
       setLastProductAdded([])
@@ -55,7 +63,11 @@ export const CarritoPage = () => {
                   <span>{ pago }</span>
                 </div>
                 <div className="total-pay-button">
-                  <button>Continuar compra</button>
+                  <button
+                    onClick={comprarProductos}
+                  >
+                    Continuar compra
+                  </button>
                 </div>
               </> 
             }

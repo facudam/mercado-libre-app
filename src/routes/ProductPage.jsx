@@ -14,14 +14,17 @@ import { ProductAdded } from '../components/ProductAdded';
 import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
 import { Footer } from '../components/Footer';
 import { AgregarUnidades } from '../components/AgregarUnidades';
+import { useNavigate } from 'react-router-dom';
 
 
 export const ProductPage = () => {
 
-  const { itemForPage, addProductToCart, lastProductAdded, setLastProductAdded, cantidadItem, setCantidadItem, handleQuantityItems } = useContext(MeliContext)
+  const { itemForPage, addProductToCart, lastProductAdded, setLastProductAdded, cantidadItem, setCantidadItem, handleQuantityItems, productosAComprar, setProductosAComprar } = useContext(MeliContext)
 
   const [item, setItem] = useState([])
   const [ pictureIndex, setPictureIndex] = useState(0)
+
+  const navigate = useNavigate()
 
   const getItem = async() => {
     let url = `https://api.mercadolibre.com/items?ids=${itemForPage}`;
@@ -42,7 +45,7 @@ export const ProductPage = () => {
     setCantidadItem(cant)
     activateQuantityItemContainer()
   }
-
+  
   const addToCartAndToLasProductAdded = () => {
     item.quantity = cantidadItem;
     addProductToCart(item)
@@ -51,6 +54,12 @@ export const ProductPage = () => {
       top: 0,
       behavior: "smooth"
     })
+  }
+
+  const buyProduct = () => {
+    item.quantity = cantidadItem;
+    setProductosAComprar([item])
+    navigate('/checkout/buying')
   }
 
   useEffect(() => {
@@ -175,7 +184,11 @@ export const ProductPage = () => {
             </div>
           </div>
           <div className='buy-btn-container'>
-            <button>Comprar ahora</button>
+            <button
+              onClick={buyProduct}
+            >
+              Comprar ahora
+            </button>
             <button
               onClick={addToCartAndToLasProductAdded}
             >
