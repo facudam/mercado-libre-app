@@ -4,10 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles/BuyPage.css'
 import { MeliContext } from '../contexts/meliContext';
 import { CompraFinalizada } from '../modals/CompraFinalizada';
+import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
 
 export const BuyPage = () => {
 
-    const { isCompraFinalizadaModalActive, setIsCompraFinalizadaModalActive,productosAComprar, setProductosAComprar } = useContext(MeliContext)
+    const { isCompraFinalizadaModalActive, setIsCompraFinalizadaModalActive,productosAComprar,  getTotalPriceFromCart } = useContext(MeliContext)
     const [ btnMessage, setBtnMessage ] = useState('Confirmar Compra')
 
     useEffect(() => {
@@ -82,7 +83,7 @@ export const BuyPage = () => {
                 <div className='purchase-summary__info'>
                     <div className='purchase-summary__info-span-container'>
                         <span>Productos ({ productosAComprar.length })</span>
-                        <span>${productosAComprar[0].price}</span>
+                        <span>{convertToCurrencyFormat(getTotalPriceFromCart(productosAComprar))}</span>
                     </div>
                     <div className='purchase-summary__info-span-container'>
                         <span>Envío</span>
@@ -91,7 +92,7 @@ export const BuyPage = () => {
                 </div>
                 <div className={`purchase-summary__info-span-container padding-20-0`}>
                     <span>Total</span>
-                    <span>${productosAComprar[0].price}</span>
+                    <span>{convertToCurrencyFormat(getTotalPriceFromCart(productosAComprar))}</span>
                 </div>
                 
                 <button className='buy-btn' onClick={ confirmarCompra }>

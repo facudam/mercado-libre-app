@@ -10,7 +10,7 @@ export const ProductAdded = ({ img, title }) => {
 
     const { carritoState, getTotalPriceFromCart } = useContext(MeliContext)
     const navigate = useNavigate()
-    let totalAPagar = convertToCurrencyFormat(getTotalPriceFromCart()) ;
+    let totalAPagar = convertToCurrencyFormat(getTotalPriceFromCart(carritoState)) ;
 
     return(
         <div className="product-added">

@@ -65,6 +65,10 @@ export const ContextProvider = ({children}) => {
           const itemId = action.payload
           return carritoState.map((item) => (item.id === itemId && item.quantity > 1 ) ? {...item, quantity: item.quantity - 1} : item)
         }
+        case carritoActions.EMPTY_CART: {
+          const productos = action.payload
+          return (productos === carritoState) ? initialState : carritoState
+        }
         default:
           return carritoState
       }
@@ -100,13 +104,20 @@ export const ContextProvider = ({children}) => {
       })
     }
 
+    const emptyCart = (productos) => {
+      dispatch({
+        type: carritoActions.EMPTY_CART,
+        payload: productos
+      })
+    }
+
     const [ carritoState, dispatch ] = useReducer(carritoReducer, initialState);
 
   /* +++++++++++++++++++++++++++++++++++++++++ */
 
-    let totalPrice = 0;
-    const getTotalPriceFromCart = () => {
-      const totalPrice = carritoState.reduce((accumulator, currentItem) => {
+    
+    const getTotalPriceFromCart = (productArray) => {
+      const totalPrice = productArray.reduce((accumulator, currentItem) => {
         return accumulator + currentItem.price * currentItem.quantity;
       }, 0);
       return totalPrice
@@ -186,7 +197,8 @@ export const ContextProvider = ({children}) => {
             isCompraFinalizadaModalActive, 
             setIsCompraFinalizadaModalActive,
             productosAComprar, 
-            setProductosAComprar
+            setProductosAComprar,
+            emptyCart
         }}>{ children }</MeliContext.Provider>
     )
 }

@@ -10,7 +10,7 @@ export const CarritoPage = () => {
 
     const { carritoState, setLastProductAdded, getTotalPriceFromCart, productosAComprar, setProductosAComprar } = useContext(MeliContext)
 
-    let pago = convertToCurrencyFormat(getTotalPriceFromCart())
+    let pago = convertToCurrencyFormat(getTotalPriceFromCart(carritoState))
 
     const navigate = useNavigate()
 

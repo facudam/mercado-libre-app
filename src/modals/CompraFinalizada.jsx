@@ -8,15 +8,16 @@ import { useNavigate } from "react-router-dom";
 
 export const CompraFinalizada = ({productos}) => {
 
-    const { setIsCompraFinalizadaModalActive, setProductosAComprar } = useContext(MeliContext)
+    const { carritoState, setIsCompraFinalizadaModalActive, setProductosAComprar, productosAComprar, emptyCart } = useContext(MeliContext)
 
     const navigate = useNavigate()
 
     const salirDeCompra = () => {
-        setProductosAComprar([])
         document.documentElement.style.setProperty("--display", "none")
         setIsCompraFinalizadaModalActive(false)
         navigate('/')
+        emptyCart(productosAComprar)
+        setProductosAComprar([])
     }
 
     return ReactDOM.createPortal(

@@ -3,4 +3,5 @@ export const carritoActions = {
     DELETE_PRODUCT: 'delete_product',
     INCREMENT_QUANTITY: 'increment_quantity',
     DECREMENT_QUANTITY: 'decrement_quantity',
+    EMPTY_CART: 'empty_cart',
 }
