@@ -8,16 +8,11 @@ import { useNavigate } from "react-router-dom"
 
 export const CarritoPage = () => {
 
-    const { carritoState, setLastProductAdded, getTotalPriceFromCart, productosAComprar, setProductosAComprar } = useContext(MeliContext)
+    const { carritoState, setLastProductAdded, getTotalPriceFromCart, productosAComprar, setProductosAComprar, buyProduct } = useContext(MeliContext)
 
     let pago = convertToCurrencyFormat(getTotalPriceFromCart(carritoState))
 
     const navigate = useNavigate()
-
-    const comprarProductos = () => {
-      setProductosAComprar(carritoState)
-      navigate('/checkout/buying')
-    }
 
     useEffect(() => {
       setLastProductAdded([])
@@ -64,7 +59,7 @@ export const CarritoPage = () => {
                 </div>
                 <div className="total-pay-button">
                   <button
-                    onClick={comprarProductos}
+                    onClick={() => buyProduct(carritoState, navigate)}
                   >
                     Continuar compra
                   </button>

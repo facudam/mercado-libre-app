@@ -19,11 +19,10 @@ import { useNavigate } from 'react-router-dom';
 
 export const ProductPage = () => {
 
-  const { itemForPage, addProductToCart, lastProductAdded, setLastProductAdded, cantidadItem, setCantidadItem, handleQuantityItems, productosAComprar, setProductosAComprar } = useContext(MeliContext)
+  const { itemForPage, addProductToCart, lastProductAdded, setLastProductAdded, cantidadItem, setCantidadItem, handleQuantityItems, buyProduct } = useContext(MeliContext)
 
   const [item, setItem] = useState([])
   const [ pictureIndex, setPictureIndex] = useState(0)
-
   const navigate = useNavigate()
 
   const getItem = async() => {
@@ -56,12 +55,6 @@ export const ProductPage = () => {
     })
   }
 
-  const buyProduct = () => {
-    item.quantity = cantidadItem;
-    setProductosAComprar([item])
-    navigate('/checkout/buying')
-  }
-
   useEffect(() => {
     setLastProductAdded([])
     setCantidadItem(1)
@@ -69,6 +62,9 @@ export const ProductPage = () => {
     // Cada vez que se actualice el item, que se muestre la primera imagen.
     setPictureIndex(0)
   }, [itemForPage])
+
+  //Añadimos la cantidad de unidades al producto:
+  useEffect(() => {item.quantity = cantidadItem}, [cantidadItem, item])
 
   if (!item) return;
   return (
@@ -185,7 +181,7 @@ export const ProductPage = () => {
           </div>
           <div className='buy-btn-container'>
             <button
-              onClick={buyProduct}
+              onClick={() => buyProduct([item], navigate)}
             >
               Comprar ahora
             </button>

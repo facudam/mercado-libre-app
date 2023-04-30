@@ -8,7 +8,7 @@ import { convertToCurrencyFormat } from "../helpers/convertToCurrencyFormat"
 
 export const ProductAdded = ({ img, title }) => {
 
-    const { carritoState, getTotalPriceFromCart } = useContext(MeliContext)
+    const { carritoState, getTotalPriceFromCart, buyProduct } = useContext(MeliContext)
     const navigate = useNavigate()
     let totalAPagar = convertToCurrencyFormat(getTotalPriceFromCart(carritoState)) ;
 
@@ -57,7 +57,7 @@ export const ProductAdded = ({ img, title }) => {
                         Ver carrito
                     </button>
                     <button
-
+                        onClick={() => buyProduct(carritoState, navigate)}
                     >
                     Comprar carrito
                     </button>

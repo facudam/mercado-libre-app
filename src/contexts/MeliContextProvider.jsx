@@ -156,6 +156,12 @@ export const ContextProvider = ({children}) => {
         setCantidadItem(e.target.value)
     }
 
+    // Compramos los productos: 
+    const buyProduct = (productos, navigate) => {
+      setProductosAComprar(productos)
+      navigate('/checkout/buying')
+    }
+
     return(
         <MeliContext.Provider value={{
             menuActive,
@@ -198,7 +204,8 @@ export const ContextProvider = ({children}) => {
             setIsCompraFinalizadaModalActive,
             productosAComprar, 
             setProductosAComprar,
-            emptyCart
+            emptyCart,
+            buyProduct
         }}>{ children }</MeliContext.Provider>
     )
 }

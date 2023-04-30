@@ -2,10 +2,11 @@ import { useContext, useState } from 'react'
 import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat'
 import '../styles/ProductInCart.css'
 import { MeliContext } from '../contexts/meliContext'
+import { useNavigate } from 'react-router-dom'
 
 export const ProductInCart = ({ imgUrl, title, attributes, price, item }) => {
-    const { deleteProductFromCart, IncrementQuantityProduct, DecrementQuantityProduct } = useContext(MeliContext)
-
+    const { deleteProductFromCart, IncrementQuantityProduct, DecrementQuantityProduct, buyProduct } = useContext(MeliContext)
+    const navigate = useNavigate()
 
   return (
     <div className='product-in-cart'>
@@ -23,7 +24,7 @@ export const ProductInCart = ({ imgUrl, title, attributes, price, item }) => {
                 <div className='item-info__main-span'>
                     <span onClick={() => deleteProductFromCart(item) }>Eliminar</span>
                     <span>Más productos del vendedor</span>
-                    <span>Comprar ahora</span>
+                    <span onClick={() => buyProduct([item], navigate)}>Comprar ahora</span>
                 </div>
             </div>
         </div>
