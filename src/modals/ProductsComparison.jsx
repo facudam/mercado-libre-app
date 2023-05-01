@@ -45,7 +45,7 @@ export const ProductsComparison = () => {
                         <th>Cantidad vendidos</th>
                         <th>Reputación del vendedor</th>
                         <th>Cantidad de estrellas</th>
-                        <th></th>
+                        <th><div className='check-for-btn'>¡AÑADIDO!</div></th>
                     </tr>
                     {
                         productsToCompare.map(producto => (
@@ -63,15 +63,12 @@ export const ProductsComparison = () => {
                                 <td>{Number.parseFloat(producto.seller.seller_reputation.transactions.ratings.positive * 5).toFixed(1)}</td>
                                 <td>
                                     <button onClick={() => ComprarProducto(producto)} className='buy-product-btn'>Comprar ahora</button>
-                                    <button onClick={() => agregarAlCarrito(producto)} className='add-to-cart-btn'>
-                                        Agregar al carrito
-                                        <div className='check-for-btn'><img src='https://icongr.am/fontawesome/check.svg?size=16&color=ffffff' /></div>
-                                    </button>
-                                      
+                                    <button onClick={() => agregarAlCarrito(producto)} className='add-to-cart-btn'>Añadir al carrito</button>   
                                 </td>
                             </tr>
                         ))
                     }
+                    
                 </tbody>
             </table>
         </div>
