@@ -177,7 +177,10 @@ export const Nav = () => {
         {/* mobile nav */}
 
         <div className='nav__top nav-mobile-superior'>
-            <img className='mobile-logo' src={ mobileLogo } />
+            <Link onClick={() => setItemSearched('')}to="/">
+                <img className='mobile-logo' src={ mobileLogo } />
+            </Link>
+            
             <form
                 onSubmit={ handleSearchInput } 
                 className='nav-mobile-superior__input'
@@ -196,7 +199,7 @@ export const Nav = () => {
             </form>
             
             <MenuHamburguesa />
-            <img className='carrito-img' src={ carrito } alt='carrito de compras' />
+            <Link to="/gz/cart/v2"><img className='carrito-img' src={ carrito } alt='carrito de compras' /></Link>
         </div>
         {
             !menuActive && 
