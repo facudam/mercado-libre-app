@@ -164,7 +164,7 @@ export const ProductPage = () => {
             >
               Cantidad:{ (cantidadItem === 1 ) ? ` ${cantidadItem} unidad` : ` ${cantidadItem} unidades` } 
               <FontAwesomeIcon icon={ faChevronDown }   className='row-down-icon'/>
-              <span>({ item.available_quantity } disponibles)</span>
+              <span>({ item.available_quantity } { item.available_quantity > 1 ? 'disponibles' : 'disponible'} )</span>
             </button>
             <div className='quantity-items'>
               <AgregarUnidades availableItems={item.available_quantity} addQuantityItems={addQuantityItems}/>
