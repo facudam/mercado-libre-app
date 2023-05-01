@@ -59,7 +59,7 @@ export const ProductsComparison = () => {
                                 <td>{producto.attributes[0].value_name}</td>
                                 <td>{convertToCurrencyFormat(producto.price)}</td>
                                 <td>{producto.sold_quantity}</td>
-                                <td>{producto.seller.seller_reputation.power_seller_status}</td>
+                                <td>{(producto.seller.seller_reputation.power_seller_status === null) ? 'Sin reputación' : producto.seller.seller_reputation.power_seller_status}</td>
                                 <td>{Number.parseFloat(producto.seller.seller_reputation.transactions.ratings.positive * 5).toFixed(1)}</td>
                                 <td>
                                     <button onClick={() => ComprarProducto(producto)} className='buy-product-btn'>Comprar ahora</button>
