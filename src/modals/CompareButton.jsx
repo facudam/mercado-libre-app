@@ -5,10 +5,13 @@ import { MeliContext } from "../contexts/meliContext";
 
 export const CompareButton = () => {
 
-    const { productsToCompare } = useContext(MeliContext)
+    const { productsToCompare, setShowProductsComparison } = useContext(MeliContext)
 
     return ReactDOM.createPortal(
-        <button className="compare-button">Comparar productos ({productsToCompare.length})</button>,
+        <button
+            onClick={() => setShowProductsComparison(true)}
+            className="compare-button">Comparar productos ({productsToCompare.length})
+        </button>,
         document.getElementById('portal')
     )
 }

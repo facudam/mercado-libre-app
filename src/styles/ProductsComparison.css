@@ -1,0 +1,108 @@
+.products-comparison {
+    width: 95%;
+    max-width: 1200px;
+    max-height: 700px;
+    overflow-y: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    z-index: 99999;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+}
+
+.products-comparison__btn-ctn {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.products-comparison__btn-ctn button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #ff0000;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.products-comparison__btn-ctn button:hover {
+    background-color: #d90b0b;
+}
+
+.products-comparison table {
+    border-collapse: collapse;
+    border: 1px solid rgba(0,0,0, .1);
+    height: 100%; 
+}
+
+.products-comparison table tr th {
+    border: 1px solid rgba(0,0,0, .1);
+    width: 130px;
+    padding: 10px;
+}
+
+.products-comparison table tr td {
+    border: 1px solid rgba(0,0,0, .1);
+    padding: 10px;
+    text-align: center;
+}
+
+.add-to-cart-btn {
+    background-color: rgb(214,230,254);
+    width: 140px;
+    color: var(--azul);
+    padding: 10px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    transition: all .5s ease;
+    position: relative;
+}
+
+.add-to-cart-btn:hover {
+    background-color: rgb(188, 209, 241);
+    cursor: pointer;
+}
+
+.check-for-btn {
+    position: absolute;
+    background-color: var(--verde);
+    width: 20px;
+    height: 20px;
+    display: var(--display);
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    left: 145px;
+    top: 8px;
+    animation: heartBeat .8s ease-in .4s forwards;
+}
+
+.check-for-btn img {
+    width: 12px;
+}
+
+.buy-product-btn {
+    background-color: var(--azul);
+    width: 140px;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all .5s ease;
+    margin-bottom: 5px;
+}
+
+.buy-product-btn:hover {
+    background-color: rgb(28, 102, 212);
+    cursor: pointer;
+}

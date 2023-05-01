@@ -8,13 +8,14 @@ import { useNavigate } from "react-router-dom"
 
 export const CarritoPage = () => {
 
-    const { carritoState, setLastProductAdded, getTotalPriceFromCart, productosAComprar, setProductosAComprar, buyProduct } = useContext(MeliContext)
+    const { carritoState, setLastProductAdded, getTotalPriceFromCart, buyProduct, setProductsToCompare } = useContext(MeliContext)
 
     let pago = convertToCurrencyFormat(getTotalPriceFromCart(carritoState))
 
     const navigate = useNavigate()
 
     useEffect(() => {
+      setProductsToCompare([])
       setLastProductAdded([])
     }, [])
 
@@ -38,7 +39,7 @@ export const CarritoPage = () => {
                             carritoState.map(item => (
                               <ProductInCart
                                 key={item.id}
-                                imgUrl={item.secure_thumbnail} 
+                                imgUrl={item.thumbnail} 
                                 title={item.title}
                                 attributes={item.attributes}
                                 price={item.price}

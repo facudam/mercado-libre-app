@@ -19,7 +19,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const ProductPage = () => {
 
-  const { itemForPage, addProductToCart, lastProductAdded, setLastProductAdded, cantidadItem, setCantidadItem, handleQuantityItems, buyProduct } = useContext(MeliContext)
+  const { itemForPage, addProductToCart, lastProductAdded, setLastProductAdded, cantidadItem, setCantidadItem, handleQuantityItems, buyProduct, setProductsToCompare, setShowProductsComparison } = useContext(MeliContext)
 
   const [item, setItem] = useState([])
   const [ pictureIndex, setPictureIndex] = useState(0)
@@ -65,6 +65,11 @@ export const ProductPage = () => {
 
   //Añadimos la cantidad de unidades al producto:
   useEffect(() => {item.quantity = cantidadItem}, [cantidadItem, item])
+
+  useEffect(() => {
+    setProductsToCompare([])
+    setShowProductsComparison(false)
+  }, [])
 
   if (!item) return;
   return (

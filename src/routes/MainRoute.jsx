@@ -13,11 +13,12 @@ import { MeliContext } from '../contexts/meliContext'
 
 export const MainRoute = () => {
 
-  const { setLastProductAdded } = useContext(MeliContext)
+  const { setLastProductAdded, setProductsToCompare } = useContext(MeliContext)
 
   useEffect(() => {
     //Reiniciamos lastProductAdded a vacio.
     setLastProductAdded([])
+    setProductsToCompare([])
   }, [])
   
   return (

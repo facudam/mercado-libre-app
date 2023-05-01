@@ -52,7 +52,7 @@ export const SearchProductContainer = ({ identifier, img, name, price, item }) =
                 onClick={() => addOrDeleteToProductsToCompare(identifier, item)}
                 type='checkbox' id={ identifier} 
             />
-            <label htmlFor={ identifier }>Seleccionar</label>
+            <label htmlFor={ identifier }>Comparar</label>
         </div> 
     </div>
   )

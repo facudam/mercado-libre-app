@@ -35,6 +35,8 @@ export const ContextProvider = ({children}) => {
 
     const [ productsToCompare, setProductsToCompare ] = useState([])
 
+    const [ showProductsComparison, setShowProductsComparison ] = useState(false)
+
 
   /* ++++++++++++ UseReducer código +++++++++++ */
 
@@ -207,7 +209,9 @@ export const ContextProvider = ({children}) => {
             emptyCart,
             buyProduct,
             productsToCompare, 
-            setProductsToCompare
+            setProductsToCompare,
+            showProductsComparison, 
+            setShowProductsComparison
         }}>{ children }</MeliContext.Provider>
     )
 }
