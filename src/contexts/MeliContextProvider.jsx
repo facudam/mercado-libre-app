@@ -33,6 +33,8 @@ export const ContextProvider = ({children}) => {
 
     const [ isCompraFinalizadaModalActive, setIsCompraFinalizadaModalActive ] = useState(false)
 
+    const [ productsToCompare, setProductsToCompare ] = useState([])
+
 
   /* ++++++++++++ UseReducer código +++++++++++ */
 
@@ -126,8 +128,6 @@ export const ContextProvider = ({children}) => {
     const getMaxPages = (results) => {
       const MAX_ITEMS = 20;
       const MAX_PAGES = Math.round(results.length / MAX_ITEMS);
-      console.log(MAX_PAGES)
-
       return MAX_PAGES
     }
 
@@ -205,7 +205,9 @@ export const ContextProvider = ({children}) => {
             productosAComprar, 
             setProductosAComprar,
             emptyCart,
-            buyProduct
+            buyProduct,
+            productsToCompare, 
+            setProductsToCompare
         }}>{ children }</MeliContext.Provider>
     )
 }

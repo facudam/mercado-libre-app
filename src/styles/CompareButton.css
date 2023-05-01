@@ -1,0 +1,30 @@
+.compare-button {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 35px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    color: #fff;
+    background-color: var(--azul);
+    box-shadow: 2px 5px 5px 1px #808080;
+    transition: all .5s ease;
+    animation: aparecer 1.5s ease forwards;
+}
+
+.compare-button:hover {
+    background-color: rgb(34, 104, 210);
+    cursor: pointer;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0; 
+    }
+    100% {
+        opacity: 1; 
+    }
+}

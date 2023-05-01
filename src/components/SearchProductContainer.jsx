@@ -6,9 +6,9 @@ import { MeliContext } from '../contexts/meliContext';
 import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
 
 
-export const SearchProductContainer = ({ identifier, img, name, price }) => {
+export const SearchProductContainer = ({ identifier, img, name, price, item }) => {
 
-    const { itemNameForPage, changeItemPageValues } = useContext(MeliContext)
+    const { itemNameForPage, changeItemPageValues, productsToCompare, setProductsToCompare } = useContext(MeliContext)
 
     const [ productUrlImage, setProductUrlImage ] = useState('')
 
@@ -16,7 +16,14 @@ export const SearchProductContainer = ({ identifier, img, name, price }) => {
         const imagen = await getProductImages(img)
         setProductUrlImage(imagen[0].body.pictures[0].url)
     }
-
+    
+    const addOrDeleteToProductsToCompare = (id, item) => {
+        const productAllreadyAdded = productsToCompare.find(item => item.id === id)
+        productAllreadyAdded 
+            ? setProductsToCompare(productsToCompare.filter(item => item.id !== id)) 
+            : setProductsToCompare([...productsToCompare, item])
+    }
+   
     useEffect(() => {
         getProductUrlImage()
     }, [])
@@ -41,7 +48,10 @@ export const SearchProductContainer = ({ identifier, img, name, price }) => {
             <span>Envío gratis</span>
         </div>
         <div className='seleccionar-producto'>
-            <input type='checkbox' id={ identifier} />
+            <input 
+                onClick={() => addOrDeleteToProductsToCompare(identifier, item)}
+                type='checkbox' id={ identifier} 
+            />
             <label htmlFor={ identifier }>Seleccionar</label>
         </div> 
     </div>

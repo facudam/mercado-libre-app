@@ -3,13 +3,14 @@ import { SearchProductContainer } from '../components/SearchProductContainer'
 import '../styles/SearchProductsSection.css'
 import { PaginationComponent } from '../components/PaginationComponent';
 import { MeliContext } from '../contexts/meliContext';
+import { CompareButton } from '../modals/CompareButton';
 
 
 
 export const SearchProductsSection = ({ results }) => {
 
   const MAX_ITEMS = 20;
-  const { currentPage, setCurrentPage, getMaxPages } = useContext(MeliContext)
+  const { currentPage, setCurrentPage, getMaxPages, productsToCompare } = useContext(MeliContext)
  
 
   const handleNext = () => { 
@@ -23,6 +24,10 @@ export const SearchProductsSection = ({ results }) => {
   }
 
   return (
+   <>
+    {
+      productsToCompare.length > 1 && <CompareButton />
+    }
     <div className='search-products-section'>
       {
         results.slice(
@@ -34,6 +39,7 @@ export const SearchProductsSection = ({ results }) => {
             img={ item.id }
             name={ item.title }
             price={ item.price}
+            item={ item }
           />
         ))
       }
@@ -49,5 +55,6 @@ export const SearchProductsSection = ({ results }) => {
             />
       } 
     </div>
+   </>
   )
 }
