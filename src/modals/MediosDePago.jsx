@@ -83,7 +83,7 @@ export const MediosDePago = () => {
                                 <img src={ naranja } alt='tarjeta naranja' />
                                 <img src={ american } alt='tarjeta american express' />
                             </div>
-                            <p>*La cantidad de cuotas puede variar según la tarjeta.</p>
+                            <p className="tarjetas__info-p">*La cantidad de cuotas puede variar según la tarjeta.</p>
                             <a href="">Ver promociones en cuotas</a>
                         </div>
                     </div>

@@ -59,13 +59,13 @@
     line-height: 30px;
 }
 
-@media screen and (max-width: 445px) {
+@media screen and (max-width: 500px) {
     .descubri-container__info {
         padding: 30px 0 20px 20px;
     }
 
     .descubri-container__info p:nth-child(2) {
-        font-size: 18px;
-        line-height: 20px;
+        font-size: 14px;
+        line-height: 15px;
     }
 }

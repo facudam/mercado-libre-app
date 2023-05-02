@@ -157,3 +157,17 @@
         display: none;
     }
 }
+
+@media screen and (max-width: 592px) {
+    .mercado-puntos__title h2 {
+        font-size: 18px;
+    }
+    
+    .mercado-puntos__title a {
+        font-size: 14px;
+    }
+    .mercado-puntos__promos {
+        justify-content: center;
+        gap: 10px;
+    }
+}

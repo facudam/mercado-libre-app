@@ -13,7 +13,7 @@
     position: fixed;
     height: 88vh;
     max-height: 755px;
-    width: 100%;
+    width: 95vw;
     max-width: 830px;
     top: 50%;
     left: 50%;
@@ -194,9 +194,70 @@
     font-size: 13px;
 }
 
-@media screen and (max-width: 450px) {
-    .medios-de-pago-modal {
-        padding: 0px 15px 15px 15px;
+@media screen and (max-width: 680px) {
+    .header-modal {
+        padding: 24px 14px 0 14px;   
+    }
+    .header-modal__span {
+        font-size: 20px;
+    }
+    .info-modal {
+        padding: 0 14px 14px 14px;
+    }
+    .header-modal.on-scroll {
+        box-shadow: 1px 8px 10px -9px #808080;
+        padding: 14px 14px;
+        top: 0;
+    }
+    
+    .header-modal__span.scrolling {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .payment-modal-subtitle {
+        font-size: 15px;
+    }
+    
+    .mercado-credito-section {
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .mercado-credito-section img{
+        width: 120px;
+    }
+    
+    .mercado-credito-section-paragraph {
+        padding: 0 10px;
+    }
+    
+    .mercado-credito-section-paragraph p:first-child {
+       font-size: 15px;
+    }
+    
+    .mercado-credito-section-paragraph p:nth-child(2) {
+        font-size: 13px;
+    }
+    
+    .mercado-credito-section button {
+        padding: 5px;
+        font-size: 12px;
+    }
+    
+    .tarjetas-paragraphs p:first-child {
+        font-size: 16px  
+    }
+    
+    .tarjetas-paragraphs p:nth-child(2) {
+        font-size: 15px;
+    }
+    
+    .tarjetas-paragraphs p:nth-child(3) {
+        font-size: 15px;
+    }
+
+    .tarjetas__info p {
+        font-size: 14px;
     }
 }
 

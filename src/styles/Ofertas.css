@@ -48,3 +48,16 @@
     box-shadow: 1px 2px 10px 1px rgba(0,0,0,.19);
 }
 
+
+@media screen and (max-width: 1000px) {
+    .ofertas_section {
+        width: 85%;
+    }
+    .ofertas-title__h2 {
+        font-size: 18px;
+    }
+    
+    .ofertas-title__anchor {
+       font-size: 14px;
+    }
+}

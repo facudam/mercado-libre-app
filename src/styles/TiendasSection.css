@@ -12,3 +12,9 @@
     flex-wrap: wrap;
     gap: 16px;
 }
+
+@media screen and (max-width: 578px) {
+    .tiendas-section__tiendas {
+        justify-content: center;
+    }
+}

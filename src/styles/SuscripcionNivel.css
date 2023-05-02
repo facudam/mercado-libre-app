@@ -96,3 +96,37 @@
     cursor: pointer;
     background-color: #1259c3;
 }
+
+
+@media screen and (max-width: 790px) {
+    .title-section div:first-child {
+        font-size: 20px;
+    }
+    .title-section div:nth-child(2) p:first-child {
+        font-size: 12px;
+    }
+    
+    .title-section div:nth-child(2) p:nth-child(2) {
+        font-size: 18px;
+    }
+
+    .benefits-section p:first-child {
+        font-size: 16px;
+    }
+
+    .benefits__info {
+        gap: 10px;
+        font-size: 14px;
+        padding: 19px 0 14px 0;
+    }
+
+    .benefits__info img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .button-section button {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+}
