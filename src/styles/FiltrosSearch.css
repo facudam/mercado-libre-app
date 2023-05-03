@@ -52,6 +52,12 @@
     color: var(--azul);
 }
 
+@media screen and (max-width: 1069px) {
+    .filtros-search {
+        max-width: 238px;
+    }
+}
+
 @media screen and (max-width: 913px) {
     .filtros-search {
         display: none;
