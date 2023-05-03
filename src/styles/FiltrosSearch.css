@@ -1,6 +1,11 @@
+.filtros-search-mobile {
+    display: none;
+}
+
 
 .filtros-search {
-    width: 292px;
+    width: 100%;
+    max-width: 292px;
     color: #333;
 }
 
@@ -45,4 +50,30 @@
     font-size: 13px;
     text-decoration: none;
     color: var(--azul);
+}
+
+@media screen and (max-width: 913px) {
+    .filtros-search {
+        display: none;
+    }
+    .filtros-search-mobile {
+        display: flex;
+        width: 100%;
+    }
+    .filtros-search-mobile button {
+        width: 50%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        border: none;
+        background-color: #fff;
+        color: rgba(0,0,0, .6);
+        font-weight: 700;
+    }
+
+    .filtros-search-mobile button svg {
+        width: 20px;
+    }
 }

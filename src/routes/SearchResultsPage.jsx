@@ -18,7 +18,6 @@ export const SearchResultsPage = () => {
   const getItemSearched = async() => {
     const busqueda = await getProducts(productToBuy);
     setItemSearched(busqueda)
-    
   }
   
   useEffect(() => {

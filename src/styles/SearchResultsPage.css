@@ -1,8 +1,19 @@
 .search-results-page {
-    width: 90%;
+    width: 100%;
     max-width: var(--max-width);
     margin: auto; 
     padding: 20px 30px;
     display: flex;
-    gap: 10px;
+    gap: 20px;
+}
+
+@media screen and (max-width: 913px) {
+    .search-results-page {
+        padding: 0;
+        flex-wrap: wrap;
+    }
+
+    .mostrar {
+        display: none;
+    }
 }
