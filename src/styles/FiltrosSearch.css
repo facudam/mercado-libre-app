@@ -59,6 +59,7 @@
     .filtros-search-mobile {
         display: flex;
         width: 100%;
+        box-shadow: var(--shadow-container);
     }
     .filtros-search-mobile button {
         width: 50%;
