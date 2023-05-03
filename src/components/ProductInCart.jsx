@@ -28,14 +28,16 @@ export const ProductInCart = ({ imgUrl, title, attributes, price, item }) => {
                 </div>
             </div>
         </div>
-        <div className='item-quantity-button'>
-            <button onClick={() => DecrementQuantityProduct(item)}>-</button>
-            <span>{item.quantity}</span>
-            <button onClick={() => IncrementQuantityProduct(item)}>+</button>
-        </div>
-        <div className='item-price'>
-            <span>{ convertToCurrencyFormat(price) }</span>
-        </div>
+        <div className='item-numbers'>
+            <div className='item-quantity-button'>
+                <button onClick={() => DecrementQuantityProduct(item)}>-</button>
+                <span>{item.quantity}</span>
+                <button onClick={() => IncrementQuantityProduct(item)}>+</button>
+            </div>
+            <div className='item-price'>
+                <span>{ convertToCurrencyFormat(price) }</span>
+            </div>
+        </div>  
     </div>
   )
 }
