@@ -34,7 +34,6 @@ export const CompraFinalizada = ({productos}) => {
                         <div id="check-ctn">
                             <img src="https://icongr.am/fontawesome/check.svg?size=16&color=ffffff" />
                         </div>
-                        
                     </div>
                 </div>
                 <div className="compra-finalizada__productos">
