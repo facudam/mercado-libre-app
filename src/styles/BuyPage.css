@@ -1,6 +1,6 @@
 
 .BuyPage {
-    width: 100%;
+    width: 97%;
     max-width: 1173px;
     min-height: 100vh;
     margin: auto;
@@ -223,5 +223,54 @@
     }
     100% {
         width: 290px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    /* .receive-purchase {
+        width: 95%;
+        max-width: 505px;
+        padding: 50px 0 20px;
+    } */
+    .BuyPage {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 535px) {
+    .BuyPage h1 {
+        font-size: 18px;
+    }
+    
+    .BuyPage h2 {
+        font-size: 14px;
+        margin: 15px 0;
+    }
+    .receive-purchase__domicilio-info h3 {
+        font-size: 14px;
+    }
+    
+    .receive-purchase__domicilio-info span {
+        font-size: 12px;
+    }
+    
+    .receive-purchase__domicilio a {
+        font-size: 12px;
+    }
+    .checkbox-span {
+        font-size: 14px;
+    }
+    
+    .checkbox-span2 {
+        font-size: 13px;
+    }
+    .beneficio-m-p img {
+        width: 11px;
+    }
+    .beneficio-m-p span {
+        font-size: 12px;
+    }
+    .green {
+        font-size: 13px;
     }
 }
