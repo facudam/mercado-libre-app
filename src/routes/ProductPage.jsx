@@ -112,9 +112,8 @@ export const ProductPage = () => {
         <ProductDescriptionSection id={item.id} />
         <PreguntasYRespuestas />
       </div>
-
   
-      <div className='f-direction'>
+      <div>
         <div className='buying-info'>
           <span>{ (item.condition === 'new') ? 'Nuevo ' : 'Usado ' }
           | 

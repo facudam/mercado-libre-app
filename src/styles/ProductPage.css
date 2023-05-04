@@ -1,5 +1,9 @@
+* {
+    
+}
+
 .product-page {
-    width: 90%;
+    width: 98%;
     max-width: 1183px;
     margin: auto;
     background-color: #fff;
@@ -9,12 +13,15 @@
     justify-content: space-between;
     border: 1px solid rgba(0,0,0, .2);
     border-top: none;
-     margin-bottom: 30px; 
+    flex-wrap: wrap;
+    margin-bottom: 30px; 
+    
 }
 
 .f-direction {
     display: flex;
     flex-direction: column;
+    width: 100%;
     max-width: 840px;
 }
 
