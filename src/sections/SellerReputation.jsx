@@ -13,8 +13,6 @@ export const SellerReputation = ({ sellerID }) => {
 
     const getSellerInfo = async() => {
         const info = await getProductsBySeller(sellerID)
-        const respuesta = await info.json()
-        console.log(respuesta)
         setReputation(info.seller.seller_reputation.power_seller_status)  
     }
 
