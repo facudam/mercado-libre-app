@@ -29,14 +29,14 @@ export const MercadoLibreApp = () => {
         {/* establecemos la ruta search como dinamica al agregar los dos puntos */}
         <Route path='/search/:product' element={ <SearchResultsPage />} />
 
-        <Route path='/item/:item/:item' element={ <ProductPage /> } />
+        <Route path='/item/:itemId/:itemName' element={ <ProductPage /> } />
 
         <Route path='/gz/cart/v2' element={ <CarritoPage />} />
 
         <Route path='/checkout/buying' element={ <BuyPage />} />
 
         {/* En caso de que el usuario escriba una url inexistente lo enviamos a la url principal: */}
-        <Route path='/*' element={ <Navigate to='/' /> } />
+        {/* <Route path='/*' element={ <Navigate to='/' /> } /> */}
       </Routes>
     </>    
         

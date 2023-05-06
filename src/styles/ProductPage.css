@@ -406,6 +406,7 @@
         align-items: center;
     }
     .mobile-main-picture img {
+        max-width: 90%;
         max-height: 300px; 
     }
 }

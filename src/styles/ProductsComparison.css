@@ -1,9 +1,9 @@
 .products-comparison {
+    position: fixed;
     width: 95%;
     max-width: 1200px;
-    max-height: 700px;
-    overflow-y: auto;
-    position: fixed;
+    max-height: 80vh;
+    overflow: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -54,6 +54,11 @@
     border: 1px solid rgba(0,0,0, .1);
     padding: 10px;
     text-align: center;
+}
+
+.products-comparison table tr td a img {
+    max-width: 90px;
+    max-height: 90px;
 }
 
 .add-to-cart-btn {

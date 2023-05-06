@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from 'react'
 import '../styles/SearchProductContainer.css'
 import { getProductImages } from '../helpers/getProductImages'
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { MeliContext } from '../contexts/meliContext';
 import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
 
@@ -23,6 +23,10 @@ export const SearchProductContainer = ({ identifier, img, name, price, item }) =
             ? setProductsToCompare(productsToCompare.filter(item => item.id !== id)) 
             : setProductsToCompare([...productsToCompare, item])
     }
+
+    // useEffect(() => {
+    //     Navigate(`/item/${identifier}/${name}`)
+    // }, [identifier, name])
    
     useEffect(() => {
         getProductUrlImage()

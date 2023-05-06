@@ -56,6 +56,10 @@ export const ProductPage = () => {
   }
 
   useEffect(() => {
+    navigate(`/item/${item.id}/${item.title}`)
+  }, [item.id, item.title])
+
+  useEffect(() => {
     setLastProductAdded([])
     setCantidadItem(1)
     getItem()

@@ -23,7 +23,7 @@ export const ContextProvider = ({children}) => {
     const [ currentPage, setCurrentPage ] = useState(1)
 
     const [ itemForPage, setItemForPage ] = useState('MLA612037339')
-    const [ itemNameForPage, setItemNameForPage ] = useState('')
+    const [ itemNameForPage, setItemNameForPage ] = useState('producto')
 
     const [ lastProductAdded, setLastProductAdded ] = useState([])
 
