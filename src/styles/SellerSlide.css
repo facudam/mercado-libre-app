@@ -106,3 +106,8 @@
     color: var(--azul);
 }
 
+@media  screen and (max-width: 1130px) {
+    .seller-slide {
+        display: none;
+    }
+}

@@ -59,7 +59,7 @@ export const ProductAdded = ({ img, title }) => {
                     <button
                         onClick={() => buyProduct(carritoState, navigate)}
                     >
-                    Comprar carrito
+                        Comprar carrito
                     </button>
                 </div>
             </div>

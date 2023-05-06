@@ -1,6 +1,3 @@
-* {
-    
-}
 
 .product-page {
     width: 98%;
@@ -14,15 +11,14 @@
     border: 1px solid rgba(0,0,0, .2);
     border-top: none;
     flex-wrap: wrap;
-    margin-bottom: 30px; 
-    
+    margin-bottom: 30px;  
 }
 
 .f-direction {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 840px;
+    max-width: 840px;  
 }
 
 .product-main-info {
@@ -86,7 +82,8 @@
 }
 
 .buying-info {
-    width: 325px;
+    width: 100%;
+    max-width: 325px;
     margin: 16px 16px 16px 0;
     border: 1px solid rgba(0,0,0, .1);
     border-radius: 8px;
@@ -128,6 +125,10 @@
 .star {
     width: 18px;
     color: var(--azul);
+}
+
+.mobile-main-picture {
+    display: none;
 }
 
 .pago-container {
@@ -279,11 +280,6 @@
     border: none;  
 }
 
-/* .quantity-items__greater input:first-child::-webkit-inner-spin-button,
-.quantity-items__greater input:first-child::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-} */
-
 .quantity-items__greater input:first-child:focus {
     outline: none;
 }
@@ -353,3 +349,64 @@
 .footer-buy-info span a {
     color: var(--azul);
 }
+
+@media screen and (max-width: 1300px) {
+    .f-direction {
+        max-width: 740px;
+    }  
+}
+
+@media screen and (max-width: 1130px) {
+    .f-direction {
+        max-width: 660px;
+    }
+
+    .huge-picture-container {
+        border: none;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .f-direction {
+        max-width: 600px;
+    }
+}
+
+@media screen and (max-width: 985px) {
+    .f-direction {
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .product-page {
+        width: 100%;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        margin-top: 10px;
+    }
+    .f-direction {
+        display: none;
+    }
+    .buying-ctn {
+        width: 97%; 
+        border: none; 
+        margin: auto;
+    }
+    .buying-info {
+        max-width: 100%;
+        background-color: #fff;
+        margin: 0;
+    }
+    .mobile-main-picture {
+        display: flex;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    .mobile-main-picture img {
+        max-height: 300px; 
+    }
+}
+

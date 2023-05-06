@@ -113,7 +113,7 @@ export const ProductPage = () => {
         <PreguntasYRespuestas />
       </div>
   
-      <div>
+      <div className='buying-ctn'>
         <div className='buying-info'>
           <span>{ (item.condition === 'new') ? 'Nuevo ' : 'Usado ' }
           | 
@@ -138,6 +138,12 @@ export const ProductPage = () => {
             <span>{ convertToCurrencyFormat(item.price)  }</span>
             <span>en 6x { convertToCurrencyFormat(item.price / 5)  }</span>
             <a>Ver los medios de pago</a>
+          </div>
+          <div className='mobile-main-picture'>
+            {
+              (!item.pictures) ? console.log('..cargando')
+                : <img src={ item.pictures[0].secure_url }/>  
+            }
           </div>
           <div className='entrega-container'>
             <FontAwesomeIcon icon={ faTruckFast } className='entrega-icon'/>

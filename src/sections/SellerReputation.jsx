@@ -22,7 +22,7 @@ export const SellerReputation = ({ sellerID }) => {
 
   if (reputation.power_seller_status == null) return
   return (
-    <section className="buying-info">
+    <section className='buying-info'>
         <h2 className='reputation-h2'>Información sobre el vendedor</h2>
         <div className="seller-reputation">
             <FontAwesomeIcon icon={ faMedal } className='green-color' />
