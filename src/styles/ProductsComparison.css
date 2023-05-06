@@ -1,9 +1,9 @@
 .products-comparison {
     position: fixed;
     width: 95%;
-    max-width: 1200px;
+    max-width: 1000px;
     max-height: 80vh;
-    overflow: auto;
+    overflow: hidden;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -38,10 +38,12 @@
 }
 
 .products-comparison table {
+    display: block;
     border-collapse: collapse;
     border: 1px solid rgba(0,0,0, .1);
-    height: 100%; 
+    max-height: 90%; 
     position: relative;
+    overflow: auto;
 }
 
 .products-comparison table tr th {
