@@ -32,6 +32,7 @@ export const SearchProductContainer = ({ identifier, img, name, price, item }) =
     <div className="search-product-container" >
         <Link 
             onMouseOver={() => changeItemPageValues(identifier, name)}
+            onClick={() => changeItemPageValues(identifier, name)}
             to={`/item/${identifier}/${itemNameForPage}`}
             className="product-img-container"
         >
@@ -40,6 +41,7 @@ export const SearchProductContainer = ({ identifier, img, name, price, item }) =
         <div className="product-information">
             <Link
                 onMouseOver={() => changeItemPageValues(identifier, name)}
+                onClick={() => changeItemPageValues(identifier, name)}
                 to={`/item/${identifier}/${itemNameForPage}`}
             >
                 <h2>{ name }</h2>

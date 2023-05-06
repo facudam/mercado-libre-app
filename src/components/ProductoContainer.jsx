@@ -25,6 +25,7 @@ export const ProductoContainer = ({ id, img, title, price, descuento, cuotas, en
       className="main-container" 
       to={`/item/${id}/${itemNameForPage}`} 
       onMouseOver={() => changeItemPageValues(id, title)}
+      onClick={() => changeItemPageValues(id, title)}
       >
         <div id="img-container">
           <div className="img-container__heart"><img id="img-container__heart-img" src={ corazon } alt='corazon svg'/></div>

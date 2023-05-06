@@ -221,12 +221,11 @@
 @media screen and (max-width: 540px) {
     .main-info {
         width: 100%;
-        justify-content: center;
+        justify-content: start;
         padding: 5px 10px;
     }
     .secondary-info {
         width: 100%;
-        
         padding: 5px 10px;
     }
     .product-added-max-width {
