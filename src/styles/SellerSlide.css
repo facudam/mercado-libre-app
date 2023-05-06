@@ -79,11 +79,11 @@
 }
 
 .seller-slider .swiper-button-prev {
-    left: -17px !important;  
+    left: 0px !important;  
 }
 
 .seller-slider .swiper-button-next {
-    right: -2px !important;
+    right: 20px !important;
 }
 
 .seller-slide .swiper {
@@ -109,5 +109,15 @@
 @media  screen and (max-width: 1130px) {
     .seller-slide {
         display: none;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .seller-slider .swiper-button-prev {
+        left: -30px !important;  
+    }
+
+    .seller-slider .swiper-button-next {
+        right: -20px !important;
     }
 }

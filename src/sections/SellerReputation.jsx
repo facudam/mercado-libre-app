@@ -5,6 +5,7 @@ import '../styles/SellerReputation.css'
 import { getProductsBySeller } from '../helpers/getProductsBySeller';
 import messagePositive from '../images/message-positive.svg'
 import timePositive from '../images/time-positive.svg'
+import { SimpleLoader } from '../loaders/SimpleLoader';
 
 export const SellerReputation = ({ sellerID }) => {
 
@@ -12,24 +13,27 @@ export const SellerReputation = ({ sellerID }) => {
 
     const getSellerInfo = async() => {
         const info = await getProductsBySeller(sellerID)
-        setReputation(info.seller.seller_reputation)
-        
+        const respuesta = await info.json()
+        console.log(respuesta)
+        setReputation(info.seller.seller_reputation.power_seller_status)  
     }
 
     useEffect(() => {
         getSellerInfo()
     }, [ reputation, sellerID ])
 
-  if (reputation.power_seller_status == null) return
   return (
     <section className='buying-info'>
         <h2 className='reputation-h2'>Información sobre el vendedor</h2>
         <div className="seller-reputation">
             <FontAwesomeIcon icon={ faMedal } className='green-color' />
-            <div className='p-container'>
-                <p>{(!reputation) ? '' :  `MercadoLíder ${reputation.power_seller_status}` }</p>
-                <p>{(reputation.power_seller_status === 'platinum') ? '¡Es uno de los mejores del sitio!' : null}</p>
-            </div>
+            {
+                (!sellerID) ? <SimpleLoader /> :
+                <div className='p-container'>
+                    <p>{(reputation) && `MercadoLíder ${reputation}` }</p>
+                    <p>{(reputation === 'platinum') ? '¡Es uno de los mejores del sitio!' : null}</p>
+                </div>
+            } 
             
         </div>
         <div className='color-container'>

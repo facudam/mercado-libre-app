@@ -15,6 +15,7 @@ import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
 import { Footer } from '../components/Footer';
 import { AgregarUnidades } from '../components/AgregarUnidades';
 import { useNavigate } from 'react-router-dom';
+import { SimpleLoader } from '../loaders/SimpleLoader'
 
 
 export const ProductPage = () => {
@@ -24,6 +25,7 @@ export const ProductPage = () => {
   const [item, setItem] = useState([])
   const [ pictureIndex, setPictureIndex] = useState(0)
   const navigate = useNavigate()
+  const [titulo, setTitulo] = useState('')
 
   const getItem = async() => {
     let url = `https://api.mercadolibre.com/items?ids=${itemForPage}`;
@@ -56,7 +58,11 @@ export const ProductPage = () => {
   }
 
   useEffect(() => {
-    navigate(`/item/${item.id}/${item.title}`)
+    // Verificamos si item no es ni null ni undefined, y si no lo es, entonces reemplazamos los "/" por "-"
+    if (item && item.id && item.title) {
+      const ruta = `/item/${item.id}/${item.title.replace(/\//g, "-")}`;
+      navigate(ruta)
+    }
   }, [item.id, item.title])
 
   useEffect(() => {
@@ -88,7 +94,7 @@ export const ProductPage = () => {
         <div className='product-main-info'>
           <div className='small-pictures-container'>
             {
-                (!item.pictures) ? console.log('...cargando')
+                (!item.pictures) ? <SimpleLoader />
                 : item.pictures.slice(0, 8).map((img, index) => (
                     <div
                       onMouseOver={() => setPictureIndex(index)}
@@ -105,7 +111,7 @@ export const ProductPage = () => {
           </div> 
           <div className='huge-picture-container'>
             {
-              (!item.pictures) ? console.log('..cargando')
+              (!item.pictures) ? <SimpleLoader />
                 : <img src={ item.pictures[pictureIndex].secure_url }/>  
             }
           </div>
@@ -145,7 +151,7 @@ export const ProductPage = () => {
           </div>
           <div className='mobile-main-picture'>
             {
-              (!item.pictures) ? console.log('..cargando')
+              (!item.pictures) ? <SimpleLoader />
                 : <img src={ item.pictures[0].secure_url }/>  
             }
           </div>

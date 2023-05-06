@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { getProductDescription } from '../helpers/getProductDescription'
 import '../styles/ProductDescriptionSection.css'
+import { SimpleLoader } from '../loaders/SimpleLoader'
 
-export const ProductDescriptionSection = ({id}) => {
+export const ProductDescriptionSection = ({ id }) => {
 
     const [ description, setDescription ] = useState('')
 
@@ -18,7 +19,10 @@ export const ProductDescriptionSection = ({id}) => {
   return (
     <section className='description-section'>
         <h2>Descripción</h2>
-        <p className='description-p'>{ description.plain_text }</p>
+        {
+          (description) && <p className='description-p'>{ description.plain_text }</p>
+        }
+        
     </section>
   )
 }
