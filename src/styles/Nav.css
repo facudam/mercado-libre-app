@@ -241,6 +241,11 @@
     position: relative;
     height: 25px;
 }
+
+.relative-position-2 {
+    position: relative;
+}
+
 .carrito-img {
     width: 25px;
     cursor: pointer;
@@ -260,6 +265,10 @@
     background-color: rgb(217,0,0);
     border-radius: 3px;
     cursor: pointer;
+}
+
+.cant-products-cart-2 {
+    top: 0;
 }
 
 .nav__top-second {

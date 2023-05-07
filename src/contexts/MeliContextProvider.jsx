@@ -63,11 +63,11 @@ export const ContextProvider = ({children}) => {
         }
         case carritoActions.INCREMENT_QUANTITY: {
           const itemId = action.payload;
-          return carritoState.map((item) => item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item)
+          return carritoState.map((item) => item.id === itemId ? { ...item, quantity: Number(item.quantity) + 1 } : item)
         }
         case carritoActions.DECREMENT_QUANTITY: {
           const itemId = action.payload
-          return carritoState.map((item) => (item.id === itemId && item.quantity > 1 ) ? {...item, quantity: item.quantity - 1} : item)
+          return carritoState.map((item) => (item.id === itemId && item.quantity > 1 ) ? {...item, quantity: Number(item.quantity) - 1} : item)
         }
         case carritoActions.EMPTY_CART: {
           const productos = action.payload

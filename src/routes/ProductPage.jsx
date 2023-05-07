@@ -25,7 +25,6 @@ export const ProductPage = () => {
   const [item, setItem] = useState([])
   const [ pictureIndex, setPictureIndex] = useState(0)
   const navigate = useNavigate()
-  const [titulo, setTitulo] = useState('')
 
   const getItem = async() => {
     let url = `https://api.mercadolibre.com/items?ids=${itemForPage}`;

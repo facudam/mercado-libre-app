@@ -199,7 +199,18 @@ export const Nav = () => {
             </form>
             
             <MenuHamburguesa />
-            <Link to="/gz/cart/v2"><img className='carrito-img' src={ carrito } alt='carrito de compras' /></Link>
+            <div className='relative-position-2'>
+                <Link to="/gz/cart/v2"><img className='carrito-img' src={ carrito } alt='carrito de compras' /></Link>
+            {
+                (carritoState.length > 0 ) && 
+                    <div 
+                        onClick={() => navigate('/gz/cart/v2')}
+                        className={`cant-products-cart cant-products-cart-2`}>
+                        { carritoState.length }
+                    </div>
+            }
+            </div>
+            
         </div>
         {
             !menuActive && 
