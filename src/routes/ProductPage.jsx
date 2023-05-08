@@ -24,6 +24,7 @@ export const ProductPage = () => {
 
   const [item, setItem] = useState([])
   const [ pictureIndex, setPictureIndex] = useState(0)
+  const [loading, setLoading ] = useState(true)
   const navigate = useNavigate()
 
   const getItem = async() => {
@@ -31,6 +32,7 @@ export const ProductPage = () => {
     const resp = await fetch(url);
     const resultado = await resp.json();
     setItem(resultado[0].body) 
+    setLoading(false)
   }
 
   const activateQuantityItemContainer = () => {
@@ -80,8 +82,8 @@ export const ProductPage = () => {
     setShowProductsComparison(false)
   }, [])
 
-  if (!item) return;
-  return (
+  if (loading) return (<SimpleLoader />)
+  else { return (
    <>
     {
       (lastProductAdded.length > 0) &&
@@ -227,4 +229,5 @@ export const ProductPage = () => {
     <Footer />
    </>
   )
+ }
 }
