@@ -67,6 +67,7 @@ export const ProductPage = () => {
   }, [item.id, item.title])
 
   useEffect(() => {
+    setLoading(true)
     setLastProductAdded([])
     setCantidadItem(1)
     getItem()

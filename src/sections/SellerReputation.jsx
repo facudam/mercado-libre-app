@@ -10,10 +10,12 @@ import { SimpleLoader } from '../loaders/SimpleLoader';
 export const SellerReputation = ({ sellerID }) => {
 
     const [ reputation, setReputation ] = useState('')
+    const [ isLoading, setIsLoading ] = useState(true)
 
     const getSellerInfo = async() => {
         const info = await getProductsBySeller(sellerID)
-        setReputation(info.seller.seller_reputation.power_seller_status)  
+        setReputation(info.seller.seller_reputation.power_seller_status)
+        setIsLoading(false) 
     }
 
     useEffect(() => {
@@ -26,7 +28,7 @@ export const SellerReputation = ({ sellerID }) => {
         <div className="seller-reputation">
             <FontAwesomeIcon icon={ faMedal } className='green-color' />
             {
-                (!sellerID) ? <SimpleLoader /> :
+                (isLoading) ? <SimpleLoader /> :
                 <div className='p-container'>
                     <p>{(reputation) && `MercadoLíder ${reputation}` }</p>
                     <p>{(reputation === 'platinum') ? '¡Es uno de los mejores del sitio!' : null}</p>
