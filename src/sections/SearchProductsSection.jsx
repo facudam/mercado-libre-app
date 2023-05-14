@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { SearchProductContainer } from '../components/SearchProductContainer'
 import '../styles/SearchProductsSection.css'
 import { PaginationComponent } from '../components/PaginationComponent';
@@ -11,7 +11,7 @@ import { ProductsComparison } from '../modals/ProductsComparison';
 export const SearchProductsSection = ({ results }) => {
 
   const MAX_ITEMS = 20;
-  const { currentPage, setCurrentPage, getMaxPages, productsToCompare, showProductsComparison, setShowProductsComparison } = useContext(MeliContext)
+  const { currentPage, setCurrentPage, getMaxPages, productsToCompare, showProductsComparison, setShowProductsComparison, setCantidadItem } = useContext(MeliContext)
  
 
   const handleNext = () => { 
@@ -23,6 +23,8 @@ export const SearchProductsSection = ({ results }) => {
     window.scrollTo(0,0)
     setCurrentPage(currentPage - 1)
   }
+
+  useEffect(() => {setCantidadItem(1)}, [])
 
   return (
    <>

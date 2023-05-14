@@ -9,10 +9,11 @@ import { SimpleLoader } from '../loaders/SimpleLoader'
 
 export const SearchResultsPage = () => {
 
-  const { itemSearched, setItemSearched, productToBuy, setLastProductAdded } = useContext(MeliContext)
+  const { itemSearched, setItemSearched, productToBuy, setLastProductAdded, setCantidadItem } = useContext(MeliContext)
 
   useEffect(() => {
     document.querySelector('body').style.backgroundColor = "rgb(237, 237, 237)"
+    setCantidadItem(1)
   }, [])
 
   const getItemSearched = async() => {
