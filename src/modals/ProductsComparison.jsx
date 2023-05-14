@@ -45,7 +45,7 @@ export const ProductsComparison = () => {
                         <th>Cantidad vendidos</th>
                         <th>Reputación del vendedor</th>
                         <th>Cantidad de estrellas</th>
-                        <th><div className='check-for-btn'>¡AÑADIDO!</div></th>
+                        <th><div className='check-for-btn'><span>¡AÑADIDO!</span></div></th>
                     </tr>
                     {
                         productsToCompare.map(producto => (

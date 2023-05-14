@@ -85,17 +85,18 @@
     left: 0;
     right: 0;
     bottom: 0;
-    transform: translate(-50%, -50%);
     background-color: rgba(0, 166, 80, .5);
     color: #fff;
     display: var(--display);
     justify-content: center;
     align-items: center;
-    animation: latido .8s ease-in forwards;
     font-size: 40px;
     text-shadow: 1px 1px 1px rgb(159, 156, 156);
-    padding: 20px 25px;
-    border-radius: 10px;
+}
+
+.check-for-btn span {
+    display: block;
+    animation: latido .8s ease-in forwards;
 }
 
 .buy-product-btn {
