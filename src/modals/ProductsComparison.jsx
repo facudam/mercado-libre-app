@@ -25,6 +25,28 @@ export const ProductsComparison = () => {
         }, 2000)
     }
 
+    const showReputationSeller = (producto) => {
+        if (producto.seller.seller_reputation.power_seller_status === null) {
+            return 'sin reputación'
+        } else if (producto.seller.seller_reputation.power_seller_status === 'platinum') {
+            return 'Platinum: Uno de los mejores'
+        } else {
+            return producto.seller.seller_reputation.power_seller_status
+        } 
+    }
+
+    const addColorReputation = (producto) => {
+        if (producto.seller.seller_reputation.power_seller_status === 'platinum') {
+            return 'platinum'
+        } 
+        if (producto.seller.seller_reputation.power_seller_status === 'gold'){
+            return 'gold-reputation'
+        }
+        if (producto.seller.seller_reputation.power_seller_status === 'silver') {
+            return 'silver-reputation'
+        }
+    }
+
     useEffect(() => {
         document.documentElement.style.setProperty('--display', 'none')
     }, [])
@@ -59,7 +81,7 @@ export const ProductsComparison = () => {
                                 <td>{producto.attributes[0].value_name}</td>
                                 <td>{convertToCurrencyFormat(producto.price)}</td>
                                 <td>{producto.sold_quantity}</td>
-                                <td>{(producto.seller.seller_reputation.power_seller_status === null) ? 'Sin reputación' : producto.seller.seller_reputation.power_seller_status}</td>
+                                <td className={addColorReputation(producto)}>{showReputationSeller(producto)}</td>
                                 <td>{Number.parseFloat(producto.seller.seller_reputation.transactions.ratings.positive * 5).toFixed(1)}</td>
                                 <td>
                                     <button onClick={() => ComprarProducto(producto)} className='buy-product-btn'>Comprar ahora</button>

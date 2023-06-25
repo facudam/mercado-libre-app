@@ -116,6 +116,26 @@
     cursor: pointer;
 }
 
+.platinum {
+    background-color: rgb(0, 166, 80);
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #4b4a4a;
+}
+
+.gold-reputation {
+    background-color: #ffd700;
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #4b4a4a;
+}
+.silver-reputation {
+    background-color: #c0c0c0;
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #4b4a4a;
+}
+
 @keyframes latido {
     0% {
         opacity: 0;
