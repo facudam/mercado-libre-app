@@ -61,12 +61,12 @@ export const ProductsComparison = () => {
             <table className=''>
                 <tbody>
                     <tr>
-                        <th>Producto</th>
-                        <th>Marca</th>
-                        <th>Precio</th>
-                        <th>Cantidad vendidos</th>
-                        <th>Reputación del vendedor</th>
-                        <th>Cantidad de estrellas</th>
+                        <th>PRODUCTO</th>
+                        <th>MARCA</th>
+                        <th>PRECIO</th>
+                        <th>CANTIDAD VENDIDOS</th>
+                        <th>REPUTACIÓN VENDEDOR</th>
+                        <th>CANTIDAD DE ESTRELLAS</th>
                         <th><div className='check-for-btn'><span>¡AÑADIDO!</span></div></th>
                     </tr>
                     {

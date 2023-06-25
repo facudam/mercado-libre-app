@@ -14,7 +14,6 @@
     flex-direction: column;
     justify-content: center;
     gap: 10px;
-    border-radius: 5px;
 }
 
 .products-comparison__btn-ctn {
@@ -47,9 +46,12 @@
 }
 
 .products-comparison table tr th {
-    border: 1px solid rgba(0,0,0, .1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     width: 130px;
     padding: 10px;
+    background-color: #4b4a4a;
+    font-size: 14px;
+    color: #fff;
 }
 
 .products-comparison table tr td {
