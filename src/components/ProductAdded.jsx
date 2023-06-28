@@ -20,8 +20,7 @@ export const ProductAdded = ({ img, title }) => {
                     <img src={ img } className="product-img"/>
                     <div className="check-icon-container">
                         <FontAwesomeIcon icon={faCheck} className='check-icon' />
-                    </div>
-                    
+                    </div>  
                 </div>
                 <div className="main-info__titles">
                     <span>Agregaste a tu carrito</span>
