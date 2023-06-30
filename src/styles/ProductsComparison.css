@@ -82,6 +82,16 @@
     cursor: pointer;
 }
 
+.vaciar-lista {
+    padding: 5px 10px;
+    border: none;
+    background-color: transparent;
+    background-color: rgb(113, 114, 113);
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    font-weight: 700;
+}
+
 .check-for-btn {
     position: fixed;
     top: 0;

@@ -8,13 +8,12 @@ import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
 
 export const BuyPage = () => {
 
-    const { isCompraFinalizadaModalActive, setIsCompraFinalizadaModalActive,productosAComprar,  getTotalPriceFromCart, setProductsToCompare, setShowProductsComparison } = useContext(MeliContext)
+    const { isCompraFinalizadaModalActive, setIsCompraFinalizadaModalActive,productosAComprar,  getTotalPriceFromCart, setShowProductsComparison } = useContext(MeliContext)
     const [ btnMessage, setBtnMessage ] = useState('Confirmar Compra')
 
     useEffect(() => {
         document.querySelector('body').style.backgroundColor = "rgb(238, 238, 238)"
         setBtnMessage('Confirmar Compra')
-        setProductsToCompare([])
         setShowProductsComparison(false)
       }, [])
 

@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 export const ProductsComparison = () => {
 
-    const { productsToCompare, setShowProductsComparison, addProductToCart, cantidadItem, buyProduct, itemNameForPage, changeItemPageValues } = useContext(MeliContext)
+    const { productsToCompare, setProductsToCompare, setShowProductsComparison, addProductToCart, cantidadItem, buyProduct, itemNameForPage, changeItemPageValues } = useContext(MeliContext)
     
     const navigate = useNavigate()
 
@@ -47,6 +47,11 @@ export const ProductsComparison = () => {
         }
     }
 
+    const vaciarLista = () => {
+        setProductsToCompare([])
+        setShowProductsComparison(false)
+    }
+
     useEffect(() => {
         document.documentElement.style.setProperty('--display', 'none')
     }, [])
@@ -67,7 +72,14 @@ export const ProductsComparison = () => {
                         <th>CANTIDAD VENDIDOS</th>
                         <th>REPUTACIÓN VENDEDOR</th>
                         <th>CANTIDAD DE ESTRELLAS</th>
-                        <th><div className='check-for-btn'><span>¡AÑADIDO!</span></div></th>
+                        <th>
+                            <button 
+                                onClick={ vaciarLista }
+                                className='vaciar-lista'>Vaciar lista
+                            </button>
+                            <div className='check-for-btn'><span>¡AÑADIDO!</span>
+                            </div>
+                        </th>
                     </tr>
                     {
                         productsToCompare.map(producto => (

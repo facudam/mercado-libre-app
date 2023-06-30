@@ -20,7 +20,7 @@ import { SimpleLoader } from '../loaders/SimpleLoader'
 
 export const ProductPage = () => {
 
-  const { itemForPage, addProductToCart, lastProductAdded, setLastProductAdded, cantidadItem, setCantidadItem, handleQuantityItems, buyProduct, setProductsToCompare, setShowProductsComparison } = useContext(MeliContext)
+  const { itemForPage, addProductToCart, lastProductAdded, setLastProductAdded, cantidadItem, setCantidadItem, handleQuantityItems, buyProduct, setShowProductsComparison } = useContext(MeliContext)
 
   const [item, setItem] = useState([])
   const [ pictureIndex, setPictureIndex] = useState(0)
@@ -79,7 +79,6 @@ export const ProductPage = () => {
   useEffect(() => {item.quantity = cantidadItem}, [cantidadItem, item])
 
   useEffect(() => {
-    setProductsToCompare([])
     setShowProductsComparison(false)
   }, [])
 

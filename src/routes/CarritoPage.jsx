@@ -8,14 +8,13 @@ import { useNavigate } from "react-router-dom"
 
 export const CarritoPage = () => {
 
-    const { carritoState, setLastProductAdded, getTotalPriceFromCart, buyProduct, setProductsToCompare } = useContext(MeliContext)
+    const { carritoState, setLastProductAdded, getTotalPriceFromCart, buyProduct } = useContext(MeliContext)
 
     let pago = convertToCurrencyFormat(getTotalPriceFromCart(carritoState))
 
     const navigate = useNavigate()
 
     useEffect(() => {
-      setProductsToCompare([])
       setLastProductAdded([])
     }, [])
 
