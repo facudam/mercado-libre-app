@@ -48,6 +48,9 @@ export const ProductsComparison = () => {
     }
 
     const vaciarLista = () => {
+        // productsToCompare.map(item => {
+        //     checked == false
+        // })
         setProductsToCompare([])
         setShowProductsComparison(false)
     }
@@ -75,7 +78,7 @@ export const ProductsComparison = () => {
                         <th>
                             <button 
                                 onClick={ vaciarLista }
-                                className='vaciar-lista'>Vaciar lista
+                                className='vaciar-lista'><img src='https://icongr.am/jam/trash.svg?size=25&color=ffffff' /> 
                             </button>
                             <div className='check-for-btn'><span>¡AÑADIDO!</span>
                             </div>

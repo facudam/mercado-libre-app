@@ -53,6 +53,52 @@
     font-size: 14px;
     color: #fff;
 }
+.products-comparison table tr th:nth-child(7) {
+    padding: 0;
+    border-top: 1px solid #d6a700;
+    border-right: 1px solid #d6a700;
+}
+.products-comparison table tr th > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #d6a700;
+    width: 100%;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+}
+
+.products-comparison table tr th > button img {
+    filter: drop-shadow(1px 1px 0px black);
+}
+
+.products-comparison table tr th > button:hover img {
+    animation: shaking .6s ease-in infinite;
+    /* transform: rotateZ(50deg); */
+}
+
+@keyframes shaking {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    15% {
+        transform: rotateZ(50deg);
+    }
+    30% {
+        transform: rotateZ(0deg);
+    }
+    45% {
+        transform: rotateZ(-50deg);
+    }
+    60% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
 
 .products-comparison table tr td {
     border: 1px solid rgba(0,0,0, .1);

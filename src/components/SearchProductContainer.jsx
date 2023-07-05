@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from 'react'
 import '../styles/SearchProductContainer.css'
 import { getProductImages } from '../helpers/getProductImages'
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MeliContext } from '../contexts/meliContext';
 import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
 
@@ -17,16 +17,16 @@ export const SearchProductContainer = ({ identifier, img, name, price, item }) =
         setProductUrlImage(imagen[0].body.pictures[0].url)
     }
     
-    const addOrDeleteToProductsToCompare = (id, item) => {
-        const productAllreadyAdded = productsToCompare.find(item => item.id === id)
-        productAllreadyAdded 
-            ? setProductsToCompare(productsToCompare.filter(item => item.id !== id)) 
-            : setProductsToCompare([...productsToCompare, item])
-    }
+    const handleProductsToCompare = (e) => {
+        const { checked } = e.target;
+        console.log(checked)
 
-    // useEffect(() => {
-    //     Navigate(`/item/${identifier}/${name}`)
-    // }, [identifier, name])
+        if (checked) {
+        setProductsToCompare([...productsToCompare, item]);
+        } else {
+            setProductsToCompare(productsToCompare.filter(product => product.id !== identifier));
+        }
+    }
    
     useEffect(() => {
         getProductUrlImage()
@@ -55,7 +55,7 @@ export const SearchProductContainer = ({ identifier, img, name, price, item }) =
         </div>
         <div className='seleccionar-producto'>
             <input 
-                onClick={() => addOrDeleteToProductsToCompare(identifier, item)}
+                onChange={handleProductsToCompare}
                 type='checkbox' id={ identifier} 
             />
             <label htmlFor={ identifier }>Comparar</label>
