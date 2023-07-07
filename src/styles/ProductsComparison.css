@@ -1,7 +1,7 @@
 .products-comparison {
     position: fixed;
     width: 95%;
-    max-width: 1000px;
+    max-width: 1100px;
     max-height: 80vh;
     overflow: hidden;
     top: 50%;
@@ -9,7 +9,7 @@
     transform: translate(-50%, -50%);
     background-color: #fff;
     z-index: 99999;
-    padding: 30px;
+    padding: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,7 +47,7 @@
 
 .products-comparison table tr th {
     border: 1px solid rgba(255, 255, 255, 0.1);
-    width: 130px;
+    width: 140px;
     padding: 10px;
     background-color: #4b4a4a;
     font-size: 14px;
@@ -55,28 +55,46 @@
 }
 .products-comparison table tr th:nth-child(7) {
     padding: 0;
-    border-top: 1px solid #d6a700;
-    border-right: 1px solid #d6a700;
+    background-color: rgb(237, 203, 6);
+    border-right: 1px solid rgb(237, 203, 6);
+    
 }
 .products-comparison table tr th > button {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    background-color: #d6a700;
+    background-color: transparent;
     width: 100%;
     height: 60px;
     border: none;
     cursor: pointer;
+    transition: all .5s ease;
 }
 
 .products-comparison table tr th > button img {
+    position: absolute;
+    right: 70px;
     filter: drop-shadow(1px 1px 0px black);
+    transition: all .5s ease;
 }
 
+.products-comparison table tr th > button:after {
+    content: 'Vaciar';
+    position: absolute;
+    padding-top: 5px;
+    right: 0px;
+    opacity: 0;
+    transition: all .5s ease;
+}
 .products-comparison table tr th > button:hover img {
+    right: 100px;
     animation: shaking .6s ease-in infinite;
-    /* transform: rotateZ(50deg); */
+}
+
+.products-comparison table tr th > button:hover:after {
+    right: 50px;
+    opacity: 1;
 }
 
 @keyframes shaking {
@@ -112,20 +130,36 @@
     max-height: 90px;
 }
 
-.add-to-cart-btn {
-    background-color: rgb(214,230,254);
-    width: 140px;
-    color: var(--azul);
-    padding: 10px;
+.add-to-cart-btn, .delete-btn, .buy-product-btn {
+    font-size: 11px;
+    width: 120px;
+    padding: 7px;
     font-weight: 600;
     border: none;
     border-radius: 5px;
     transition: all .5s ease;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.add-to-cart-btn {
+    background-color: rgb(214,230,254);
+    color: var(--azul);
+    margin-bottom: 5px;
 }
 
 .add-to-cart-btn:hover {
     background-color: rgb(188, 209, 241);
-    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: rgba(248, 2, 2, .6);
+    color: #fff;
+    text-shadow: 1px 1px 0 rgb(36, 34, 34);
+}
+
+.delete-btn:hover {
+    background-color: rgba(248, 2, 2, .8);
 }
 
 .vaciar-lista {
@@ -160,19 +194,12 @@
 
 .buy-product-btn {
     background-color: var(--azul);
-    width: 140px;
     color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: all .5s ease;
     margin-bottom: 5px;
 }
 
 .buy-product-btn:hover {
     background-color: rgb(28, 102, 212);
-    cursor: pointer;
 }
 
 .platinum {

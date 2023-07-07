@@ -98,9 +98,11 @@ export const ProductsComparison = () => {
                                 <td>{producto.sold_quantity}</td>
                                 <td className={addColorReputation(producto)}>{showReputationSeller(producto)}</td>
                                 <td>{Number.parseFloat(producto.seller.seller_reputation.transactions.ratings.positive * 5).toFixed(1)}</td>
-                                <td>
+                                <td className='td-btns'>
                                     <button onClick={() => ComprarProducto(producto)} className='buy-product-btn'>Comprar ahora</button>
-                                    <button onClick={() => agregarAlCarrito(producto)} className='add-to-cart-btn'>Añadir al carrito</button>   
+                                    <button onClick={() => agregarAlCarrito(producto)} className='add-to-cart-btn'>Añadir al carrito</button>
+                                    <button
+                                    className='delete-btn'>Eliminar</button>   
                                 </td>
                             </tr>
                         ))
