@@ -48,16 +48,21 @@ export const ProductsComparison = () => {
     }
 
     const vaciarLista = () => {
-        // productsToCompare.map(item => {
-        //     checked == false
-        // })
         setProductsToCompare([])
         setShowProductsComparison(false)
+    }
+
+    const eliminarProducto = (id) => {
+        setProductsToCompare(productsToCompare.filter( item => item.id !== id))
     }
 
     useEffect(() => {
         document.documentElement.style.setProperty('--display', 'none')
     }, [])
+
+    useEffect(() => {
+        (productsToCompare.length < 1) && setShowProductsComparison(false)
+    }, [productsToCompare])
 
     return ReactDOM.createPortal(
       <> 
@@ -101,7 +106,7 @@ export const ProductsComparison = () => {
                                 <td className='td-btns'>
                                     <button onClick={() => ComprarProducto(producto)} className='buy-product-btn'>Comprar ahora</button>
                                     <button onClick={() => agregarAlCarrito(producto)} className='add-to-cart-btn'>Añadir al carrito</button>
-                                    <button
+                                    <button onClick={() => eliminarProducto(producto.id)}
                                     className='delete-btn'>Eliminar</button>   
                                 </td>
                             </tr>
