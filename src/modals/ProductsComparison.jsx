@@ -92,17 +92,28 @@ export const ProductsComparison = () => {
                     {
                         productsToCompare.map(producto => (
                             <tr key={producto.id}>
-                                <td><Link 
+                                <td>
+                                    <Link 
                                         onMouseOver={() => changeItemPageValues(producto.id, producto.title)}
                                         to={`/item/${producto.id}/${itemNameForPage}`}>
                                         <img src={producto.thumbnail} />
                                     </Link>
                                 </td>
                                 <td>{producto.attributes[0].value_name}</td>
-                                <td>{convertToCurrencyFormat(producto.price)}</td>
-                                <td>{producto.sold_quantity}</td>
+                                <td>
+                                    <img src='https://icongr.am/fontawesome/money.svg?size=37&color=1aab17' alt='money' />
+                                    <img src='https://icongr.am/fontawesome/money.svg?size=37&color=1aab17' alt='money' />
+                                    {convertToCurrencyFormat(producto.price)}
+                                </td>
+                                <td>
+                                    <span>{producto.sold_quantity}</span>
+                                    <img src='https://icongr.am/material/cart.svg?size=60&color=beb6b6' />  
+                                </td>
                                 <td className={addColorReputation(producto)}>{showReputationSeller(producto)}</td>
-                                <td>{Number.parseFloat(producto.seller.seller_reputation.transactions.ratings.positive * 5).toFixed(1)}</td>
+                                <td>
+                                    <img className='star-reputation' src='https://icongr.am/octicons/star-fill.svg?size=55&color=ffd700' alt='icon-star' />
+                                    {Number.parseFloat(producto.seller.seller_reputation.transactions.ratings.positive * 5).toFixed(1)}
+                                </td>
                                 <td className='td-btns'>
                                     <button onClick={() => ComprarProducto(producto)} className='buy-product-btn'>Comprar ahora</button>
                                     <button onClick={() => agregarAlCarrito(producto)} className='add-to-cart-btn'>Añadir al carrito</button>

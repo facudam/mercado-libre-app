@@ -124,6 +124,68 @@
     text-align: center;
     font-weight: 600;
 }
+.products-comparison table tr td:nth-child(3), .products-comparison table tr td:nth-child(4), .products-comparison table tr td:nth-child(6) {
+    position: relative;
+}
+.products-comparison table tr td:nth-child(3) > img {
+    position: absolute;
+    opacity: .1;
+    top: 0;
+    left: 25px;
+}
+
+.products-comparison table tr td:nth-child(3) > img:first-child {
+    animation: moneyFall 4s ease-out infinite;
+}
+
+.products-comparison table tr td:nth-child(3) > img:nth-child(2) {
+    left: 70px;
+    top: -10px;
+    animation: moneyFall 3.2s ease-in infinite;
+}
+
+@keyframes moneyFall {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+    50% {
+        opacity: .1;
+        transform: rotate(18deg);
+    }
+    100% {
+        top: 80px;
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+}
+
+.products-comparison table tr td:nth-child(6) {
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    font-weight: 700;
+}
+.products-comparison table tr td:nth-child(4) > span {
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.products-comparison table tr td:nth-child(4) > img {
+    transform: translateY(10px);
+    width: 50px;
+    opacity: .2;
+}
+
+.star-reputation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: drop-shadow(1px 1px 1px #000);
+}
 
 .products-comparison table tr td a img {
     max-width: 90px;
