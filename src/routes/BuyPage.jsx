@@ -3,7 +3,7 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles/BuyPage.css'
 import { MeliContext } from '../contexts/meliContext';
-import { CompraFinalizada } from '../modals/CompraFinalizada';
+import { CompraFinalizada } from '../modals';
 import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
 
 export const BuyPage = () => {

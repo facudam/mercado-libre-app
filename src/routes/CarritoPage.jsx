@@ -1,8 +1,8 @@
 import { useContext, useEffect } from "react"
 import { MeliContext } from "../contexts/meliContext"
 import '../styles/CarritoPage.css'
-import { Ofertas } from "../sections/Ofertas"
-import { ProductInCart } from "../components/ProductInCart"
+import { Ofertas } from "../sections"
+import { ProductInCart } from "../components"
 import { convertToCurrencyFormat } from "../helpers/convertToCurrencyFormat"
 import { useNavigate } from "react-router-dom"
 

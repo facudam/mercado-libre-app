@@ -1,22 +1,14 @@
 import { useState, useEffect, useContext } from 'react'
-import heart from '../images/corazon.png'
-import { faStar, faStarHalf, faTruckFast, faArrowTurnDown, faChevronDown, faShieldHalved, faTrophy } from '@fortawesome/free-solid-svg-icons';
-import '../styles/ProductPage.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SellerSlide } from '../components/SellerSlide';
-import { MainCharacteristics } from '../sections/MainCharacteristics';
-import { ProductDescriptionSection } from '../sections/ProductDescriptionSection';
-import { SellerReputation } from '../sections/SellerReputation';
 import { MeliContext } from '../contexts/meliContext';
-import { OpcionesDePago } from '../sections/OpcionesDePago';
-import { PreguntasYRespuestas } from '../sections/PreguntasYRespuestas';
-import { ProductAdded } from '../components/ProductAdded';
-import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
-import { Footer } from '../components/Footer';
-import { AgregarUnidades } from '../components/AgregarUnidades';
 import { useNavigate } from 'react-router-dom';
+import { SellerSlide, ProductAdded, Footer, AgregarUnidades } from '../components';
+import { MainCharacteristics, ProductDescriptionSection, SellerReputation, OpcionesDePago, PreguntasYRespuestas } from '../sections';
 import { SimpleLoader } from '../loaders/SimpleLoader'
-
+import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
+import { faStar, faStarHalf, faTruckFast, faArrowTurnDown, faChevronDown, faShieldHalved, faTrophy } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import heart from '../images/corazon.png'
+import '../styles/ProductPage.css'
 
 export const ProductPage = () => {
 

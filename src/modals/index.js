@@ -1,0 +1,6 @@
+export * from './CompareButton'
+export * from './CompraFinalizada'
+export * from './CookiesModal'
+export * from './MediosDePago'
+export * from './NavHoverModal'
+export * from './ProductsComparison'

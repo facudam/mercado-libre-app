@@ -1,11 +1,11 @@
 import { useContext, useEffect } from 'react'
-import { SearchBanner } from '../components/SearchBanner'
 import { MeliContext } from '../contexts/meliContext'
-import { getProducts } from '../helpers/getProducts'
-import { FiltrosSearch } from '../sections/FiltrosSearch'
-import '../styles/SearchResultsPage.css'
-import { SearchProductsSection } from '../sections/SearchProductsSection'
+import { FiltrosSearch, SearchProductsSection } from '../sections'
+import { SearchBanner } from '../components'
 import { SimpleLoader } from '../loaders/SimpleLoader'
+import { getProducts } from '../helpers/getProducts'
+import '../styles/SearchResultsPage.css'
+
 
 export const SearchResultsPage = () => {
 

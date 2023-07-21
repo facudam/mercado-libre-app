@@ -1,15 +1,9 @@
-import { Categories } from '../sections/Categories'
-import { DescubriSection } from '../sections/DescubriSection'
-import { MercadoPuntosSection } from '../sections/MercadoPuntosSection'
-import { Ofertas } from '../sections/Ofertas'
-import { PaymentsContainer } from '../sections/PaymentsContainer'
-import Slider from '../components/Slider'
-import { SuscripcionNivel } from '../sections/SuscripcionNivel'
-import { TiendasSection } from '../sections/TiendasSection'
-import { Footer } from '../components/Footer'
-import { CookiesModal } from '../modals/CookiesModal'
 import { useContext, useEffect } from 'react'
 import { MeliContext } from '../contexts/meliContext'
+import { DescubriSection, MercadoPuntosSection, Ofertas, PaymentsContainer, SuscripcionNivel, TiendasSection, Categories } from '../sections'
+import { Footer, Slider } from '../components'
+import { CookiesModal } from '../modals'
+
 
 export const MainRoute = () => {
 

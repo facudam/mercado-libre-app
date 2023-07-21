@@ -17,8 +17,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 
-export default () => {
-  
+export const Slider = () => {
   return (
     <Swiper
       // install Swiper modules

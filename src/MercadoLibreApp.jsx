@@ -1,14 +1,9 @@
-import { Navigate, Route, Routes } from 'react-router'
-import { Nav } from './components/Nav'
-import { NavHoverModal } from './modals/navHoverModal'
-import { MainRoute } from './routes/MainRoute'
-import { SearchResultsPage } from './routes/SearchResultsPage'
-import { ProductPage } from './routes/ProductPage'
-import { CarritoPage } from './routes/CarritoPage'
-import { useLocation } from "react-router-dom";
 import { useEffect } from 'react'
-import { BuyPage } from './routes/BuyPage'
-
+import { useLocation } from "react-router-dom";
+import { Route, Routes } from 'react-router'
+import { MainRoute, SearchResultsPage, ProductPage, CarritoPage, BuyPage } from './routes'
+import { Nav } from './components'
+import { NavHoverModal } from './modals'
 
 export const MercadoLibreApp = () => {
 
