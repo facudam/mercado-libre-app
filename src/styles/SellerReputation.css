@@ -10,7 +10,6 @@
     margin-top: 25px;
     display: flex;
     gap: 10px;
-    
 }
 
 .green-color {
@@ -21,18 +20,18 @@
     margin-top: -2px;
 }
 
-.p-container p {
-    margin: 0
+.p-container span {
+    display: block;
 }
 
-.p-container p:first-child {
+.p-container span:first-child {
     color: #00a650;
     font-size: 16px;
     font-weight: 600;
     text-transform: capitalize;
 }
 
-.p-container p:nth-child(2) {
+.p-container span:nth-child(2) {
     font-size: 14px;
     font-weight: 300;
     color: rgba(0,0,0, .55);

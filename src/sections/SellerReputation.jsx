@@ -22,6 +22,7 @@ export const SellerReputation = ({ sellerID }) => {
         getSellerInfo()
     }, [ reputation, sellerID ])
 
+  if (!reputation) return;
   return (
     <section className='buying-info'>
         <h2 className='reputation-h2'>Información sobre el vendedor</h2>
@@ -30,11 +31,10 @@ export const SellerReputation = ({ sellerID }) => {
             {
                 (isLoading) ? <SimpleLoader /> :
                 <div className='p-container'>
-                    <p>{(reputation) && `MercadoLíder ${reputation}` }</p>
-                    <p>{(reputation === 'platinum') ? '¡Es uno de los mejores del sitio!' : null}</p>
+                    <span>{(reputation) && `MercadoLíder ${reputation}` }</span>
+                    <span>{(reputation === 'platinum') ? '¡Es uno de los mejores del sitio!' : null}</span>
                 </div>
-            } 
-            
+            }   
         </div>
         <div className='color-container'>
             <span></span>
