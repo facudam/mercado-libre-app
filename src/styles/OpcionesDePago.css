@@ -4,7 +4,7 @@
     gap: 10px;
     background-color: var(--verde);
     border-radius: 5px;
-    color: #fff;
+    color: #ffffff;
     padding: 12px 20px;
 }
 
@@ -15,8 +15,11 @@
 
 .cuotas-container span {
     font-size: 13px;
-    font-weight: 400;
-    color: #fff; 
+    font-weight: 400; 
+}
+
+#whiteFont {
+    color: #fff !important;
 }
 
 .opciones-de-pago h3 {

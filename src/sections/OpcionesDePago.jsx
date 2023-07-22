@@ -1,4 +1,3 @@
-
 import mercadoCreditoLogo from '../images/mercadocreditologo.svg'
 import visa from '../images/visa.svg'
 import american from '../images/american.svg'
@@ -20,7 +19,7 @@ export const OpcionesDePago = () => {
         <h2 className='reputation-h2'>Medios de pago</h2>
         <div className='cuotas-container'>
             <FontAwesomeIcon icon={faCreditCard} />
-            <span>¡Pagá el mismo precio en <b>hasta 9 cuotas</b>!</span>
+            <span id='whiteFont'>¡Pagá el mismo precio en <b>hasta 9 cuotas</b>!</span>
         </div>
         <h3>Hasta 12 cuotas sin tarjeta</h3>
         <img src={mercadoCreditoLogo} />
