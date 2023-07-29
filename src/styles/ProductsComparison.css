@@ -50,8 +50,9 @@
     width: 140px;
     padding: 10px;
     background-color: #4b4a4a;
-    font-size: 14px;
+    font-size: 18px;
     color: #fff;
+    
 }
 .products-comparison table tr th:nth-child(7) {
     padding: 0;
@@ -60,6 +61,7 @@
     
 }
 .products-comparison table tr th > button {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,8 +75,6 @@
 }
 
 .products-comparison table tr th > button img {
-    position: absolute;
-    right: 70px;
     filter: drop-shadow(1px 1px 0px black);
     transition: all .5s ease;
 }
@@ -87,8 +87,9 @@
     opacity: 0;
     transition: all .5s ease;
 }
+
 .products-comparison table tr th > button:hover img {
-    right: 100px;
+    margin-right: 50px;
     animation: shaking .6s ease-in infinite;
 }
 
