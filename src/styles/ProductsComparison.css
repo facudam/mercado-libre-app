@@ -48,9 +48,9 @@
 .products-comparison table tr th {
     border: 1px solid rgba(255, 255, 255, 0.1);
     width: 140px;
-    padding: 10px;
+    padding: 13px 10px;
     background-color: #4b4a4a;
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
     
 }

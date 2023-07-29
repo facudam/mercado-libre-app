@@ -17,12 +17,19 @@ export const SearchProductContainer = ({ identifier, img, name, price, item }) =
         setProductUrlImage(imagen[0].body.pictures[0].url)
     }
     
+    const AddProductIfApplicable = () => {
+        const itemAlreadyAdded = productsToCompare.find(producto => producto.id === item.id)
+        if(!itemAlreadyAdded) {
+            setProductsToCompare([...productsToCompare, item])
+        } else {
+            alert('El producto ya está añadido en la tabla comparativa')
+        }
+    }
+
     const handleProductsToCompare = (e) => {
         const { checked } = e.target;
-        console.log(checked)
-
         if (checked) {
-        setProductsToCompare([...productsToCompare, item]);
+            AddProductIfApplicable()
         } else {
             setProductsToCompare(productsToCompare.filter(product => product.id !== identifier));
         }
@@ -55,7 +62,7 @@ export const SearchProductContainer = ({ identifier, img, name, price, item }) =
         </div>
         <div className='seleccionar-producto'>
             <input 
-                onChange={handleProductsToCompare}
+                onChange={ handleProductsToCompare }
                 type='checkbox' id={ identifier} 
             />
             <label htmlFor={ identifier }>Comparar</label>
