@@ -124,8 +124,7 @@
     padding: 10px;
     text-align: center;
     font-weight: 600;
-}
-.products-comparison table tr td:nth-child(3), .products-comparison table tr td:nth-child(4), .products-comparison table tr td:nth-child(6) {
+}.products-comparison table tr td:nth-child(3), .products-comparison table tr td:nth-child(4), .products-comparison table tr td:nth-child(6) {
     position: relative;
 }
 .products-comparison table tr td:nth-child(3) > img {
@@ -143,6 +142,20 @@
     left: 70px;
     top: -10px;
     animation: moneyFall 3.2s ease-in infinite;
+}
+
+.products-comparison table tr td a {
+    text-decoration: none;
+}
+
+.recommended-product {
+    background-color: rgb(0,166,80);
+    color: #fff;
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 @keyframes moneyFall {

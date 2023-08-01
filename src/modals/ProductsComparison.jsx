@@ -90,13 +90,14 @@ export const ProductsComparison = () => {
                         </th>
                     </tr>
                     {
-                        productsToCompare.map(producto => (
+                        productsToCompare.map((producto, index) => (
                             <tr key={producto.id}>
                                 <td>
                                     <Link 
                                         onMouseOver={() => changeItemPageValues(producto.id, producto.title)}
                                         to={`/item/${producto.id}/${itemNameForPage}`}>
                                         <img src={producto.thumbnail} />
+                                        {(index === 0) && <span className='recommended-product'>¡Recomendado!</span>}
                                     </Link>
                                 </td>
                                 <td>{producto.attributes[0].value_name}</td>
