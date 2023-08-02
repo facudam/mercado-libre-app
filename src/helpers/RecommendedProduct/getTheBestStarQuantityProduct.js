@@ -1,5 +1,5 @@
 
-export const getTheBestStarQuantityProducts = (arr) => {
+export const getTheBestStarQuantityProduct = (arr) => {
     //Purpose: Returns an array with the best star quantity products from 'arr'.
     let bestProducts = [ arr[0] ]
   

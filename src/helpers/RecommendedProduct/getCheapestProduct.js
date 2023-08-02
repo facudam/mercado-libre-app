@@ -1,4 +1,4 @@
-export const getTheCheapestProducts = (arr) => {
+export const getTheCheapestProduct = (arr) => {
     //Purpose: Returns an array with the cheapest products from 'arr'.
     let cheapestProducts = [ arr[0] ]
   
