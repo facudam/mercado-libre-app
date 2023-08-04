@@ -1,5 +1,5 @@
 export const getTheCheapestProduct = (arr) => {
-    //Purpose: Returns an array with the cheapest products from 'arr'.
+    //Purpose: Returns an array with the cheapest product from 'arr'.
     let cheapestProducts = [ arr[0] ]
   
     for (let i = 1; i < arr.length; i++) { 

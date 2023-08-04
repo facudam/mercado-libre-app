@@ -1,4 +1,5 @@
-export * from './getCheapestProduct'
+export * from './getTheCheapestProduct'
 export * from './getReputationPoints'
 export * from './getTheBestSellingProduct'
 export * from './getTheBestStarQuantityProduct'
+export * from './getRecommendedProduct'
