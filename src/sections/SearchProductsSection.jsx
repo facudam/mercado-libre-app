@@ -24,11 +24,7 @@ export const SearchProductsSection = ({ results }) => {
     setCurrentPage(currentPage - 1)
   }
 
-  useEffect(() => {
-    setCantidadItem(1)
-    console.log(document.documentElement.querySelectorAll('input[type="checkbox"]'))
-    
-  }, [])
+  useEffect(() => { setCantidadItem(1) }, [])
 
   return (
    <>

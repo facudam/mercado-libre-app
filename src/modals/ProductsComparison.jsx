@@ -1,9 +1,10 @@
 import ReactDOM from 'react-dom'
 import '../styles/ProductsComparison.css'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { MeliContext } from '../contexts/meliContext'
 import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat'
 import { Link, useNavigate } from 'react-router-dom'
+import { getRecommendedProduct } from '../helpers/RecommendedProduct/index'
 
 export const ProductsComparison = () => {
 
@@ -11,6 +12,8 @@ export const ProductsComparison = () => {
     
     const navigate = useNavigate()
 
+    const [recommendedProduct, setRecommendedProduct] = useState([getRecommendedProduct(productsToCompare)])
+    
     const ComprarProducto = (producto) => {
         producto.quantity = cantidadItem
         buyProduct([producto], navigate)
@@ -58,11 +61,15 @@ export const ProductsComparison = () => {
 
     useEffect(() => {
         document.documentElement.style.setProperty('--display', 'none')
+        
     }, [])
 
     useEffect(() => {
         (productsToCompare.length < 1) && setShowProductsComparison(false)
-    }, [productsToCompare])
+        
+        setRecommendedProduct([getRecommendedProduct(productsToCompare)])
+        
+    }, [ productsToCompare ])
 
     return ReactDOM.createPortal(
       <> 
@@ -90,14 +97,14 @@ export const ProductsComparison = () => {
                         </th>
                     </tr>
                     {
-                        productsToCompare.map((producto, index) => (
+                        productsToCompare.map((producto) => (
                             <tr key={producto.id}>
                                 <td>
                                     <Link 
                                         onMouseOver={() => changeItemPageValues(producto.id, producto.title)}
                                         to={`/item/${producto.id}/${itemNameForPage}`}>
                                         <img src={producto.thumbnail} />
-                                        {(index === 0) && <span className='recommended-product'>¡Recomendado!</span>}
+                                        {(recommendedProduct[0].id === producto.id) && <span className='recommended-product'>¡Recomendado!</span>}
                                     </Link>
                                 </td>
                                 <td>{producto.attributes[0].value_name}</td>

@@ -2,7 +2,7 @@ import { getTheBestStarQuantityProduct, getReputationPoint, getTheCheapestProduc
 
 function addPointsPropertyToElementsIn_(arr) {
     arr.forEach(element => {
-      element.puntos = getReputationPoint(element.reputation)
+      element.puntos = getReputationPoint(element.seller.seller_reputation.power_seller_status)
     })
     return arr
 }
@@ -23,8 +23,8 @@ const addPointsToBestProduct = (fn, arr, num) => {
   
 export const setPointsToProducts = (arr) => {
     addPointsPropertyToElementsIn_(arr) 
-    addPointsToBestProduct(getTheBestSellingProduct,arr, 2);
-    addPointsToBestProduct(getTheBestStarQuantityProduct, arr, 5)
+    addPointsToBestProduct(getTheBestSellingProduct,arr, 3);
+    addPointsToBestProduct(getTheBestStarQuantityProduct, arr, 6)
     addPointsToBestProduct(getTheCheapestProduct,arr, 2)
     
     return arr
