@@ -38,12 +38,12 @@ export const ProductsComparison = () => {
     const addColorReputation = (producto) => {
         if (producto.seller.seller_reputation.power_seller_status === 'platinum') {
             return 'platinum'
-        } 
-        if (producto.seller.seller_reputation.power_seller_status === 'gold'){
+        } else if (producto.seller.seller_reputation.power_seller_status === 'gold'){
             return 'gold-reputation'
-        }
-        if (producto.seller.seller_reputation.power_seller_status === 'silver') {
+        } else if (producto.seller.seller_reputation.power_seller_status === 'silver') {
             return 'silver-reputation'
+        } else {
+            return 'no-reputation'
         }
     }
 

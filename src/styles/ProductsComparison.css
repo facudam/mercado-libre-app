@@ -39,7 +39,6 @@
 .products-comparison table {
     display: block;
     border-collapse: collapse;
-    border: 1px solid rgba(0,0,0, .1);
     max-height: 90%; 
     position: relative;
     overflow: auto;
@@ -49,15 +48,15 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     width: 140px;
     padding: 13px 10px;
-    background-color: #4b4a4a;
+    background-color: #9a9c9c;
     font-size: 16px;
     color: #fff;
+    text-shadow: 1px 1px 1px #000;
     
 }
 .products-comparison table tr th:nth-child(7) {
     padding: 0;
-    background-color: rgb(237, 203, 6);
-    border-right: 1px solid rgb(237, 203, 6);
+    border-right: 1px solid #9a9c9c;
     
 }
 .products-comparison table tr th > button {
@@ -255,7 +254,7 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0, 166, 80, .5);
-    color: #fff;
+    
     display: var(--display);
     justify-content: center;
     align-items: center;
@@ -264,8 +263,10 @@
 }
 
 .check-for-btn span {
+    z-index: 999;
     display: block;
     animation: latido .8s ease-in forwards;
+    color: #fff;
 }
 
 .buy-product-btn {
@@ -296,6 +297,11 @@
     color: #fff;
     font-weight: 600;
     text-shadow: 1px 1px 1px #4b4a4a;
+}
+
+.no-reputation {
+    background-color: #2a2929;
+    color: #fff;
 }
 
 @keyframes latido {

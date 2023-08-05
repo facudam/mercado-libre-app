@@ -5,12 +5,15 @@ function addPointsPropertyToElementsIn_(arr) {
       element.puntos = getReputationPoint(element.reputation)
     })
     return arr
-  }
+}
   
-const modifyArr = (fn, arr, num) => {
-    const ganador = fn(arr);
+const addPointsToBestProduct = (fn, arr, num) => {
+    /* 
+      Purpose: Add points *num* to best products results *fn* in *arr*.
+    */
+    const bestProduct = fn(arr);
     arr.forEach(prod => {
-      if (ganador.includes(prod)) {
+      if (bestProduct.includes(prod)) {
         prod.puntos = prod.puntos + num;
       }
     })
@@ -18,11 +21,11 @@ const modifyArr = (fn, arr, num) => {
 }
   
   
-export const getRecommendedProduct = (arr) => {
+export const setPointsToProducts = (arr) => {
     addPointsPropertyToElementsIn_(arr) 
-    modifyArr(getTheBestSellingProduct,arr, 2);
-    modifyArr(getTheBestStarQuantityProduct, arr, 5)
-    modifyArr(getTheCheapestProduct,arr, 2)
+    addPointsToBestProduct(getTheBestSellingProduct,arr, 2);
+    addPointsToBestProduct(getTheBestStarQuantityProduct, arr, 5)
+    addPointsToBestProduct(getTheCheapestProduct,arr, 2)
     
     return arr
 }
