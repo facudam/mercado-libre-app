@@ -104,7 +104,7 @@ export const ProductsComparison = () => {
                                         onMouseOver={() => changeItemPageValues(producto.id, producto.title)}
                                         to={`/item/${producto.id}/${itemNameForPage}`}>
                                         <img 
-                                            className={(recommendedProduct[0].id === producto.id) && `vibrate-1`}
+                                            className={(recommendedProduct[0].id === producto.id) && `heartbeat`}
                                             src={producto.thumbnail} 
                                         />
                                             {(recommendedProduct[0].id === producto.id) && <span className={`recommended-product`}>¡Recomendado!</span>}
