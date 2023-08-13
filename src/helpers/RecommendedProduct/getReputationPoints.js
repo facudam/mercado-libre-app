@@ -3,7 +3,7 @@ export const getReputationPoint = (reputation) => {
       case 'silver':
         return 3;
       case 'gold':
-        return 6;
+        return 5;
       case 'platinum':
         return 10;
       default:
