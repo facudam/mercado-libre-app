@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useLocation } from "react-router-dom";
+import { useLocation, Navigate } from "react-router-dom";
 import { Route, Routes } from 'react-router'
 import { MainRoute, SearchResultsPage, ProductPage, CarritoPage, BuyPage } from './routes'
 import { Nav } from './components'
@@ -31,7 +31,7 @@ export const MercadoLibreApp = () => {
         <Route path='/checkout/buying' element={ <BuyPage />} />
 
         {/* En caso de que el usuario escriba una url inexistente lo enviamos a la url principal: */}
-        {/* <Route path='/*' element={ <Navigate to='/' /> } /> */}
+        <Route path='/*' element={ <Navigate to='/' /> } />
       </Routes>
     </>    
         

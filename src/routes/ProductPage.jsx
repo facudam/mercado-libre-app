@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import { MeliContext } from '../contexts/meliContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { SellerSlide, ProductAdded, Footer, AgregarUnidades } from '../components';
 import { MainCharacteristics, ProductDescriptionSection, SellerReputation, OpcionesDePago, PreguntasYRespuestas } from '../sections';
 import { SimpleLoader } from '../loaders/SimpleLoader'
@@ -16,15 +16,17 @@ export const ProductPage = () => {
 
   const [item, setItem] = useState([])
   const [ pictureIndex, setPictureIndex] = useState(0)
-  const [loading, setLoading ] = useState(true)
+  const [ loading, setLoading ] = useState(true)
   const navigate = useNavigate()
-
+  const { itemId } = useParams()
   const getItem = async() => {
-    let url = `https://api.mercadolibre.com/items?ids=${itemForPage}`;
+    
+    let url = `https://api.mercadolibre.com/items?ids=${itemId}`;
     const resp = await fetch(url);
     const resultado = await resp.json();
     setItem(resultado[0].body) 
     setLoading(false)
+    console.log('itemForPage: ' + itemForPage)
   }
 
   const activateQuantityItemContainer = () => {
@@ -65,7 +67,7 @@ export const ProductPage = () => {
     getItem()
     // Cada vez que se actualice el item, que se muestre la primera imagen.
     setPictureIndex(0)
-  }, [itemForPage])
+  }, [ itemForPage ])
 
   //Añadimos la cantidad de unidades al producto:
   useEffect(() => {item.quantity = cantidadItem}, [cantidadItem, item])

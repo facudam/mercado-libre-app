@@ -6,18 +6,14 @@ import '../styles/SellerSlide.css'
 import { SellerProductContainer } from './SellerProductContainer';
 
 
-
 export const SellerSlide = ({ id }) => {
 
     const [ listaProductos, setListaProductos ] = useState([])
-    
 
     const getSellerProducts = async() => {
         const list = await getProductsBySeller(id)
         setListaProductos(list.results)
     }
-
-    
 
     useEffect(() => {
         getSellerProducts()
@@ -43,8 +39,7 @@ export const SellerSlide = ({ id }) => {
                                 title={ item.title } 
                                 price={ item.price } 
                             />
-                        </SwiperSlide>
-                        
+                        </SwiperSlide>     
                 ))
             }
         </Swiper>

@@ -11,35 +11,22 @@ export const ContextProvider = ({children}) => {
     // Para obtener la lista de productos en oferta
     const [ productosEnOferta, setProductosEnOferta ] = useState([])
     const [ urlProductImage, setUrlProductImage ] = useState('')
-
     const [ categories, setCategories ] = useState([])
-
     const [ navIsHover, setNavIsHover ] = useState(false)
-
     const [ itemSearched, setItemSearched ] = useState('')
-
     const [ productToBuy, setProductToBuy ] = useState('')
-
     const [ currentPage, setCurrentPage ] = useState(1)
-
-    const [ itemForPage, setItemForPage ] = useState('MLA612037339')
+    const [ itemForPage, setItemForPage ] = useState()
     const [ itemNameForPage, setItemNameForPage ] = useState('producto')
-
     const [ lastProductAdded, setLastProductAdded ] = useState([])
-
     const [ cantidadItem, setCantidadItem ] = useState(1)
-
     const [ productosAComprar, setProductosAComprar ] = useState([])
-
     const [ isCompraFinalizadaModalActive, setIsCompraFinalizadaModalActive ] = useState(false)
-
     const [ productsToCompare, setProductsToCompare ] = useState([])
-
     const [ showProductsComparison, setShowProductsComparison ] = useState(false)
 
 
   /* ++++++++++++ UseReducer código +++++++++++ */
-
     const initialState = []
 
     const carritoReducer = (carritoState, action) => {
