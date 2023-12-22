@@ -69,7 +69,7 @@ export const CarritoPage = () => {
             
           </main>
 
-          <Ofertas title='Productos que te pueden interesar' toSearch='ropa invierno' />
+          <Ofertas title='Productos que te pueden interesar' toSearch='ropa' />
         </section>
     )
 }

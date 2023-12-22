@@ -73,7 +73,7 @@ export const Ofertas = ({ title, toSearch }) => {
                                 title={producto.title}
                                 price={producto.price}
                                 descuento={producto.discounts}
-                                cuotas={producto.installments.quantity}
+                                cuotas={producto?.installments.quantity}
                                 envio='Envío gratis'
                                 precioCuota={convertToCurrencyFormat(producto.installments.amount)}
                             />

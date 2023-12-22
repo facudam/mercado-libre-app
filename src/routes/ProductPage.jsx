@@ -14,7 +14,7 @@ export const ProductPage = () => {
 
   const { itemForPage, addProductToCart, lastProductAdded, setLastProductAdded, cantidadItem, setCantidadItem, handleQuantityItems, buyProduct, setShowProductsComparison } = useContext(MeliContext)
 
-  const [item, setItem] = useState([])
+  const [ item, setItem ] = useState([])
   const [ pictureIndex, setPictureIndex] = useState(0)
   const [ loading, setLoading ] = useState(true)
   const navigate = useNavigate()
@@ -26,7 +26,6 @@ export const ProductPage = () => {
     const resultado = await resp.json();
     setItem(resultado[0].body) 
     setLoading(false)
-    console.log('itemForPage: ' + itemForPage)
   }
 
   const activateQuantityItemContainer = () => {
@@ -70,11 +69,9 @@ export const ProductPage = () => {
   }, [ itemForPage ])
 
   //Añadimos la cantidad de unidades al producto:
-  useEffect(() => {item.quantity = cantidadItem}, [cantidadItem, item])
+  useEffect(() => { item.quantity = cantidadItem }, [cantidadItem, item])
 
-  useEffect(() => {
-    setShowProductsComparison(false)
-  }, [])
+  useEffect(() => { setShowProductsComparison(false) }, [])
 
   if (loading) return (<SimpleLoader />)
   else { return (
@@ -174,12 +171,12 @@ export const ProductPage = () => {
             >
               Cantidad:{ (cantidadItem === 1 ) ? ` ${cantidadItem} unidad` : ` ${cantidadItem} unidades` } 
               <FontAwesomeIcon icon={ faChevronDown }   className='row-down-icon'/>
-              <span>({ item.available_quantity } { item.available_quantity > 1 ? 'disponibles' : 'disponible'} )</span>
+              <span>({ item.initial_quantity } { item.initial_quantity > 1 ? 'disponibles' : 'disponible'} )</span>
             </button>
             <div className='quantity-items'>
-              <AgregarUnidades availableItems={item.available_quantity} addQuantityItems={addQuantityItems}/>
+              <AgregarUnidades availableItems={item.initial_quantity} addQuantityItems={addQuantityItems}/>
               {
-                (item.available_quantity > 6) &&
+                (item.initial_quantity > 6) &&
                 <div className='quantity-items__greater'>
                   <span>Cantidad:</span>
                   <div className='quantity-inputs-container'>
