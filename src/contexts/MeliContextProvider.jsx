@@ -1,5 +1,5 @@
 import { useState, useReducer } from "react"
-import { MeliContext } from "./meliContext"
+import { MeliContext } from "./MeliContext"
 import { carritoActions } from "../actions/carritoActions"
 export const ContextProvider = ({children}) => {
 
