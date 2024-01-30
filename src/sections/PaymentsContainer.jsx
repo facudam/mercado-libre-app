@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { MeliContext } from '../contexts/meliContext'
+import { MeliContext } from '../contexts/MeliContext'
 import credito from '../images/credit-card.svg'
 import debito from '../images/debit-card.svg'
 import cuotas from '../images/mercado-creditsv2.svg'

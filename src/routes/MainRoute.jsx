@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import { MeliContext } from '../contexts/meliContext'
+import { MeliContext } from '../contexts/MeliContext'
 import { DescubriSection, MercadoPuntosSection, Ofertas, PaymentsContainer, SuscripcionNivel, TiendasSection, Categories } from '../sections'
 import { Footer, Slider } from '../components'
 import { CookiesModal } from '../modals'

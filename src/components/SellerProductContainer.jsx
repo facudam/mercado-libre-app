@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { getProductImages } from '../helpers/getProductImages';
 import { Link } from "react-router-dom";
 import '../styles/SellerSlide.css'
-import { MeliContext } from '../contexts/meliContext';
+import { MeliContext } from '../contexts/MeliContext';
 import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
 
 export const SellerProductContainer = ({ id, title, price }) => {

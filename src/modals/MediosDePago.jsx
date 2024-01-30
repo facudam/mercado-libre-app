@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import ReactDOM from "react-dom"
-import { MeliContext } from "../contexts/meliContext"
+import { MeliContext } from "../contexts/MeliContext"
 import mercadoCreditoLogo from '../images/mercadocreditologo.svg'
 import tarjetaCredito from '../images/credit-card.svg'
 import visa from '../images/visa.svg'

@@ -1,7 +1,7 @@
 import  ReactDOM  from "react-dom";
 import '../styles/CompareButton.css'
 import { useContext } from "react";
-import { MeliContext } from "../contexts/meliContext";
+import { MeliContext } from "../contexts/MeliContext";
 
 export const CompareButton = () => {
 

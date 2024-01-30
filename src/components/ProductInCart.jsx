@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat'
 import '../styles/ProductInCart.css'
-import { MeliContext } from '../contexts/meliContext'
+import { MeliContext } from '../contexts/MeliContext'
 import { useNavigate } from 'react-router-dom'
 
 export const ProductInCart = ({ imgUrl, title, attributes, price, item }) => {

@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import ReactDOM from "react-dom"
-import { MeliContext } from "../contexts/meliContext"
+import { MeliContext } from "../contexts/MeliContext"
 import '../styles/NavHoverModal.css'
 
 export const NavHoverModal = () => {

@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../styles/BuyPage.css'
-import { MeliContext } from '../contexts/meliContext';
+import { MeliContext } from '../contexts/MeliContext';
 import { CompraFinalizada } from '../modals';
 import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
 

@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from 'react'
 import '../styles/SearchProductContainer.css'
 import { getProductImages } from '../helpers/getProductImages'
 import { Link } from "react-router-dom";
-import { MeliContext } from '../contexts/meliContext';
+import { MeliContext } from '../contexts/MeliContext';
 import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat';
 
 

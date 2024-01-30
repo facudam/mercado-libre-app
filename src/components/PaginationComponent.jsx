@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react'
 import '../styles/PaginationComponent.css'
-import { MeliContext } from '../contexts/meliContext'
+import { MeliContext } from '../contexts/MeliContext'
 
 
 export const PaginationComponent = ({ MAX_PAGES, anterior, siguiente }) => {

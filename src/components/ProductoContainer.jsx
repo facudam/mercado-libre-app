@@ -3,7 +3,7 @@ import { getProductImages } from "../helpers/getProductImages";
 import corazon from '../images/corazon.png'
 import '../styles/ProductoContainer.css'
 import { Link } from "react-router-dom";
-import { MeliContext } from "../contexts/meliContext";
+import { MeliContext } from "../contexts/MeliContext";
 import { convertToCurrencyFormat } from "../helpers/convertToCurrencyFormat";
 
 export const ProductoContainer = ({ id, img, title, price, descuento, cuotas, envio, precioCuota }) => {

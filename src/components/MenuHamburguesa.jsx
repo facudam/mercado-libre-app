@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { MeliContext } from '../contexts/meliContext';
+import { MeliContext } from '../contexts/MeliContext';
 import '../styles/MenuHamburguesa.css';
 
 export const MenuHamburguesa = () => {

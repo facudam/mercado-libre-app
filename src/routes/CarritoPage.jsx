@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react"
-import { MeliContext } from "../contexts/meliContext"
+import { MeliContext } from "../contexts/MeliContext"
 import '../styles/CarritoPage.css'
 import { Ofertas } from "../sections"
 import { ProductInCart } from "../components"

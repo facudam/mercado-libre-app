@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import { MeliContext } from '../contexts/meliContext'
+import { MeliContext } from '../contexts/MeliContext'
 import { FiltrosSearch, SearchProductsSection } from '../sections'
 import { SearchBanner } from '../components'
 import { SimpleLoader } from '../loaders/SimpleLoader'

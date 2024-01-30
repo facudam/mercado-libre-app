@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react'
-import { MeliContext } from '../contexts/meliContext';
+import { MeliContext } from '../contexts/MeliContext';
 import { useNavigate, useParams } from 'react-router-dom';
 import { SellerSlide, ProductAdded, Footer, AgregarUnidades } from '../components';
 import { MainCharacteristics, ProductDescriptionSection, SellerReputation, OpcionesDePago, PreguntasYRespuestas } from '../sections';

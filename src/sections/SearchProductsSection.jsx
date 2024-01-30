@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import { SearchProductContainer } from '../components/SearchProductContainer'
 import '../styles/SearchProductsSection.css'
 import { PaginationComponent } from '../components/PaginationComponent';
-import { MeliContext } from '../contexts/meliContext';
+import { MeliContext } from '../contexts/MeliContext';
 import { CompareButton } from '../modals/CompareButton';
 import { ProductsComparison } from '../modals/ProductsComparison';
 

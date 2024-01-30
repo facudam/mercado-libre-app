@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom'
 import '../styles/ProductsComparison.css'
 import { useContext, useEffect, useState } from 'react'
-import { MeliContext } from '../contexts/meliContext'
+import { MeliContext } from '../contexts/MeliContext'
 import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat'
 import { Link, useNavigate } from 'react-router-dom'
 import { getRecommendedProduct } from '../helpers/RecommendedProduct/index'

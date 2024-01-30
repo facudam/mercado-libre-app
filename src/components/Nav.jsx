@@ -9,7 +9,7 @@ import '../styles/Nav.css'
 import { MenuHamburguesa } from './MenuHamburguesa';
 import { DropdownMobileMenu } from './DropdownMobileMenu';
 import { useContext, useEffect, useState } from 'react';
-import { MeliContext } from '../contexts/meliContext';
+import { MeliContext } from '../contexts/MeliContext';
 import { Link, useNavigate } from 'react-router-dom';
 
 

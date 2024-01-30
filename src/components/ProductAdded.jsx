@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { useContext } from "react"
-import { MeliContext } from "../contexts/meliContext"
+import { MeliContext } from "../contexts/MeliContext"
 import '../styles/ProductAdded.css'
 import { useNavigate } from "react-router-dom"
 import { convertToCurrencyFormat } from "../helpers/convertToCurrencyFormat"
