@@ -1,5 +1,5 @@
 import lupa from '../images/search-outline.svg';
-import logo from '../images/mercadolibre.svg';
+import logo from '../images/mercadolibre.png';
 import location_img from '../images/location-outline.svg';
 import row_down from '../images/row-down.svg';
 import row_right from '../images/row-right.svg'
@@ -92,10 +92,6 @@ export const Nav = () => {
                         <img className='lupa' src={ lupa } alt='lupa search' />
                     </div>
                 </form>
-            </div>
-            
-            <div className='propaganda'>
-                <a><img src='https://http2.mlstatic.com/D_NQ_887100-MLA50801817839_072022-OO.webp' alt='promo-disney' /></a>
             </div>
         </div>
 
