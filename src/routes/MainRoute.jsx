@@ -19,6 +19,10 @@ export const MainRoute = () => {
     <>
         <Slider />
         <PaymentsContainer />
+        <div style={{maxWidth:"1100px", margin:"auto"}}>
+          <p style={{textAlign:"center", marginTop:"60px", backgroundColor:"red", color:"#fff", padding:"10px", borderRadius:"4px", fontSize:"1.05rem"}}><strong>¡Atención!</strong> Este sitio web no es un sitio oficial, solamente es un sitio creado como práctica y demostración de habilidades de desarrollo web.</p>
+        </div>
+        
         <Ofertas title='Ofertas' toSearch='electrodomesticos' />
         <SuscripcionNivel />
         <MercadoPuntosSection />
