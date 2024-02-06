@@ -6,22 +6,27 @@ import { getProductsBySeller } from '../helpers/getProductsBySeller';
 import messagePositive from '../images/message-positive.svg'
 import timePositive from '../images/time-positive.svg'
 import { SimpleLoader } from '../loaders/SimpleLoader';
+import { getSellerFullInfo } from '../helpers/getSellerFullInfo';
 
 export const SellerReputation = ({ sellerID }) => {
 
     const [ reputation, setReputation ] = useState('')
     const [ isLoading, setIsLoading ] = useState(true)
 
-    const getSellerInfo = async() => {
+    const getSellerProducts = async() => {
         const info = await getProductsBySeller(sellerID)
-        console.log(info)
-        setReputation(info.seller.seller_reputation.power_seller_status)
         setIsLoading(false) 
     }
 
+    const getSellerReputation = async() => {
+        const info = await getSellerFullInfo(sellerID)
+        setReputation(info.seller_reputation.power_seller_status)
+    }
+
     useEffect(() => {
-        getSellerInfo()
-    }, [ reputation, sellerID ])
+        getSellerProducts()
+        getSellerReputation()
+    }, [ sellerID, reputation ])
 
   if (!reputation) return;
   return (

@@ -5,6 +5,7 @@ import { MeliContext } from '../contexts/MeliContext'
 import { convertToCurrencyFormat } from '../helpers/convertToCurrencyFormat'
 import { Link, useNavigate } from 'react-router-dom'
 import { getRecommendedProduct } from '../helpers/RecommendedProduct/index'
+import { getSellerFullInfo } from '../helpers/getSellerFullInfo'
 
 export const ProductsComparison = () => {
 
@@ -12,7 +13,7 @@ export const ProductsComparison = () => {
     
     const navigate = useNavigate()
 
-    const [recommendedProduct, setRecommendedProduct] = useState([getRecommendedProduct(productsToCompare)])
+    const [ recommendedProduct, setRecommendedProduct ] = useState([getRecommendedProduct(productsToCompare)])
     
     const ComprarProducto = (producto) => {
         producto.quantity = cantidadItem
@@ -28,22 +29,25 @@ export const ProductsComparison = () => {
         }, 2000)
     }
 
-    const showReputationSeller = (producto) => {
-        if (producto.seller.seller_reputation.power_seller_status === null) {
+    const showReputationSeller = async(producto) => {
+        const reputacion = await getSellerFullInfo(producto.seller_id)
+
+        if (reputacion.power_seller_status === null) {
             return 'sin reputación'
-        } else if (producto.seller.seller_reputation.power_seller_status === 'platinum') {
+        } else if (reputacion.power_seller_status === 'platinum') {
             return 'Platinum: Uno de los mejores'
         } else {
-            return producto.seller.seller_reputation.power_seller_status
+            return reputacion.power_seller_status
         } 
     }
 
-    const addColorReputation = (producto) => {
-        if (producto.seller.seller_reputation.power_seller_status === 'platinum') {
+    const addColorReputation = async(producto) => {
+        const reputacion = await getSellerFullInfo(producto.seller_id)
+        if (reputacion.power_seller_status === 'platinum') {
             return 'platinum'
-        } else if (producto.seller.seller_reputation.power_seller_status === 'gold'){
+        } else if (reputacion.power_seller_status === 'gold'){
             return 'gold-reputation'
-        } else if (producto.seller.seller_reputation.power_seller_status === 'silver') {
+        } else if (reputacion.power_seller_status === 'silver') {
             return 'silver-reputation'
         } else {
             return 'no-reputation'

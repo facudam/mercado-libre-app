@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react"
 import { MeliContext } from "../contexts/MeliContext"
 import '../styles/CarritoPage.css'
 import { Ofertas } from "../sections"
-import { ProductInCart } from "../components"
+import { Footer, ProductInCart } from "../components"
 import { convertToCurrencyFormat } from "../helpers/convertToCurrencyFormat"
 import { useNavigate } from "react-router-dom"
 
@@ -19,6 +19,7 @@ export const CarritoPage = () => {
     }, [])
 
     return(
+      <>
         <section className="carrito-section">
           <main className="carrito-page">
             <ul>
@@ -69,7 +70,9 @@ export const CarritoPage = () => {
             
           </main>
 
-          <Ofertas title='Productos que te pueden interesar' toSearch='ropa' />
+          
         </section>
+        <Footer />
+      </>
     )
 }

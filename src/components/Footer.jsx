@@ -20,7 +20,7 @@ export const Footer = () => {
                 <img src={ footer2 } />
                 <div>
                     <p>Envío gratis desde $ 8.000</p>
-                    <p>Solo por estar registrado en Mercado Libre tenés envíos gratis en miles de productos. Es un beneficio de Mercado Puntos.</p>
+                    <p>Solo por estar registrado en M***** L**** tenés envíos gratis en miles de productos. Es un beneficio de Mercado Puntos.</p>
                     <a href=''>Conocé más sobre este beneficio</a>
                 </div>
             </div>
@@ -28,7 +28,7 @@ export const Footer = () => {
                 <img src={ footer3 } />
                 <div>
                     <p>Seguridad, de principio a fin</p>
-                    <p>¿No te gusta? ¡Devolvelo! En Mercado Libre, no hay nada que no puedas hacer, porque estás siempre protegido.</p>
+                    <p>¿No te gusta? ¡Devolvelo! En M****** L*****, no hay nada que no puedas hacer, porque estás siempre protegido.</p>
                     <a href=''>Cómo te protegemos</a>
                 </div>
             </div>
