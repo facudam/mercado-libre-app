@@ -15,10 +15,10 @@ export const getTheBestStarQuantityProduct = (arr) => {
 
 function addBestProductBetween_And_To_(arr1, arr2, arreglo) {
   //Purpose: Returns the array 'arreglo' updated as appropriate. In case arr1 and arr2 are equal it adds arr2 to 'arreglo', if arr2 is greater then redefine 'arreglo' with the value of arr2.
-  if (arr1.seller.seller_reputation.transactions.ratings.positive === arr2.seller.seller_reputation.transactions.ratings.positive) {
+  if (arr1.seller_reputation.transactions.total === arr2.seller_reputation.transactions.total) {
       arreglo.push(arr2)
   }
-  if (!is_BiggerOrEqualTo_(arr1.seller.seller_reputation.transactions.ratings.positive, arr2.seller.seller_reputation.transactions.ratings.positive)) {
+  if (!is_BiggerOrEqualTo_(arr1.seller_reputation.transactions.total, arr2.seller_reputation.transactions.total)) {
       arreglo = [arr2]
   }
   return arreglo
@@ -30,9 +30,9 @@ function is_BiggerOrEqualTo_(number1, number2) {
 
 function bestStarProductBetween_And_(item1, item2) {
   //Purpose: Returns as an array the best star quantity product between item1 and item2, in case they're the same, it returns both.
-    if (item1.seller.seller_reputation.transactions.ratings.positive > item2.seller.seller_reputation.transactions.ratings.positive) {
+    if (item1.seller_reputation.transactions.total > item2.seller_reputation.transactions.total) {
       return [item1]
-    } else if (item2.seller.seller_reputation.transactions.ratings.positive > item1.seller.seller_reputation.transactions.ratings.positive) {
+    } else if (item2.seller_reputation.transactions.total > item1.seller_reputation.transactions.total) {
       return [item2]
     } else {
       return [item1, item2]

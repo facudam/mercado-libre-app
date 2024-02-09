@@ -29,6 +29,7 @@ export const SearchProductContainer = ({ identifier, img, name, price, item }) =
     const handleProductsToCompare = (e) => {
         const { checked } = e.target;
         if (checked) {
+            console.log(productsToCompare)
             AddProductIfApplicable()
         } else {
             setProductsToCompare(productsToCompare.filter(product => product.id !== identifier));

@@ -24,7 +24,7 @@ const addPointsToBestProduct = (fn, arr, num) => {
   
   
 export const setPointsToProducts = (arr) => {
-    // addPointsPropertyToElementsIn_(arr) 
+    addPointsPropertyToElementsIn_(arr) 
     addPointsToBestProduct(getTheBestSellingProduct,arr, 3);
     addPointsToBestProduct(getTheBestStarQuantityProduct, arr, 6)
     addPointsToBestProduct(getTheCheapestProduct,arr, 2)

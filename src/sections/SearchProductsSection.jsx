@@ -5,6 +5,7 @@ import { PaginationComponent } from '../components/PaginationComponent';
 import { MeliContext } from '../contexts/MeliContext';
 import { CompareButton } from '../modals/CompareButton';
 import { ProductsComparison } from '../modals/ProductsComparison';
+import { MaintenanceModal } from '../modals/MaintenanceModal';
 
 
 
@@ -28,8 +29,9 @@ export const SearchProductsSection = ({ results }) => {
 
   return (
    <>
+   {/* showProductsComparison && <ProductsComparison /> */}
     {
-      showProductsComparison && <ProductsComparison />
+      showProductsComparison && <MaintenanceModal />
     }
     
     {
