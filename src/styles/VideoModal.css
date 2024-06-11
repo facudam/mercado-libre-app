@@ -1,0 +1,53 @@
+.full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 20;
+    cursor: pointer;
+}
+
+.video-ctn {
+    position: fixed;
+    max-height: 90vh;
+    width: 95vw;
+    max-width: 930px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+    background-color: #fff;
+    z-index: 20;
+    border-radius: 5px;
+    padding: 35px 25px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: appearing .5s ease-in-out forwards;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex button {
+    padding: 3px 5px;
+    border: 2px solid rgb(255,0,0);
+    border-radius: 5px;
+    color: rgb(255, 1, 1);
+    font-weight: 700;
+    background-color: rgba(255,0,0, .2);
+    cursor: pointer;
+}
+
+.video-ctn video {
+    width: 100%;
+}
+
+@keyframes appearing {
+    from { opacity: 0; }
+    to { opacity: 1;}
+}

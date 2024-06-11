@@ -13,8 +13,14 @@ export const ProductoContainer = ({ id, img, title, price, descuento, cuotas, en
 
 
   const getUrlImage = async() => {
-    const main_img = await getProductImages(img);
-    setUrlImage(main_img[0].body.pictures[0].url)
+    try {
+      const main_img = await getProductImages(id);
+      console.log(main_img)
+      setUrlImage(main_img[0].body.pictures[0].url)
+    } catch (error) {
+      console.log(error)
+    }
+    
   }
   useEffect(() => {
     getUrlImage()

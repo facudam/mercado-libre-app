@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect } from "react"
 import ReactDOM from "react-dom"
 import { MeliContext } from "../contexts/MeliContext"
 import mercadoCreditoLogo from '../images/mercadocreditologo.svg'

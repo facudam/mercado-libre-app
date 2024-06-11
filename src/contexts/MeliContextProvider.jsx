@@ -24,6 +24,7 @@ export const ContextProvider = ({children}) => {
     const [ isCompraFinalizadaModalActive, setIsCompraFinalizadaModalActive ] = useState(false)
     const [ productsToCompare, setProductsToCompare ] = useState([])
     const [ showProductsComparison, setShowProductsComparison ] = useState(false)
+    const [ isVideoModalOpen, setIsVideoModalOpen ] = useState(false)
 
 
   /* ++++++++++++ UseReducer código +++++++++++ */
@@ -198,7 +199,8 @@ export const ContextProvider = ({children}) => {
             productsToCompare, 
             setProductsToCompare,
             showProductsComparison, 
-            setShowProductsComparison
+            setShowProductsComparison,
+            isVideoModalOpen, setIsVideoModalOpen
         }}>{ children }</MeliContext.Provider>
     )
 }
