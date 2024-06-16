@@ -49,4 +49,4 @@ npm i --save @fortawesome/react-fontawesome@latest
 ![imagen de nueva la landing de meliclon](https://raw.githubusercontent.com/facudam/mercado-libre-app/main/src/images/landing.webp)
 ![imagen por producto de meliclon ](https://raw.githubusercontent.com/facudam/mercado-libre-app/main/src/images/productPage.webp)
 
-- See [live project](https://meliclon.netlify.app/ "Mercado libre clone")
+- See [live project](e-commerce-libre.vercel.app/ "Mercado libre clone")
